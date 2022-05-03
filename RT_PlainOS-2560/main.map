@@ -1,0 +1,953 @@
+Archive member included because of file (symbol)
+
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                              obj/rts_os/rts_task.o (__subsf3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o) (__addsf3x)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                              obj/rts_os/rts_task.o (__divsf3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o) (__divsf3x)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                              obj/main.o (__fixunssfsi)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                              obj/rts_os/rts_task.o (__floatunsisf)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_inf)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_nan)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_pscA)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_pscB)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o) (__fp_round)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_split3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o) (__fp_zero)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                              obj/main.o (__mulsf3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o) (__mulsf3x)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                              obj/drivers/usart.o (__udivmodhi4)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+                              obj/main.o (__udivmodsi4)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o (exit)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                              obj/main.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+rts_gb_systicks     0x4               obj/rts_os/rts_core.o
+stack1              0x80              obj/main.o
+mem_ctr_blk         0x200             obj/rts_os/rts_heap1.o
+stack2              0x80              obj/main.o
+rts_gb_curr_task_tcb
+                    0x2               obj/rts_os/rts_core.o
+stack3              0x80              obj/main.o
+mem_pool            0x400             obj/rts_os/rts_heap1.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00800200         0x0000fe00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800200
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+LOAD obj/main.o
+LOAD obj/rts_os/rts_heap1.o
+LOAD obj/rts_os/rts_port.o
+LOAD obj/rts_os/rts_core.o
+LOAD obj/rts_os/rts_task.o
+LOAD obj/rts_os/rts_semaphore.o
+LOAD obj/rts_os/rts_os.o
+LOAD obj/drivers/usart.o
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libc.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x1cbe
+ *(.vectors)
+ .vectors       0x00000000       0xe4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x000000e4                . = ALIGN (0x2)
+                0x000000e4                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000e4        0x0 linker stubs
+ *(.trampolines*)
+                0x000000e4                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000e4                __ctors_start = .
+ *(.ctors)
+                0x000000e4                __ctors_end = .
+                0x000000e4                __dtors_start = .
+ *(.dtors)
+                0x000000e4                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000e4        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x000000e4                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000e4       0x10 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000f4       0x1a d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x000000f4                __do_copy_data
+ .init4         0x0000010e       0x10 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                0x0000010e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000011e        0x8 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ *(.init9)
+ *(.text)
+ .text          0x00000126        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                0x00000126                __vector_38
+                0x00000126                __vector_22
+                0x00000126                __vector_28
+                0x00000126                __vector_1
+                0x00000126                __vector_32
+                0x00000126                __vector_34
+                0x00000126                __vector_24
+                0x00000126                __vector_12
+                0x00000126                __vector_55
+                0x00000126                __vector_46
+                0x00000126                __bad_interrupt
+                0x00000126                __vector_6
+                0x00000126                __vector_31
+                0x00000126                __vector_35
+                0x00000126                __vector_39
+                0x00000126                __vector_3
+                0x00000126                __vector_23
+                0x00000126                __vector_30
+                0x00000126                __vector_45
+                0x00000126                __vector_11
+                0x00000126                __vector_54
+                0x00000126                __vector_13
+                0x00000126                __vector_17
+                0x00000126                __vector_19
+                0x00000126                __vector_56
+                0x00000126                __vector_7
+                0x00000126                __vector_49
+                0x00000126                __vector_41
+                0x00000126                __vector_43
+                0x00000126                __vector_27
+                0x00000126                __vector_5
+                0x00000126                __vector_33
+                0x00000126                __vector_47
+                0x00000126                __vector_52
+                0x00000126                __vector_37
+                0x00000126                __vector_4
+                0x00000126                __vector_44
+                0x00000126                __vector_51
+                0x00000126                __vector_9
+                0x00000126                __vector_2
+                0x00000126                __vector_21
+                0x00000126                __vector_15
+                0x00000126                __vector_29
+                0x00000126                __vector_40
+                0x00000126                __vector_8
+                0x00000126                __vector_26
+                0x00000126                __vector_48
+                0x00000126                __vector_14
+                0x00000126                __vector_53
+                0x00000126                __vector_10
+                0x00000126                __vector_50
+                0x00000126                __vector_16
+                0x00000126                __vector_18
+                0x00000126                __vector_42
+ .text          0x0000012a      0x2b2 obj/main.o
+                0x0000035c                task1
+                0x00000270                task2
+                0x00000172                idle_hook
+                0x0000018e                main
+                0x0000012a                delay
+                0x0000023c                task3
+ .text          0x000003dc      0x382 obj/rts_os/rts_heap1.o
+                0x0000051e                MemAlloc
+                0x0000049a                MemAllocInit
+                0x00000746                MemGetUsedBytes
+                0x000003dc                MemCleanFragment
+                0x0000065c                MemFree
+ .text          0x0000075e       0x7e obj/rts_os/rts_port.o
+                0x00000780                RTS_PORT_TaskStackInit
+                0x0000075e                RTS_PORT_SystickInit
+ .text          0x000007dc      0x584 obj/rts_os/rts_core.o
+                0x00000b44                RTS_CORE_GetHightPrioTcb
+                0x000009d2                RTS_CORE_InsertTcbToRdyList
+                0x00000996                RTS_CORE_RegisterTask
+                0x00000890                RTS_CORE_ClearPrioBitmapBit
+                0x0000083c                RTS_CORE_UpdateTaskHightPrio
+                0x000007dc                RTS_CORE_Init
+                0x00000d56                RTS_CORE_OsSchdule
+                0x00000a54                RTS_CORE_RemoveTcbFromRdyList
+                0x00000b64                RTS_CORE_SwitchToHiprioTask
+                0x00000b2c                RTS_CORE_GetTcbFromTid
+                0x00000c70                RTS_CORE_GetHiprioTcbNum
+                0x00000ab8                RTS_CORE_InsertTcbToPendList
+                0x00000b04                RTS_CORE_RemoveTcbFromPendList
+                0x00000c88                RTS_CORE_SwitchToNextTask
+                0x0000091e                RTS_CORE_SetPrioBitmapBit
+ .text          0x00000d60      0x3a6 obj/rts_os/rts_task.o
+                0x00000ff2                RTS_PendTask
+                0x00000e3a                RTS_TurnOnSchdule
+                0x000010e0                RTS_TASK_IdleTaskInit
+                0x00000f9c                RTS_ResumeTask
+                0x00000f32                RTS_ChangeTaskPrio
+                0x00000d80                RTS_GetCurrTaskTid
+                0x00000d98                RTS_GetCpuUtilizationRate
+                0x00000e22                RTS_TurnOffSchdule
+                0x00000d8c                RTS_GetCurrTaskPrio
+                0x0000107c                RTS_CreateTask
+                0x00000e54                __vector_20
+ .text          0x00001106      0x1b8 obj/rts_os/rts_semaphore.o
+                0x0000112c                RTS_PostSemaphore
+                0x0000125e                RTS_DestorySemaphore
+                0x000011c8                RTS_WaitSemaphore
+                0x00001106                RTS_InitSemaphore
+                0x00001280                RTS_CreateSemaphore
+ .text          0x000012be       0xc6 obj/rts_os/rts_os.o
+                0x00001350                RTS_OS_Init
+                0x000012be                RTS_OS_Start
+ .text          0x00001384      0x4f6 obj/drivers/usart.o
+                0x0000148c                __vector_25
+                0x00001710                usart_init
+                0x000013ee                __vector_36
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .text          0x0000187a        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                0x0000187a                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc.fplib
+                0x0000187a        0xa d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                0x0000187a                __subsf3
+                0x0000187c                __addsf3
+ .text.avr-libc.fplib
+                0x00001884       0xc0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                0x0000189e                __addsf3x
+ .text.avr-libc.fplib
+                0x00001944        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                0x00001944                __divsf3
+ .text.avr-libc.fplib
+                0x00001948       0xcc d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                0x0000195e                __divsf3x
+                0x00001962                __divsf3_pse
+ .text.avr-libc.fplib
+                0x00001a14       0x58 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                0x00001a14                __fixunssfsi
+ .text.avr-libc.fplib
+                0x00001a6c       0x7a d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                0x00001a70                __floatsisf
+                0x00001a6c                __floatunsisf
+ .text.avr-libc.fplib
+                0x00001ae6        0xc d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                0x00001ae6                __fp_inf
+ .text.avr-libc.fplib
+                0x00001af2        0x6 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                0x00001af2                __fp_nan
+ .text.avr-libc.fplib
+                0x00001af8        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                0x00001af8                __fp_pscA
+ .text.avr-libc.fplib
+                0x00001b06        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                0x00001b06                __fp_pscB
+ .text.avr-libc.fplib
+                0x00001b14       0x22 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                0x00001b14                __fp_round
+ .text.avr-libc.fplib
+                0x00001b36       0x44 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                0x00001b36                __fp_split3
+                0x00001b46                __fp_splitA
+ .text.avr-libc.fplib
+                0x00001b7a        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                0x00001b7a                __fp_zero
+                0x00001b7c                __fp_szero
+ .text.avr-libc.fplib
+                0x00001b88        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                0x00001b88                __mulsf3
+ .text.avr-libc.fplib
+                0x00001b8c       0xc2 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                0x00001ba4                __mulsf3_pse
+                0x00001ba0                __mulsf3x
+ .text.libgcc   0x00001c4e       0x28 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                0x00001c4e                __udivmodhi4
+ .text.libgcc   0x00001c76       0x44 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+                0x00001c76                __udivmodsi4
+ .text.libgcc   0x00001cba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .text.libgcc   0x00001cba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                0x00001cba                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00001cba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+                0x00001cba                exit
+                0x00001cba                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00001cba        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00001cbe                _etext = .
+
+.data           0x00800200      0x1ba load address 0x00001cbe
+                0x00800200                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800200        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ .data          0x00800200       0xb0 obj/main.o
+                0x0080028e                USART1
+ .data          0x008002b0        0x0 obj/rts_os/rts_heap1.o
+ .data          0x008002b0        0x0 obj/rts_os/rts_port.o
+ .data          0x008002b0      0x101 obj/rts_os/rts_core.o
+                0x008002b0                rts_gb_prio_tbl
+ .data          0x008003b1        0x9 obj/rts_os/rts_task.o
+ .data          0x008003ba        0x0 obj/rts_os/rts_semaphore.o
+ .data          0x008003ba        0x0 obj/rts_os/rts_os.o
+ .data          0x008003ba        0x0 obj/drivers/usart.o
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .data          0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x008003ba                . = ALIGN (0x2)
+                0x008003ba                _edata = .
+                0x008003ba                PROVIDE (__data_end, .)
+
+.bss            0x008003ba      0x849
+                0x008003ba                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008003ba        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+ .bss           0x008003ba        0x2 obj/main.o
+                0x008003ba                semaphore
+ .bss           0x008003bc        0x0 obj/rts_os/rts_heap1.o
+ .bss           0x008003bc        0x0 obj/rts_os/rts_port.o
+ .bss           0x008003bc       0x3d obj/rts_os/rts_core.o
+ .bss           0x008003f9       0x82 obj/rts_os/rts_task.o
+ .bss           0x0080047b        0x0 obj/rts_os/rts_semaphore.o
+ .bss           0x0080047b        0x0 obj/rts_os/rts_os.o
+ .bss           0x0080047b        0x2 obj/drivers/usart.o
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+ .bss           0x0080047d        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0080047d      0x180 obj/main.o
+                0x0080047d                stack1
+                0x008004fd                stack2
+                0x0080057d                stack3
+ COMMON         0x008005fd      0x600 obj/rts_os/rts_heap1.o
+                0x008005fd                mem_ctr_blk
+                0x008007fd                mem_pool
+ COMMON         0x00800bfd        0x6 obj/rts_os/rts_core.o
+                0x00800bfd                rts_gb_systicks
+                0x00800c01                rts_gb_curr_task_tcb
+                0x00800c03                PROVIDE (__bss_end, .)
+                0x00001cbe                __data_load_start = LOADADDR (.data)
+                0x00001e78                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800c03        0x0
+                0x00800c03                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800c03                PROVIDE (__noinit_end, .)
+                0x00800c03                _end = .
+                0x00800c03                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x100
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 obj/main.o
+ .debug_aranges
+                0x00000020       0x20 obj/rts_os/rts_heap1.o
+ .debug_aranges
+                0x00000040       0x20 obj/rts_os/rts_port.o
+ .debug_aranges
+                0x00000060       0x20 obj/rts_os/rts_core.o
+ .debug_aranges
+                0x00000080       0x20 obj/rts_os/rts_task.o
+ .debug_aranges
+                0x000000a0       0x20 obj/rts_os/rts_semaphore.o
+ .debug_aranges
+                0x000000c0       0x20 obj/rts_os/rts_os.o
+ .debug_aranges
+                0x000000e0       0x20 obj/drivers/usart.o
+
+.debug_pubnames
+                0x00000000      0x55e
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x8b obj/main.o
+ .debug_pubnames
+                0x0000008b       0x82 obj/rts_os/rts_heap1.o
+ .debug_pubnames
+                0x0000010d       0x46 obj/rts_os/rts_port.o
+ .debug_pubnames
+                0x00000153      0x20e obj/rts_os/rts_core.o
+ .debug_pubnames
+                0x00000361      0x104 obj/rts_os/rts_task.o
+ .debug_pubnames
+                0x00000465       0x85 obj/rts_os/rts_semaphore.o
+ .debug_pubnames
+                0x000004ea       0x33 obj/rts_os/rts_os.o
+ .debug_pubnames
+                0x0000051d       0x41 obj/drivers/usart.o
+
+.debug_info     0x00000000     0x2077
+ *(.debug_info)
+ .debug_info    0x00000000      0x6e9 obj/main.o
+ .debug_info    0x000006e9      0x284 obj/rts_os/rts_heap1.o
+ .debug_info    0x0000096d      0x10f obj/rts_os/rts_port.o
+ .debug_info    0x00000a7c      0x60b obj/rts_os/rts_core.o
+ .debug_info    0x00001087      0x465 obj/rts_os/rts_task.o
+ .debug_info    0x000014ec      0x35c obj/rts_os/rts_semaphore.o
+ .debug_info    0x00001848      0x1e6 obj/rts_os/rts_os.o
+ .debug_info    0x00001a2e      0x649 obj/drivers/usart.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xaa8
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x16b obj/main.o
+ .debug_abbrev  0x0000016b      0x153 obj/rts_os/rts_heap1.o
+ .debug_abbrev  0x000002be       0xa3 obj/rts_os/rts_port.o
+ .debug_abbrev  0x00000361      0x1fc obj/rts_os/rts_core.o
+ .debug_abbrev  0x0000055d      0x1bb obj/rts_os/rts_task.o
+ .debug_abbrev  0x00000718      0x13f obj/rts_os/rts_semaphore.o
+ .debug_abbrev  0x00000857       0xd7 obj/rts_os/rts_os.o
+ .debug_abbrev  0x0000092e      0x17a obj/drivers/usart.o
+
+.debug_line     0x00000000     0x16f7
+ *(.debug_line)
+ .debug_line    0x00000000      0x281 obj/main.o
+ .debug_line    0x00000281      0x33b obj/rts_os/rts_heap1.o
+ .debug_line    0x000005bc      0x219 obj/rts_os/rts_port.o
+ .debug_line    0x000007d5      0x41d obj/rts_os/rts_core.o
+ .debug_line    0x00000bf2      0x3c7 obj/rts_os/rts_task.o
+ .debug_line    0x00000fb9      0x2ac obj/rts_os/rts_semaphore.o
+ .debug_line    0x00001265      0x127 obj/rts_os/rts_os.o
+ .debug_line    0x0000138c      0x36b obj/drivers/usart.o
+
+.debug_frame    0x00000000      0x3f0
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 obj/main.o
+ .debug_frame   0x00000070       0x60 obj/rts_os/rts_heap1.o
+ .debug_frame   0x000000d0       0x30 obj/rts_os/rts_port.o
+ .debug_frame   0x00000100      0x100 obj/rts_os/rts_core.o
+ .debug_frame   0x00000200       0xd0 obj/rts_os/rts_task.o
+ .debug_frame   0x000002d0       0x60 obj/rts_os/rts_semaphore.o
+ .debug_frame   0x00000330       0x30 obj/rts_os/rts_os.o
+ .debug_frame   0x00000360       0x90 obj/drivers/usart.o
+
+.debug_str      0x00000000      0xb4b
+ *(.debug_str)
+ .debug_str     0x00000000      0x421 obj/main.o
+                                0x547 (size before relaxing)
+ .debug_str     0x00000421       0xef obj/rts_os/rts_heap1.o
+                                0x1c1 (size before relaxing)
+ .debug_str     0x00000510       0x59 obj/rts_os/rts_port.o
+                                0x12b (size before relaxing)
+ .debug_str     0x00000569      0x2d6 obj/rts_os/rts_core.o
+                                0x440 (size before relaxing)
+ .debug_str     0x0000083f      0x16c obj/rts_os/rts_task.o
+                                0x303 (size before relaxing)
+ .debug_str     0x000009ab       0xb9 obj/rts_os/rts_semaphore.o
+                                0x23d (size before relaxing)
+ .debug_str     0x00000a64       0x38 obj/rts_os/rts_os.o
+                                0x197 (size before relaxing)
+ .debug_str     0x00000a9c       0xaf obj/drivers/usart.o
+                                0x4fa (size before relaxing)
+
+.debug_loc      0x00000000      0xad6
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xd2 obj/main.o
+ .debug_loc     0x000000d2      0x198 obj/rts_os/rts_heap1.o
+ .debug_loc     0x0000026a       0x40 obj/rts_os/rts_port.o
+ .debug_loc     0x000002aa      0x1f9 obj/rts_os/rts_core.o
+ .debug_loc     0x000004a3      0x199 obj/rts_os/rts_task.o
+ .debug_loc     0x0000063c      0x138 obj/rts_os/rts_semaphore.o
+ .debug_loc     0x00000774       0x28 obj/rts_os/rts_os.o
+ .debug_loc     0x0000079c      0x33a obj/drivers/usart.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0x18
+ .debug_ranges  0x00000000       0x18 obj/rts_os/rts_semaphore.o
+
+Cross Reference Table
+
+Symbol                                            File
+MemAlloc                                          obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+MemAllocInit                                      obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_os.o
+MemCleanFragment                                  obj/rts_os/rts_heap1.o
+MemFree                                           obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_semaphore.o
+MemGetUsedBytes                                   obj/rts_os/rts_heap1.o
+RTS_CORE_ClearPrioBitmapBit                       obj/rts_os/rts_core.o
+RTS_CORE_GetHightPrioTcb                          obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+RTS_CORE_GetHiprioTcbNum                          obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+RTS_CORE_GetTcbFromTid                            obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_Init                                     obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+RTS_CORE_InsertTcbToPendList                      obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_InsertTcbToRdyList                       obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_OsSchdule                                obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RegisterTask                             obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RemoveTcbFromPendList                    obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RemoveTcbFromRdyList                     obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_SetPrioBitmapBit                         obj/rts_os/rts_core.o
+RTS_CORE_SwitchToHiprioTask                       obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_SwitchToNextTask                         obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_UpdateTaskHightPrio                      obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_ChangeTaskPrio                                obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_CreateSemaphore                               obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+RTS_CreateTask                                    obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_DestorySemaphore                              obj/rts_os/rts_semaphore.o
+RTS_GetCpuUtilizationRate                         obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_GetCurrTaskPrio                               obj/rts_os/rts_task.o
+RTS_GetCurrTaskTid                                obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_InitSemaphore                                 obj/rts_os/rts_semaphore.o
+RTS_OS_Init                                       obj/rts_os/rts_os.o
+                                                  obj/main.o
+RTS_OS_Start                                      obj/rts_os/rts_os.o
+                                                  obj/main.o
+RTS_PORT_SystickInit                              obj/rts_os/rts_port.o
+                                                  obj/rts_os/rts_os.o
+RTS_PORT_TaskStackInit                            obj/rts_os/rts_port.o
+                                                  obj/rts_os/rts_task.o
+RTS_PendTask                                      obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_PostSemaphore                                 obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+RTS_ResumeTask                                    obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_TASK_IdleTaskInit                             obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_os.o
+RTS_TurnOffSchdule                                obj/rts_os/rts_task.o
+RTS_TurnOnSchdule                                 obj/rts_os/rts_task.o
+RTS_WaitSemaphore                                 obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+USART1                                            obj/main.o
+__addsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+__addsf3x                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+__bad_interrupt                                   d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__bss_end                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+__bss_start                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+__data_end                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__data_load_start                                 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__data_start                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__divsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                                                  obj/rts_os/rts_task.o
+__divsf3_pse                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+__divsf3x                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+__do_clear_bss                                    d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_clear_bss.o)
+                                                  obj/drivers/usart.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_heap1.o
+                                                  obj/main.o
+__do_copy_data                                    d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+                                                  obj/main.o
+__fixunssfsi                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                                                  obj/main.o
+__floatsisf                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+__floatunsisf                                     d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(floatsisf.o)
+                                                  obj/rts_os/rts_task.o
+__fp_inf                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_inf.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__fp_nan                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_nan.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__fp_pscA                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscA.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__fp_pscB                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_pscB.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__fp_round                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_round.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+__fp_split3                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__fp_splitA                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_split3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+__fp_szero                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(divsf3x.o)
+__fp_zero                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fp_zero.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(fixunssfsi.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3x.o)
+__heap_end                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__init                                            d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__mulsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+                                                  obj/main.o
+__mulsf3_pse                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+__mulsf3x                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(mulsf3.o)
+__stack                                           d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__subsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6\libm.a(addsf3.o)
+                                                  obj/rts_os/rts_task.o
+__udivmodhi4                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodhi4.o)
+                                                  obj/drivers/usart.o
+__udivmodsi4                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_udivmodsi4.o)
+                                                  obj/drivers/usart.o
+                                                  obj/main.o
+__vector_1                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_10                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_11                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_12                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_13                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_14                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_15                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_16                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_17                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_18                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_19                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_2                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_20                                       obj/rts_os/rts_task.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_21                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_22                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_23                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_24                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_25                                       obj/drivers/usart.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_26                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_27                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_28                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_29                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_3                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_30                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_31                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_32                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_33                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_34                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_35                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_36                                       obj/drivers/usart.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_37                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_38                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_39                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_4                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_40                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_41                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_42                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_43                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_44                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_45                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_46                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_47                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_48                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_49                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_5                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_50                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_51                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_52                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_53                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_54                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_55                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_56                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_6                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_7                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_8                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_9                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vector_default                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+__vectors                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+_exit                                             d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+delay                                             obj/main.o
+exit                                              d:/winavr/bin/../lib/gcc/avr/4.3.3/avr6\libgcc.a(_exit.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+idle_hook                                         obj/main.o
+main                                              obj/main.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr6/crtm2560.o
+mem_ctr_blk                                       obj/rts_os/rts_heap1.o
+mem_pool                                          obj/rts_os/rts_heap1.o
+rts_gb_curr_task_tcb                              obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+rts_gb_prio_tbl                                   obj/rts_os/rts_core.o
+rts_gb_systicks                                   obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+                                                  obj/main.o
+semaphore                                         obj/main.o
+stack1                                            obj/main.o
+stack2                                            obj/main.o
+stack3                                            obj/main.o
+task1                                             obj/main.o
+task2                                             obj/main.o
+task3                                             obj/main.o
+usart_init                                        obj/drivers/usart.o
+                                                  obj/main.o

@@ -1,0 +1,83 @@
+{
+    "name": "arm",
+    "target": "Debug",
+    "toolchain": "GCC",
+    "showRepathOnLog": true,
+    "threadNum": 1,
+    "rootDir": "c:\\Users\\lisha\\Desktop\\arm\\arm",
+    "dumpPath": ".eide\\log",
+    "outDir": "build\\Debug",
+    "incDirs": [
+        ".eide/deps",
+        "lib/cmsis",
+        "lib",
+        "rts_os",
+        ".eide/deps",
+        "src"
+    ],
+    "libDirs": [],
+    "defines": [
+        "STM32F10X_MD",
+        "__CHECK_DEVICE_DEFINES",
+        "__CM3_REV"
+    ],
+    "sourceList": [
+        "lib/system_stm32f10x.c",
+        "rts_os/rts_core.c",
+        "rts_os/rts_heap1.c",
+        "rts_os/rts_os.c",
+        "rts_os/rts_port.c",
+        "rts_os/rts_port_asm.S",
+        "rts_os/rts_semaphore.c",
+        "rts_os/rts_task.c",
+        "src/USART.c",
+        "src/main.c",
+        "src/startup_stm32f10x_md.s",
+        "src/stm32f10x_it.c"
+    ],
+    "sourceParams": {},
+    "sourceParamsMtime": 1648638239058.658,
+    "options": {
+        "version": 4,
+        "beforeBuildTasks": [],
+        "afterBuildTasks": [],
+        "global": {
+            "$float-abi-type": "softfp",
+            "output-debug-info": "enable",
+            "toolPrefix": "arm-none-eabi-",
+            "microcontroller-cpu": "cortex-m3",
+            "microcontroller-fpu": "cortex-m3",
+            "microcontroller-float": "cortex-m3",
+            "target": "cortex-m3"
+        },
+        "c/cpp-compiler": {
+            "language-c": "c11",
+            "language-cpp": "c++14",
+            "optimization": "level-2",
+            "warnings": "all-warnings",
+            "C_FLAGS": "-ffunction-sections -fdata-sections",
+            "CXX_FLAGS": "-ffunction-sections -fdata-sections"
+        },
+        "asm-compiler": {
+            "ASM_FLAGS": "-ffunction-sections -fdata-sections"
+        },
+        "linker": {
+            "LD_FLAGS": "--specs=nosys.specs --specs=nano.specs -Wl,--gc-sections",
+            "output-format": "elf",
+            "LIB_FLAGS": "-lm",
+            "link-scatter": [
+                "\"c:/Users/lisha/Desktop/arm/arm/stm32f1x_64KB_flash.ld\""
+            ]
+        }
+    },
+    "env": {},
+    "sha": {
+        "c/cpp-defines": "8c17f729c123dd279369827a3042d254",
+        "beforeBuildTasks": "d751713988987e9331980363e24189ce",
+        "afterBuildTasks": "d751713988987e9331980363e24189ce",
+        "global": "30aa8671b8ec650757758fe00f264e94",
+        "c/cpp-compiler": "415b6be21776ac6cf2652bd0b96dc30b",
+        "asm-compiler": "4e936c1650c2f18609e37408d1cfbb9f",
+        "linker": "75a2f3545ba7d3ba7375e70ff502be62"
+    }
+}

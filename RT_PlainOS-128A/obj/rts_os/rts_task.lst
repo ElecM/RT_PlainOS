@@ -1,0 +1,1140 @@
+   1               		.file	"rts_task.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.data
+  19               	rts_gb_task_switch_on:
+  20 0000 01        		.byte	1
+  23               	rts_gb_task_idle_coun:
+  24 0001 0100      		.word	1
+  27               	rts_gb_task_coun:
+  28 0003 0100      		.word	1
+  31               	rts_gb_cpu_utilization_rate:
+  32 0005 BD        		.byte	-67
+  33 0006 37        		.byte	55
+  34 0007 86        		.byte	-122
+  35 0008 35        		.byte	53
+  36               		.text
+  38               	IdleTask:
+  39               	.LFB2:
+  40               	.LM1:
+  41 0000 DF93      		push r29
+  42 0002 CF93      		push r28
+  43 0004 00D0      		rcall .
+  44 0006 CDB7      		in r28,__SP_L__
+  45 0008 DEB7      		in r29,__SP_H__
+  46               	/* prologue: function */
+  47               	/* frame size = 2 */
+  48 000a 9A83      		std Y+2,r25
+  49 000c 8983      		std Y+1,r24
+  50               	.L3:
+  51               	.LM2:
+  52 000e 8091 0000 		lds r24,rts_gb_idle_task_pf
+  53 0012 9091 0000 		lds r25,(rts_gb_idle_task_pf)+1
+  54 0016 0097      		sbiw r24,0
+  55 0018 01F0      		breq .L3
+  56               	.LM3:
+  57 001a E091 0000 		lds r30,rts_gb_idle_task_pf
+  58 001e F091 0000 		lds r31,(rts_gb_idle_task_pf)+1
+  59 0022 8981      		ldd r24,Y+1
+  60 0024 9A81      		ldd r25,Y+2
+  61 0026 0995      		icall
+  62 0028 00C0      		rjmp .L3
+  63               	.LFE2:
+  65               		.lcomm idle_stack.1351,128
+  66               	.global	RTS_TASK_IdleTaskInit
+  68               	RTS_TASK_IdleTaskInit:
+  69               	.LFB3:
+  70               	.LM4:
+  71 002a DF93      		push r29
+  72 002c CF93      		push r28
+  73 002e 00D0      		rcall .
+  74 0030 0F92      		push __tmp_reg__
+  75 0032 CDB7      		in r28,__SP_L__
+  76 0034 DEB7      		in r29,__SP_H__
+  77               	/* prologue: function */
+  78               	/* frame size = 3 */
+  79 0036 9B83      		std Y+3,r25
+  80 0038 8A83      		std Y+2,r24
+  81               	.LM5:
+  82 003a 80E0      		ldi r24,lo8(gs(IdleTask))
+  83 003c 90E0      		ldi r25,hi8(gs(IdleTask))
+  84 003e 20E0      		ldi r18,lo8(idle_stack.1351)
+  85 0040 30E0      		ldi r19,hi8(idle_stack.1351)
+  86 0042 B901      		movw r22,r18
+  87 0044 40E8      		ldi r20,lo8(128)
+  88 0046 50E0      		ldi r21,hi8(128)
+  89 0048 26E0      		ldi r18,lo8(6)
+  90 004a 0E94 0000 		call RTS_CreateTask
+  91 004e 8983      		std Y+1,r24
+  92               	.LM6:
+  93 0050 8A81      		ldd r24,Y+2
+  94 0052 9B81      		ldd r25,Y+3
+  95 0054 9093 0000 		sts (rts_gb_idle_task_pf)+1,r25
+  96 0058 8093 0000 		sts rts_gb_idle_task_pf,r24
+  97               	.LM7:
+  98 005c 8981      		ldd r24,Y+1
+  99               	/* epilogue start */
+ 100               	.LM8:
+ 101 005e 0F90      		pop __tmp_reg__
+ 102 0060 0F90      		pop __tmp_reg__
+ 103 0062 0F90      		pop __tmp_reg__
+ 104 0064 CF91      		pop r28
+ 105 0066 DF91      		pop r29
+ 106 0068 0895      		ret
+ 107               	.LFE3:
+ 109               	.global	RTS_CreateTask
+ 111               	RTS_CreateTask:
+ 112               	.LFB4:
+ 113               	.LM9:
+ 114 006a DF93      		push r29
+ 115 006c CF93      		push r28
+ 116 006e CDB7      		in r28,__SP_L__
+ 117 0070 DEB7      		in r29,__SP_H__
+ 118 0072 2A97      		sbiw r28,10
+ 119 0074 0FB6      		in __tmp_reg__,__SREG__
+ 120 0076 F894      		cli
+ 121 0078 DEBF      		out __SP_H__,r29
+ 122 007a 0FBE      		out __SREG__,__tmp_reg__
+ 123 007c CDBF      		out __SP_L__,r28
+ 124               	/* prologue: function */
+ 125               	/* frame size = 10 */
+ 126 007e 9D83      		std Y+5,r25
+ 127 0080 8C83      		std Y+4,r24
+ 128 0082 7F83      		std Y+7,r23
+ 129 0084 6E83      		std Y+6,r22
+ 130 0086 5987      		std Y+9,r21
+ 131 0088 4887      		std Y+8,r20
+ 132 008a 2A87      		std Y+10,r18
+ 133               	.LM10:
+ 134 008c 1B82      		std Y+3,__zero_reg__
+ 135 008e 1A82      		std Y+2,__zero_reg__
+ 136               	.LM11:
+ 137 0090 1982      		std Y+1,__zero_reg__
+ 138               	.LM12:
+ 139 0092 8C81      		ldd r24,Y+4
+ 140 0094 9D81      		ldd r25,Y+5
+ 141 0096 2E81      		ldd r18,Y+6
+ 142 0098 3F81      		ldd r19,Y+7
+ 143 009a 4885      		ldd r20,Y+8
+ 144 009c 5985      		ldd r21,Y+9
+ 145 009e B901      		movw r22,r18
+ 146 00a0 0E94 0000 		call RTS_PORT_TaskStackInit
+ 147 00a4 9F83      		std Y+7,r25
+ 148 00a6 8E83      		std Y+6,r24
+ 149               	.LM13:
+ 150               	/* #APP */
+ 151               	 ;  74 "rts_os/rts_task.c" 1
+ 152 00a8 0090 5F00 		lds	r0, 0x5f
+ 153               	 ;  0 "" 2
+ 154               	 ;  74 "rts_os/rts_task.c" 1
+ 155 00ac 0F92      		push	r0
+ 156               	 ;  0 "" 2
+ 157               	/* #NOAPP */
+ 158 00ae AFE5      		ldi r26,lo8(95)
+ 159 00b0 B0E0      		ldi r27,hi8(95)
+ 160 00b2 EFE5      		ldi r30,lo8(95)
+ 161 00b4 F0E0      		ldi r31,hi8(95)
+ 162 00b6 8081      		ld r24,Z
+ 163 00b8 8F77      		andi r24,lo8(127)
+ 164 00ba 8C93      		st X,r24
+ 165               	.LM14:
+ 166 00bc 80E1      		ldi r24,lo8(16)
+ 167 00be 90E0      		ldi r25,hi8(16)
+ 168 00c0 0E94 0000 		call MemAlloc
+ 169 00c4 9B83      		std Y+3,r25
+ 170 00c6 8A83      		std Y+2,r24
+ 171               	.LM15:
+ 172 00c8 8A81      		ldd r24,Y+2
+ 173 00ca 9B81      		ldd r25,Y+3
+ 174 00cc 0097      		sbiw r24,0
+ 175 00ce 01F0      		breq .L8
+ 176               	.LM16:
+ 177 00d0 8A81      		ldd r24,Y+2
+ 178 00d2 9B81      		ldd r25,Y+3
+ 179 00d4 0E94 0000 		call RTS_CORE_RegisterTask
+ 180 00d8 8983      		std Y+1,r24
+ 181               	.LM17:
+ 182 00da EA81      		ldd r30,Y+2
+ 183 00dc FB81      		ldd r31,Y+3
+ 184 00de 8981      		ldd r24,Y+1
+ 185 00e0 8583      		std Z+5,r24
+ 186               	.LM18:
+ 187 00e2 EA81      		ldd r30,Y+2
+ 188 00e4 FB81      		ldd r31,Y+3
+ 189 00e6 8A85      		ldd r24,Y+10
+ 190 00e8 8283      		std Z+2,r24
+ 191               	.LM19:
+ 192 00ea EA81      		ldd r30,Y+2
+ 193 00ec FB81      		ldd r31,Y+3
+ 194 00ee 81E0      		ldi r24,lo8(1)
+ 195 00f0 8383      		std Z+3,r24
+ 196               	.LM20:
+ 197 00f2 EA81      		ldd r30,Y+2
+ 198 00f4 FB81      		ldd r31,Y+3
+ 199 00f6 86E0      		ldi r24,lo8(6)
+ 200 00f8 8483      		std Z+4,r24
+ 201               	.LM21:
+ 202 00fa EA81      		ldd r30,Y+2
+ 203 00fc FB81      		ldd r31,Y+3
+ 204 00fe 8E81      		ldd r24,Y+6
+ 205 0100 9F81      		ldd r25,Y+7
+ 206 0102 9183      		std Z+1,r25
+ 207 0104 8083      		st Z,r24
+ 208               	.LM22:
+ 209 0106 8A81      		ldd r24,Y+2
+ 210 0108 9B81      		ldd r25,Y+3
+ 211 010a 0E94 0000 		call RTS_CORE_InsertTcbToRdyList
+ 212               	.L8:
+ 213               	.LM23:
+ 214               	/* #APP */
+ 215               	 ;  95 "rts_os/rts_task.c" 1
+ 216 010e 0F90      		pop	r0
+ 217               	 ;  0 "" 2
+ 218               	 ;  95 "rts_os/rts_task.c" 1
+ 219 0110 0092 5F00 		sts	0x5f, r0
+ 220               	 ;  0 "" 2
+ 221               	.LM24:
+ 222               	/* #NOAPP */
+ 223 0114 8981      		ldd r24,Y+1
+ 224               	/* epilogue start */
+ 225               	.LM25:
+ 226 0116 2A96      		adiw r28,10
+ 227 0118 0FB6      		in __tmp_reg__,__SREG__
+ 228 011a F894      		cli
+ 229 011c DEBF      		out __SP_H__,r29
+ 230 011e 0FBE      		out __SREG__,__tmp_reg__
+ 231 0120 CDBF      		out __SP_L__,r28
+ 232 0122 CF91      		pop r28
+ 233 0124 DF91      		pop r29
+ 234 0126 0895      		ret
+ 235               	.LFE4:
+ 237               	.global	RTS_PendTask
+ 239               	RTS_PendTask:
+ 240               	.LFB5:
+ 241               	.LM26:
+ 242 0128 DF93      		push r29
+ 243 012a CF93      		push r28
+ 244 012c 00D0      		rcall .
+ 245 012e 0F92      		push __tmp_reg__
+ 246 0130 CDB7      		in r28,__SP_L__
+ 247 0132 DEB7      		in r29,__SP_H__
+ 248               	/* prologue: function */
+ 249               	/* frame size = 3 */
+ 250 0134 8B83      		std Y+3,r24
+ 251               	.LM27:
+ 252               	/* #APP */
+ 253               	 ;  104 "rts_os/rts_task.c" 1
+ 254 0136 0090 5F00 		lds	r0, 0x5f
+ 255               	 ;  0 "" 2
+ 256               	 ;  104 "rts_os/rts_task.c" 1
+ 257 013a 0F92      		push	r0
+ 258               	 ;  0 "" 2
+ 259               	/* #NOAPP */
+ 260 013c AFE5      		ldi r26,lo8(95)
+ 261 013e B0E0      		ldi r27,hi8(95)
+ 262 0140 EFE5      		ldi r30,lo8(95)
+ 263 0142 F0E0      		ldi r31,hi8(95)
+ 264 0144 8081      		ld r24,Z
+ 265 0146 8F77      		andi r24,lo8(127)
+ 266 0148 8C93      		st X,r24
+ 267               	.LM28:
+ 268 014a 8B81      		ldd r24,Y+3
+ 269 014c 9E01      		movw r18,r28
+ 270 014e 2F5F      		subi r18,lo8(-(1))
+ 271 0150 3F4F      		sbci r19,hi8(-(1))
+ 272 0152 B901      		movw r22,r18
+ 273 0154 0E94 0000 		call RTS_CORE_GetTcbFromTid
+ 274               	.LM29:
+ 275 0158 E981      		ldd r30,Y+1
+ 276 015a FA81      		ldd r31,Y+2
+ 277 015c 8381      		ldd r24,Z+3
+ 278 015e 8830      		cpi r24,lo8(8)
+ 279 0160 01F4      		brne .+2
+ 280 0162 00C0      		rjmp .L11
+ 281               	.LM30:
+ 282 0164 8981      		ldd r24,Y+1
+ 283 0166 9A81      		ldd r25,Y+2
+ 284 0168 9C01      		movw r18,r24
+ 285 016a 8091 0000 		lds r24,rts_gb_curr_task_tcb
+ 286 016e 9091 0000 		lds r25,(rts_gb_curr_task_tcb)+1
+ 287 0172 2817      		cp r18,r24
+ 288 0174 3907      		cpc r19,r25
+ 289 0176 01F4      		brne .L12
+ 290               	.LM31:
+ 291 0178 E981      		ldd r30,Y+1
+ 292 017a FA81      		ldd r31,Y+2
+ 293 017c 8381      		ldd r24,Z+3
+ 294 017e 8130      		cpi r24,lo8(1)
+ 295 0180 01F0      		breq .+2
+ 296 0182 00C0      		rjmp .L14
+ 297               	.LM32:
+ 298 0184 E981      		ldd r30,Y+1
+ 299 0186 FA81      		ldd r31,Y+2
+ 300 0188 84E0      		ldi r24,lo8(4)
+ 301 018a 8383      		std Z+3,r24
+ 302               	.LM33:
+ 303 018c E981      		ldd r30,Y+1
+ 304 018e FA81      		ldd r31,Y+2
+ 305 0190 81E0      		ldi r24,lo8(1)
+ 306 0192 8483      		std Z+4,r24
+ 307               	.LM34:
+ 308 0194 8981      		ldd r24,Y+1
+ 309 0196 9A81      		ldd r25,Y+2
+ 310 0198 0E94 0000 		call RTS_CORE_RemoveTcbFromRdyList
+ 311               	.LM35:
+ 312 019c 8981      		ldd r24,Y+1
+ 313 019e 9A81      		ldd r25,Y+2
+ 314 01a0 0E94 0000 		call RTS_CORE_InsertTcbToPendList
+ 315               	.LM36:
+ 316 01a4 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 317               	.LM37:
+ 318 01a8 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 319 01ac 00C0      		rjmp .L14
+ 320               	.L12:
+ 321               	.LM38:
+ 322 01ae E981      		ldd r30,Y+1
+ 323 01b0 FA81      		ldd r31,Y+2
+ 324 01b2 8381      		ldd r24,Z+3
+ 325 01b4 8130      		cpi r24,lo8(1)
+ 326 01b6 01F4      		brne .L15
+ 327               	.LM39:
+ 328 01b8 E981      		ldd r30,Y+1
+ 329 01ba FA81      		ldd r31,Y+2
+ 330 01bc 84E0      		ldi r24,lo8(4)
+ 331 01be 8383      		std Z+3,r24
+ 332               	.LM40:
+ 333 01c0 E981      		ldd r30,Y+1
+ 334 01c2 FA81      		ldd r31,Y+2
+ 335 01c4 81E0      		ldi r24,lo8(1)
+ 336 01c6 8483      		std Z+4,r24
+ 337               	.LM41:
+ 338 01c8 8981      		ldd r24,Y+1
+ 339 01ca 9A81      		ldd r25,Y+2
+ 340 01cc 0E94 0000 		call RTS_CORE_RemoveTcbFromRdyList
+ 341               	.LM42:
+ 342 01d0 8981      		ldd r24,Y+1
+ 343 01d2 9A81      		ldd r25,Y+2
+ 344 01d4 0E94 0000 		call RTS_CORE_InsertTcbToPendList
+ 345               	.LM43:
+ 346 01d8 0E94 0000 		call RTS_CORE_OsSchdule
+ 347 01dc 00C0      		rjmp .L14
+ 348               	.L15:
+ 349               	.LM44:
+ 350 01de E981      		ldd r30,Y+1
+ 351 01e0 FA81      		ldd r31,Y+2
+ 352 01e2 8381      		ldd r24,Z+3
+ 353 01e4 8230      		cpi r24,lo8(2)
+ 354 01e6 01F4      		brne .L14
+ 355               	.LM45:
+ 356 01e8 E981      		ldd r30,Y+1
+ 357 01ea FA81      		ldd r31,Y+2
+ 358 01ec 84E0      		ldi r24,lo8(4)
+ 359 01ee 8383      		std Z+3,r24
+ 360               	.LM46:
+ 361 01f0 E981      		ldd r30,Y+1
+ 362 01f2 FA81      		ldd r31,Y+2
+ 363 01f4 82E0      		ldi r24,lo8(2)
+ 364 01f6 8483      		std Z+4,r24
+ 365               	.LM47:
+ 366 01f8 8981      		ldd r24,Y+1
+ 367 01fa 9A81      		ldd r25,Y+2
+ 368 01fc 0E94 0000 		call RTS_CORE_RemoveTcbFromDlyList
+ 369               	.LM48:
+ 370 0200 8981      		ldd r24,Y+1
+ 371 0202 9A81      		ldd r25,Y+2
+ 372 0204 0E94 0000 		call RTS_CORE_DlyListHeadRelocate
+ 373               	.LM49:
+ 374 0208 8981      		ldd r24,Y+1
+ 375 020a 9A81      		ldd r25,Y+2
+ 376 020c 0E94 0000 		call RTS_CORE_InsertTcbToPendList
+ 377               	.LM50:
+ 378 0210 0E94 0000 		call RTS_CORE_OsSchdule
+ 379               	.L14:
+ 380               	.LM51:
+ 381 0214 0E94 0000 		call RTS_PORT_SwitchToNextTask
+ 382               	.L11:
+ 383               	.LM52:
+ 384               	/* #APP */
+ 385               	 ;  147 "rts_os/rts_task.c" 1
+ 386 0218 0F90      		pop	r0
+ 387               	 ;  0 "" 2
+ 388               	 ;  147 "rts_os/rts_task.c" 1
+ 389 021a 0092 5F00 		sts	0x5f, r0
+ 390               	 ;  0 "" 2
+ 391               	/* epilogue start */
+ 392               	.LM53:
+ 393               	/* #NOAPP */
+ 394 021e 0F90      		pop __tmp_reg__
+ 395 0220 0F90      		pop __tmp_reg__
+ 396 0222 0F90      		pop __tmp_reg__
+ 397 0224 CF91      		pop r28
+ 398 0226 DF91      		pop r29
+ 399 0228 0895      		ret
+ 400               	.LFE5:
+ 402               	.global	RTS_ResumeTask
+ 404               	RTS_ResumeTask:
+ 405               	.LFB6:
+ 406               	.LM54:
+ 407 022a DF93      		push r29
+ 408 022c CF93      		push r28
+ 409 022e 00D0      		rcall .
+ 410 0230 0F92      		push __tmp_reg__
+ 411 0232 CDB7      		in r28,__SP_L__
+ 412 0234 DEB7      		in r29,__SP_H__
+ 413               	/* prologue: function */
+ 414               	/* frame size = 3 */
+ 415 0236 8B83      		std Y+3,r24
+ 416               	.LM55:
+ 417               	/* #APP */
+ 418               	 ;  155 "rts_os/rts_task.c" 1
+ 419 0238 0090 5F00 		lds	r0, 0x5f
+ 420               	 ;  0 "" 2
+ 421               	 ;  155 "rts_os/rts_task.c" 1
+ 422 023c 0F92      		push	r0
+ 423               	 ;  0 "" 2
+ 424               	/* #NOAPP */
+ 425 023e AFE5      		ldi r26,lo8(95)
+ 426 0240 B0E0      		ldi r27,hi8(95)
+ 427 0242 EFE5      		ldi r30,lo8(95)
+ 428 0244 F0E0      		ldi r31,hi8(95)
+ 429 0246 8081      		ld r24,Z
+ 430 0248 8F77      		andi r24,lo8(127)
+ 431 024a 8C93      		st X,r24
+ 432               	.LM56:
+ 433 024c 8B81      		ldd r24,Y+3
+ 434 024e 9E01      		movw r18,r28
+ 435 0250 2F5F      		subi r18,lo8(-(1))
+ 436 0252 3F4F      		sbci r19,hi8(-(1))
+ 437 0254 B901      		movw r22,r18
+ 438 0256 0E94 0000 		call RTS_CORE_GetTcbFromTid
+ 439               	.LM57:
+ 440 025a E981      		ldd r30,Y+1
+ 441 025c FA81      		ldd r31,Y+2
+ 442 025e 8381      		ldd r24,Z+3
+ 443 0260 8430      		cpi r24,lo8(4)
+ 444 0262 01F4      		brne .L18
+ 445               	.LM58:
+ 446 0264 E981      		ldd r30,Y+1
+ 447 0266 FA81      		ldd r31,Y+2
+ 448 0268 81E0      		ldi r24,lo8(1)
+ 449 026a 8383      		std Z+3,r24
+ 450               	.LM59:
+ 451 026c E981      		ldd r30,Y+1
+ 452 026e FA81      		ldd r31,Y+2
+ 453 0270 84E0      		ldi r24,lo8(4)
+ 454 0272 8483      		std Z+4,r24
+ 455               	.LM60:
+ 456 0274 8981      		ldd r24,Y+1
+ 457 0276 9A81      		ldd r25,Y+2
+ 458 0278 0E94 0000 		call RTS_CORE_RemoveTcbFromPendList
+ 459               	.LM61:
+ 460 027c 8981      		ldd r24,Y+1
+ 461 027e 9A81      		ldd r25,Y+2
+ 462 0280 0E94 0000 		call RTS_CORE_InsertTcbToRdyList
+ 463               	.LM62:
+ 464 0284 0E94 0000 		call RTS_CORE_OsSchdule
+ 465               	.LM63:
+ 466 0288 0E94 0000 		call RTS_PORT_SwitchToNextTask
+ 467               	.L18:
+ 468               	.LM64:
+ 469               	/* #APP */
+ 470               	 ;  167 "rts_os/rts_task.c" 1
+ 471 028c 0F90      		pop	r0
+ 472               	 ;  0 "" 2
+ 473               	 ;  167 "rts_os/rts_task.c" 1
+ 474 028e 0092 5F00 		sts	0x5f, r0
+ 475               	 ;  0 "" 2
+ 476               	/* epilogue start */
+ 477               	.LM65:
+ 478               	/* #NOAPP */
+ 479 0292 0F90      		pop __tmp_reg__
+ 480 0294 0F90      		pop __tmp_reg__
+ 481 0296 0F90      		pop __tmp_reg__
+ 482 0298 CF91      		pop r28
+ 483 029a DF91      		pop r29
+ 484 029c 0895      		ret
+ 485               	.LFE6:
+ 487               	.global	RTS_DelayTicks
+ 489               	RTS_DelayTicks:
+ 490               	.LFB7:
+ 491               	.LM66:
+ 492 029e DF93      		push r29
+ 493 02a0 CF93      		push r28
+ 494 02a2 00D0      		rcall .
+ 495 02a4 00D0      		rcall .
+ 496 02a6 CDB7      		in r28,__SP_L__
+ 497 02a8 DEB7      		in r29,__SP_H__
+ 498               	/* prologue: function */
+ 499               	/* frame size = 4 */
+ 500 02aa 6983      		std Y+1,r22
+ 501 02ac 7A83      		std Y+2,r23
+ 502 02ae 8B83      		std Y+3,r24
+ 503 02b0 9C83      		std Y+4,r25
+ 504               	.LM67:
+ 505 02b2 8981      		ldd r24,Y+1
+ 506 02b4 9A81      		ldd r25,Y+2
+ 507 02b6 AB81      		ldd r26,Y+3
+ 508 02b8 BC81      		ldd r27,Y+4
+ 509 02ba 8230      		cpi r24,lo8(2)
+ 510 02bc 9105      		cpc r25,__zero_reg__
+ 511 02be A105      		cpc r26,__zero_reg__
+ 512 02c0 B105      		cpc r27,__zero_reg__
+ 513 02c2 00F0      		brlo .L22
+ 514               	.LM68:
+ 515               	/* #APP */
+ 516               	 ;  177 "rts_os/rts_task.c" 1
+ 517 02c4 0090 5F00 		lds	r0, 0x5f
+ 518               	 ;  0 "" 2
+ 519               	 ;  177 "rts_os/rts_task.c" 1
+ 520 02c8 0F92      		push	r0
+ 521               	 ;  0 "" 2
+ 522               	/* #NOAPP */
+ 523 02ca AFE5      		ldi r26,lo8(95)
+ 524 02cc B0E0      		ldi r27,hi8(95)
+ 525 02ce EFE5      		ldi r30,lo8(95)
+ 526 02d0 F0E0      		ldi r31,hi8(95)
+ 527 02d2 8081      		ld r24,Z
+ 528 02d4 8F77      		andi r24,lo8(127)
+ 529 02d6 8C93      		st X,r24
+ 530               	.LM69:
+ 531 02d8 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 532 02dc F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 533 02e0 8981      		ldd r24,Y+1
+ 534 02e2 9A81      		ldd r25,Y+2
+ 535 02e4 AB81      		ldd r26,Y+3
+ 536 02e6 BC81      		ldd r27,Y+4
+ 537 02e8 8683      		std Z+6,r24
+ 538 02ea 9783      		std Z+7,r25
+ 539 02ec A087      		std Z+8,r26
+ 540 02ee B187      		std Z+9,r27
+ 541               	.LM70:
+ 542 02f0 8091 0000 		lds r24,rts_gb_curr_task_tcb
+ 543 02f4 9091 0000 		lds r25,(rts_gb_curr_task_tcb)+1
+ 544 02f8 0E94 0000 		call RTS_CORE_RemoveTcbFromRdyList
+ 545               	.LM71:
+ 546 02fc 8091 0000 		lds r24,rts_gb_curr_task_tcb
+ 547 0300 9091 0000 		lds r25,(rts_gb_curr_task_tcb)+1
+ 548 0304 0E94 0000 		call RTS_CORE_InsertTcbToDlyList
+ 549               	.LM72:
+ 550 0308 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 551 030c F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 552 0310 81E0      		ldi r24,lo8(1)
+ 553 0312 8483      		std Z+4,r24
+ 554               	.LM73:
+ 555 0314 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 556 0318 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 557 031c 82E0      		ldi r24,lo8(2)
+ 558 031e 8383      		std Z+3,r24
+ 559               	.LM74:
+ 560 0320 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 561               	.LM75:
+ 562 0324 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 563               	.LM76:
+ 564               	/* #APP */
+ 565               	 ;  185 "rts_os/rts_task.c" 1
+ 566 0328 0F90      		pop	r0
+ 567               	 ;  0 "" 2
+ 568               	 ;  185 "rts_os/rts_task.c" 1
+ 569 032a 0092 5F00 		sts	0x5f, r0
+ 570               	 ;  0 "" 2
+ 571               	.LM77:
+ 572               	/* #NOAPP */
+ 573 032e 0E94 0000 		call RTS_PORT_SwitchToNextTask
+ 574               	.L22:
+ 575               	/* epilogue start */
+ 576               	.LM78:
+ 577 0332 0F90      		pop __tmp_reg__
+ 578 0334 0F90      		pop __tmp_reg__
+ 579 0336 0F90      		pop __tmp_reg__
+ 580 0338 0F90      		pop __tmp_reg__
+ 581 033a CF91      		pop r28
+ 582 033c DF91      		pop r29
+ 583 033e 0895      		ret
+ 584               	.LFE7:
+ 586               	.global	RTS_GetCurrTaskTid
+ 588               	RTS_GetCurrTaskTid:
+ 589               	.LFB8:
+ 590               	.LM79:
+ 591 0340 DF93      		push r29
+ 592 0342 CF93      		push r28
+ 593 0344 CDB7      		in r28,__SP_L__
+ 594 0346 DEB7      		in r29,__SP_H__
+ 595               	/* prologue: function */
+ 596               	/* frame size = 0 */
+ 597               	.LM80:
+ 598 0348 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 599 034c F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 600 0350 8581      		ldd r24,Z+5
+ 601               	/* epilogue start */
+ 602               	.LM81:
+ 603 0352 CF91      		pop r28
+ 604 0354 DF91      		pop r29
+ 605 0356 0895      		ret
+ 606               	.LFE8:
+ 608               	.global	RTS_GetCurrTaskPrio
+ 610               	RTS_GetCurrTaskPrio:
+ 611               	.LFB9:
+ 612               	.LM82:
+ 613 0358 DF93      		push r29
+ 614 035a CF93      		push r28
+ 615 035c CDB7      		in r28,__SP_L__
+ 616 035e DEB7      		in r29,__SP_H__
+ 617               	/* prologue: function */
+ 618               	/* frame size = 0 */
+ 619               	.LM83:
+ 620 0360 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 621 0364 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 622 0368 8281      		ldd r24,Z+2
+ 623               	/* epilogue start */
+ 624               	.LM84:
+ 625 036a CF91      		pop r28
+ 626 036c DF91      		pop r29
+ 627 036e 0895      		ret
+ 628               	.LFE9:
+ 630               	.global	RTS_ChangeTaskPrio
+ 632               	RTS_ChangeTaskPrio:
+ 633               	.LFB10:
+ 634               	.LM85:
+ 635 0370 DF93      		push r29
+ 636 0372 CF93      		push r28
+ 637 0374 00D0      		rcall .
+ 638 0376 00D0      		rcall .
+ 639 0378 CDB7      		in r28,__SP_L__
+ 640 037a DEB7      		in r29,__SP_H__
+ 641               	/* prologue: function */
+ 642               	/* frame size = 4 */
+ 643 037c 8B83      		std Y+3,r24
+ 644 037e 6C83      		std Y+4,r22
+ 645               	.LM86:
+ 646               	/* #APP */
+ 647               	 ;  208 "rts_os/rts_task.c" 1
+ 648 0380 0090 5F00 		lds	r0, 0x5f
+ 649               	 ;  0 "" 2
+ 650               	 ;  208 "rts_os/rts_task.c" 1
+ 651 0384 0F92      		push	r0
+ 652               	 ;  0 "" 2
+ 653               	/* #NOAPP */
+ 654 0386 AFE5      		ldi r26,lo8(95)
+ 655 0388 B0E0      		ldi r27,hi8(95)
+ 656 038a EFE5      		ldi r30,lo8(95)
+ 657 038c F0E0      		ldi r31,hi8(95)
+ 658 038e 8081      		ld r24,Z
+ 659 0390 8F77      		andi r24,lo8(127)
+ 660 0392 8C93      		st X,r24
+ 661               	.LM87:
+ 662 0394 8B81      		ldd r24,Y+3
+ 663 0396 9E01      		movw r18,r28
+ 664 0398 2F5F      		subi r18,lo8(-(1))
+ 665 039a 3F4F      		sbci r19,hi8(-(1))
+ 666 039c B901      		movw r22,r18
+ 667 039e 0E94 0000 		call RTS_CORE_GetTcbFromTid
+ 668               	.LM88:
+ 669 03a2 E981      		ldd r30,Y+1
+ 670 03a4 FA81      		ldd r31,Y+2
+ 671 03a6 9281      		ldd r25,Z+2
+ 672 03a8 8C81      		ldd r24,Y+4
+ 673 03aa 9817      		cp r25,r24
+ 674 03ac 01F0      		breq .L28
+ 675               	.LM89:
+ 676 03ae E981      		ldd r30,Y+1
+ 677 03b0 FA81      		ldd r31,Y+2
+ 678 03b2 8381      		ldd r24,Z+3
+ 679 03b4 8830      		cpi r24,lo8(8)
+ 680 03b6 01F0      		breq .L28
+ 681               	.LM90:
+ 682 03b8 E981      		ldd r30,Y+1
+ 683 03ba FA81      		ldd r31,Y+2
+ 684 03bc 8381      		ldd r24,Z+3
+ 685 03be 8130      		cpi r24,lo8(1)
+ 686 03c0 01F4      		brne .L29
+ 687               	.LM91:
+ 688 03c2 8981      		ldd r24,Y+1
+ 689 03c4 9A81      		ldd r25,Y+2
+ 690 03c6 0E94 0000 		call RTS_CORE_RemoveTcbFromRdyList
+ 691               	.LM92:
+ 692 03ca E981      		ldd r30,Y+1
+ 693 03cc FA81      		ldd r31,Y+2
+ 694 03ce 8C81      		ldd r24,Y+4
+ 695 03d0 8283      		std Z+2,r24
+ 696               	.LM93:
+ 697 03d2 8981      		ldd r24,Y+1
+ 698 03d4 9A81      		ldd r25,Y+2
+ 699 03d6 0E94 0000 		call RTS_CORE_InsertTcbToRdyList
+ 700               	.LM94:
+ 701 03da 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 702               	.LM95:
+ 703 03de 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 704 03e2 00C0      		rjmp .L28
+ 705               	.L29:
+ 706               	.LM96:
+ 707 03e4 E981      		ldd r30,Y+1
+ 708 03e6 FA81      		ldd r31,Y+2
+ 709 03e8 8C81      		ldd r24,Y+4
+ 710 03ea 8283      		std Z+2,r24
+ 711               	.L28:
+ 712               	.LM97:
+ 713               	/* #APP */
+ 714               	 ;  229 "rts_os/rts_task.c" 1
+ 715 03ec 0F90      		pop	r0
+ 716               	 ;  0 "" 2
+ 717               	 ;  229 "rts_os/rts_task.c" 1
+ 718 03ee 0092 5F00 		sts	0x5f, r0
+ 719               	 ;  0 "" 2
+ 720               	/* epilogue start */
+ 721               	.LM98:
+ 722               	/* #NOAPP */
+ 723 03f2 0F90      		pop __tmp_reg__
+ 724 03f4 0F90      		pop __tmp_reg__
+ 725 03f6 0F90      		pop __tmp_reg__
+ 726 03f8 0F90      		pop __tmp_reg__
+ 727 03fa CF91      		pop r28
+ 728 03fc DF91      		pop r29
+ 729 03fe 0895      		ret
+ 730               	.LFE10:
+ 732               	.global	__vector_14
+ 734               	__vector_14:
+ 735               	.LFB11:
+ 736               	.LM99:
+ 737 0400 1F92      		push __zero_reg__
+ 738 0402 0F92      		push r0
+ 739 0404 0FB6      		in r0,__SREG__
+ 740 0406 0F92      		push r0
+ 741 0408 0090 5B00 		lds r0,91
+ 742 040c 0F92      		push r0
+ 743 040e 1124      		clr __zero_reg__
+ 744 0410 2F93      		push r18
+ 745 0412 3F93      		push r19
+ 746 0414 4F93      		push r20
+ 747 0416 5F93      		push r21
+ 748 0418 6F93      		push r22
+ 749 041a 7F93      		push r23
+ 750 041c 8F93      		push r24
+ 751 041e 9F93      		push r25
+ 752 0420 AF93      		push r26
+ 753 0422 BF93      		push r27
+ 754 0424 EF93      		push r30
+ 755 0426 FF93      		push r31
+ 756 0428 DF93      		push r29
+ 757 042a CF93      		push r28
+ 758 042c 00D0      		rcall .
+ 759 042e 00D0      		rcall .
+ 760 0430 CDB7      		in r28,__SP_L__
+ 761 0432 DEB7      		in r29,__SP_H__
+ 762               	/* prologue: Signal */
+ 763               	/* frame size = 4 */
+ 764               	.LM100:
+ 765 0434 8091 0000 		lds r24,rts_gb_systicks
+ 766 0438 9091 0000 		lds r25,(rts_gb_systicks)+1
+ 767 043c A091 0000 		lds r26,(rts_gb_systicks)+2
+ 768 0440 B091 0000 		lds r27,(rts_gb_systicks)+3
+ 769 0444 0196      		adiw r24,1
+ 770 0446 A11D      		adc r26,__zero_reg__
+ 771 0448 B11D      		adc r27,__zero_reg__
+ 772 044a 8093 0000 		sts rts_gb_systicks,r24
+ 773 044e 9093 0000 		sts (rts_gb_systicks)+1,r25
+ 774 0452 A093 0000 		sts (rts_gb_systicks)+2,r26
+ 775 0456 B093 0000 		sts (rts_gb_systicks)+3,r27
+ 776               	.LM101:
+ 777 045a A5E3      		ldi r26,lo8(53)
+ 778 045c B0E0      		ldi r27,hi8(53)
+ 779 045e E5E3      		ldi r30,lo8(53)
+ 780 0460 F0E0      		ldi r31,hi8(53)
+ 781 0462 8081      		ld r24,Z
+ 782 0464 8095      		com r24
+ 783 0466 8C93      		st X,r24
+ 784               	.LM102:
+ 785 0468 8091 0000 		lds r24,rts_gb_task_switch_on
+ 786 046c 8130      		cpi r24,lo8(1)
+ 787 046e 01F0      		breq .+2
+ 788 0470 00C0      		rjmp .L32
+ 789               	.LM103:
+ 790 0472 0E94 0000 		call RTS_CORE_SwitchToNextTask
+ 791               	.LM104:
+ 792 0476 CE01      		movw r24,r28
+ 793 0478 0396      		adiw r24,3
+ 794 047a 0E94 0000 		call RTS_CORE_GetDlyListHead
+ 795               	.LM105:
+ 796 047e EB81      		ldd r30,Y+3
+ 797 0480 FC81      		ldd r31,Y+4
+ 798 0482 2681      		ldd r18,Z+6
+ 799 0484 3781      		ldd r19,Z+7
+ 800 0486 4085      		ldd r20,Z+8
+ 801 0488 5185      		ldd r21,Z+9
+ 802 048a 8091 0000 		lds r24,rts_gb_systicks
+ 803 048e 9091 0000 		lds r25,(rts_gb_systicks)+1
+ 804 0492 A091 0000 		lds r26,(rts_gb_systicks)+2
+ 805 0496 B091 0000 		lds r27,(rts_gb_systicks)+3
+ 806 049a 2817      		cp r18,r24
+ 807 049c 3907      		cpc r19,r25
+ 808 049e 4A07      		cpc r20,r26
+ 809 04a0 5B07      		cpc r21,r27
+ 810 04a2 01F4      		brne .L32
+ 811 04a4 00C0      		rjmp .L33
+ 812               	.L34:
+ 813               	.LM106:
+ 814 04a6 EB81      		ldd r30,Y+3
+ 815 04a8 FC81      		ldd r31,Y+4
+ 816 04aa 1682      		std Z+6,__zero_reg__
+ 817 04ac 1782      		std Z+7,__zero_reg__
+ 818 04ae 1086      		std Z+8,__zero_reg__
+ 819 04b0 1186      		std Z+9,__zero_reg__
+ 820               	.LM107:
+ 821 04b2 EB81      		ldd r30,Y+3
+ 822 04b4 FC81      		ldd r31,Y+4
+ 823 04b6 8485      		ldd r24,Z+12
+ 824 04b8 9585      		ldd r25,Z+13
+ 825 04ba 9A83      		std Y+2,r25
+ 826 04bc 8983      		std Y+1,r24
+ 827               	.LM108:
+ 828 04be 8B81      		ldd r24,Y+3
+ 829 04c0 9C81      		ldd r25,Y+4
+ 830 04c2 0E94 0000 		call RTS_CORE_RemoveTcbFromDlyList
+ 831               	.LM109:
+ 832 04c6 EB81      		ldd r30,Y+3
+ 833 04c8 FC81      		ldd r31,Y+4
+ 834 04ca 81E0      		ldi r24,lo8(1)
+ 835 04cc 8383      		std Z+3,r24
+ 836               	.LM110:
+ 837 04ce EB81      		ldd r30,Y+3
+ 838 04d0 FC81      		ldd r31,Y+4
+ 839 04d2 82E0      		ldi r24,lo8(2)
+ 840 04d4 8483      		std Z+4,r24
+ 841               	.LM111:
+ 842 04d6 8B81      		ldd r24,Y+3
+ 843 04d8 9C81      		ldd r25,Y+4
+ 844 04da 0E94 0000 		call RTS_CORE_InsertTcbToRdyList
+ 845               	.LM112:
+ 846 04de 8981      		ldd r24,Y+1
+ 847 04e0 9A81      		ldd r25,Y+2
+ 848 04e2 9C83      		std Y+4,r25
+ 849 04e4 8B83      		std Y+3,r24
+ 850               	.L33:
+ 851               	.LM113:
+ 852 04e6 EB81      		ldd r30,Y+3
+ 853 04e8 FC81      		ldd r31,Y+4
+ 854 04ea 2681      		ldd r18,Z+6
+ 855 04ec 3781      		ldd r19,Z+7
+ 856 04ee 4085      		ldd r20,Z+8
+ 857 04f0 5185      		ldd r21,Z+9
+ 858 04f2 8091 0000 		lds r24,rts_gb_systicks
+ 859 04f6 9091 0000 		lds r25,(rts_gb_systicks)+1
+ 860 04fa A091 0000 		lds r26,(rts_gb_systicks)+2
+ 861 04fe B091 0000 		lds r27,(rts_gb_systicks)+3
+ 862 0502 2817      		cp r18,r24
+ 863 0504 3907      		cpc r19,r25
+ 864 0506 4A07      		cpc r20,r26
+ 865 0508 5B07      		cpc r21,r27
+ 866 050a 01F0      		breq .L34
+ 867               	.LM114:
+ 868 050c 8B81      		ldd r24,Y+3
+ 869 050e 9C81      		ldd r25,Y+4
+ 870 0510 0E94 0000 		call RTS_CORE_SetDlyListHead
+ 871               	.LM115:
+ 872 0514 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 873               	.LM116:
+ 874 0518 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 875               	.L32:
+ 876               	.LM117:
+ 877 051c E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 878 0520 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 879 0524 8281      		ldd r24,Z+2
+ 880 0526 8630      		cpi r24,lo8(6)
+ 881 0528 01F4      		brne .L35
+ 882               	.LM118:
+ 883 052a 8091 0000 		lds r24,rts_gb_task_idle_coun
+ 884 052e 9091 0000 		lds r25,(rts_gb_task_idle_coun)+1
+ 885 0532 0196      		adiw r24,1
+ 886 0534 9093 0000 		sts (rts_gb_task_idle_coun)+1,r25
+ 887 0538 8093 0000 		sts rts_gb_task_idle_coun,r24
+ 888               	.L35:
+ 889               	.LM119:
+ 890 053c 8091 0000 		lds r24,rts_gb_task_coun
+ 891 0540 9091 0000 		lds r25,(rts_gb_task_coun)+1
+ 892 0544 0196      		adiw r24,1
+ 893 0546 9093 0000 		sts (rts_gb_task_coun)+1,r25
+ 894 054a 8093 0000 		sts rts_gb_task_coun,r24
+ 895               	.LM120:
+ 896 054e 8091 0000 		lds r24,rts_gb_task_coun
+ 897 0552 9091 0000 		lds r25,(rts_gb_task_coun)+1
+ 898 0556 883C      		cpi r24,200
+ 899 0558 9105      		cpc r25,__zero_reg__
+ 900 055a 00F0      		brlo .L36
+ 901               	.LM121:
+ 902 055c 81E0      		ldi r24,lo8(1)
+ 903 055e 90E0      		ldi r25,hi8(1)
+ 904 0560 9093 0000 		sts (rts_gb_task_coun)+1,r25
+ 905 0564 8093 0000 		sts rts_gb_task_coun,r24
+ 906               	.LM122:
+ 907 0568 81E0      		ldi r24,lo8(1)
+ 908 056a 90E0      		ldi r25,hi8(1)
+ 909 056c 9093 0000 		sts (rts_gb_task_idle_coun)+1,r25
+ 910 0570 8093 0000 		sts rts_gb_task_idle_coun,r24
+ 911               	.L36:
+ 912               	.LM123:
+ 913 0574 AFE5      		ldi r26,lo8(95)
+ 914 0576 B0E0      		ldi r27,hi8(95)
+ 915 0578 EFE5      		ldi r30,lo8(95)
+ 916 057a F0E0      		ldi r31,hi8(95)
+ 917 057c 8081      		ld r24,Z
+ 918 057e 8F77      		andi r24,lo8(127)
+ 919 0580 8C93      		st X,r24
+ 920 0582 ECE4      		ldi r30,lo8(76)
+ 921 0584 F0E0      		ldi r31,hi8(76)
+ 922 0586 8FEF      		ldi r24,lo8(-4097)
+ 923 0588 9FEE      		ldi r25,hi8(-4097)
+ 924 058a 9183      		std Z+1,r25
+ 925 058c 8083      		st Z,r24
+ 926 058e AFE5      		ldi r26,lo8(95)
+ 927 0590 B0E0      		ldi r27,hi8(95)
+ 928 0592 EFE5      		ldi r30,lo8(95)
+ 929 0594 F0E0      		ldi r31,hi8(95)
+ 930 0596 8081      		ld r24,Z
+ 931 0598 8068      		ori r24,lo8(-128)
+ 932 059a 8C93      		st X,r24
+ 933               	.LM124:
+ 934 059c 0E94 0000 		call RTS_PORT_SwitchToNextTask
+ 935               	/* epilogue start */
+ 936               	.LM125:
+ 937 05a0 0F90      		pop __tmp_reg__
+ 938 05a2 0F90      		pop __tmp_reg__
+ 939 05a4 0F90      		pop __tmp_reg__
+ 940 05a6 0F90      		pop __tmp_reg__
+ 941 05a8 CF91      		pop r28
+ 942 05aa DF91      		pop r29
+ 943 05ac FF91      		pop r31
+ 944 05ae EF91      		pop r30
+ 945 05b0 BF91      		pop r27
+ 946 05b2 AF91      		pop r26
+ 947 05b4 9F91      		pop r25
+ 948 05b6 8F91      		pop r24
+ 949 05b8 7F91      		pop r23
+ 950 05ba 6F91      		pop r22
+ 951 05bc 5F91      		pop r21
+ 952 05be 4F91      		pop r20
+ 953 05c0 3F91      		pop r19
+ 954 05c2 2F91      		pop r18
+ 955 05c4 0F90      		pop r0
+ 956 05c6 0092 5B00 		sts 91,r0
+ 957 05ca 0F90      		pop r0
+ 958 05cc 0FBE      		out __SREG__,r0
+ 959 05ce 0F90      		pop r0
+ 960 05d0 1F90      		pop __zero_reg__
+ 961 05d2 1895      		reti
+ 962               	.LFE11:
+ 964               	.global	RTS_GetCpuUtilizationRate
+ 966               	RTS_GetCpuUtilizationRate:
+ 967               	.LFB12:
+ 968               	.LM126:
+ 969 05d4 EF92      		push r14
+ 970 05d6 FF92      		push r15
+ 971 05d8 0F93      		push r16
+ 972 05da 1F93      		push r17
+ 973 05dc DF93      		push r29
+ 974 05de CF93      		push r28
+ 975 05e0 CDB7      		in r28,__SP_L__
+ 976 05e2 DEB7      		in r29,__SP_H__
+ 977               	/* prologue: function */
+ 978               	/* frame size = 0 */
+ 979               	.LM127:
+ 980 05e4 8091 0000 		lds r24,rts_gb_task_idle_coun
+ 981 05e8 9091 0000 		lds r25,(rts_gb_task_idle_coun)+1
+ 982 05ec CC01      		movw r24,r24
+ 983 05ee A0E0      		ldi r26,lo8(0)
+ 984 05f0 B0E0      		ldi r27,hi8(0)
+ 985 05f2 BC01      		movw r22,r24
+ 986 05f4 CD01      		movw r24,r26
+ 987 05f6 0E94 0000 		call __floatunsisf
+ 988 05fa 7B01      		movw r14,r22
+ 989 05fc 8C01      		movw r16,r24
+ 990 05fe 8091 0000 		lds r24,rts_gb_task_coun
+ 991 0602 9091 0000 		lds r25,(rts_gb_task_coun)+1
+ 992 0606 CC01      		movw r24,r24
+ 993 0608 A0E0      		ldi r26,lo8(0)
+ 994 060a B0E0      		ldi r27,hi8(0)
+ 995 060c BC01      		movw r22,r24
+ 996 060e CD01      		movw r24,r26
+ 997 0610 0E94 0000 		call __floatunsisf
+ 998 0614 9B01      		movw r18,r22
+ 999 0616 AC01      		movw r20,r24
+ 1000 0618 C801      		movw r24,r16
+ 1001 061a B701      		movw r22,r14
+ 1002 061c 0E94 0000 		call __divsf3
+ 1003 0620 DC01      		movw r26,r24
+ 1004 0622 CB01      		movw r24,r22
+ 1005 0624 9C01      		movw r18,r24
+ 1006 0626 AD01      		movw r20,r26
+ 1007 0628 68E0      		ldi r22,lo8(0x3f800008)
+ 1008 062a 70E0      		ldi r23,hi8(0x3f800008)
+ 1009 062c 80E8      		ldi r24,hlo8(0x3f800008)
+ 1010 062e 9FE3      		ldi r25,hhi8(0x3f800008)
+ 1011 0630 0E94 0000 		call __subsf3
+ 1012 0634 DC01      		movw r26,r24
+ 1013 0636 CB01      		movw r24,r22
+ 1014 0638 8093 0000 		sts rts_gb_cpu_utilization_rate,r24
+ 1015 063c 9093 0000 		sts (rts_gb_cpu_utilization_rate)+1,r25
+ 1016 0640 A093 0000 		sts (rts_gb_cpu_utilization_rate)+2,r26
+ 1017 0644 B093 0000 		sts (rts_gb_cpu_utilization_rate)+3,r27
+ 1018 0648 8091 0000 		lds r24,rts_gb_cpu_utilization_rate
+ 1019 064c 9091 0000 		lds r25,(rts_gb_cpu_utilization_rate)+1
+ 1020 0650 A091 0000 		lds r26,(rts_gb_cpu_utilization_rate)+2
+ 1021 0654 B091 0000 		lds r27,(rts_gb_cpu_utilization_rate)+3
+ 1022               	.LM128:
+ 1023 0658 BC01      		movw r22,r24
+ 1024 065a CD01      		movw r24,r26
+ 1025               	/* epilogue start */
+ 1026 065c CF91      		pop r28
+ 1027 065e DF91      		pop r29
+ 1028 0660 1F91      		pop r17
+ 1029 0662 0F91      		pop r16
+ 1030 0664 FF90      		pop r15
+ 1031 0666 EF90      		pop r14
+ 1032 0668 0895      		ret
+ 1033               	.LFE12:
+ 1035               	.global	RTS_TurnOffSchdule
+ 1037               	RTS_TurnOffSchdule:
+ 1038               	.LFB13:
+ 1039               	.LM129:
+ 1040 066a DF93      		push r29
+ 1041 066c CF93      		push r28
+ 1042 066e CDB7      		in r28,__SP_L__
+ 1043 0670 DEB7      		in r29,__SP_H__
+ 1044               	/* prologue: function */
+ 1045               	/* frame size = 0 */
+ 1046               	.LM130:
+ 1047               	/* #APP */
+ 1048               	 ;  300 "rts_os/rts_task.c" 1
+ 1049 0672 0090 5F00 		lds	r0, 0x5f
+ 1050               	 ;  0 "" 2
+ 1051               	 ;  300 "rts_os/rts_task.c" 1
+ 1052 0676 0F92      		push	r0
+ 1053               	 ;  0 "" 2
+ 1054               	/* #NOAPP */
+ 1055 0678 AFE5      		ldi r26,lo8(95)
+ 1056 067a B0E0      		ldi r27,hi8(95)
+ 1057 067c EFE5      		ldi r30,lo8(95)
+ 1058 067e F0E0      		ldi r31,hi8(95)
+ 1059 0680 8081      		ld r24,Z
+ 1060 0682 8F77      		andi r24,lo8(127)
+ 1061 0684 8C93      		st X,r24
+ 1062               	.LM131:
+ 1063 0686 1092 0000 		sts rts_gb_task_switch_on,__zero_reg__
+ 1064               	.LM132:
+ 1065               	/* #APP */
+ 1066               	 ;  302 "rts_os/rts_task.c" 1
+ 1067 068a 0F90      		pop	r0
+ 1068               	 ;  0 "" 2
+ 1069               	 ;  302 "rts_os/rts_task.c" 1
+ 1070 068c 0092 5F00 		sts	0x5f, r0
+ 1071               	 ;  0 "" 2
+ 1072               	/* epilogue start */
+ 1073               	.LM133:
+ 1074               	/* #NOAPP */
+ 1075 0690 CF91      		pop r28
+ 1076 0692 DF91      		pop r29
+ 1077 0694 0895      		ret
+ 1078               	.LFE13:
+ 1080               	.global	RTS_TurnOnSchdule
+ 1082               	RTS_TurnOnSchdule:
+ 1083               	.LFB14:
+ 1084               	.LM134:
+ 1085 0696 DF93      		push r29
+ 1086 0698 CF93      		push r28
+ 1087 069a CDB7      		in r28,__SP_L__
+ 1088 069c DEB7      		in r29,__SP_H__
+ 1089               	/* prologue: function */
+ 1090               	/* frame size = 0 */
+ 1091               	.LM135:
+ 1092               	/* #APP */
+ 1093               	 ;  308 "rts_os/rts_task.c" 1
+ 1094 069e 0090 5F00 		lds	r0, 0x5f
+ 1095               	 ;  0 "" 2
+ 1096               	 ;  308 "rts_os/rts_task.c" 1
+ 1097 06a2 0F92      		push	r0
+ 1098               	 ;  0 "" 2
+ 1099               	/* #NOAPP */
+ 1100 06a4 AFE5      		ldi r26,lo8(95)
+ 1101 06a6 B0E0      		ldi r27,hi8(95)
+ 1102 06a8 EFE5      		ldi r30,lo8(95)
+ 1103 06aa F0E0      		ldi r31,hi8(95)
+ 1104 06ac 8081      		ld r24,Z
+ 1105 06ae 8F77      		andi r24,lo8(127)
+ 1106 06b0 8C93      		st X,r24
+ 1107               	.LM136:
+ 1108 06b2 81E0      		ldi r24,lo8(1)
+ 1109 06b4 8093 0000 		sts rts_gb_task_switch_on,r24
+ 1110               	.LM137:
+ 1111               	/* #APP */
+ 1112               	 ;  310 "rts_os/rts_task.c" 1
+ 1113 06b8 0F90      		pop	r0
+ 1114               	 ;  0 "" 2
+ 1115               	 ;  310 "rts_os/rts_task.c" 1
+ 1116 06ba 0092 5F00 		sts	0x5f, r0
+ 1117               	 ;  0 "" 2
+ 1118               	/* epilogue start */
+ 1119               	.LM138:
+ 1120               	/* #NOAPP */
+ 1121 06be CF91      		pop r28
+ 1122 06c0 DF91      		pop r29
+ 1123 06c2 0895      		ret
+ 1124               	.LFE14:
+ 1126               		.lcomm rts_gb_idle_task_pf,2
+ 1247               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_task.c
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:19     .data:00000000 rts_gb_task_switch_on
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:23     .data:00000001 rts_gb_task_idle_coun
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:27     .data:00000003 rts_gb_task_coun
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:31     .data:00000005 rts_gb_cpu_utilization_rate
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:38     .text:00000000 IdleTask
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:65     .bss:00000080 rts_gb_idle_task_pf
+                             .bss:00000000 idle_stack.1351
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:68     .text:0000002a RTS_TASK_IdleTaskInit
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:111    .text:0000006a RTS_CreateTask
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:239    .text:00000128 RTS_PendTask
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:404    .text:0000022a RTS_ResumeTask
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:489    .text:0000029e RTS_DelayTicks
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:588    .text:00000340 RTS_GetCurrTaskTid
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:610    .text:00000358 RTS_GetCurrTaskPrio
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:632    .text:00000370 RTS_ChangeTaskPrio
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:734    .text:00000400 __vector_14
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:966    .text:000005d4 RTS_GetCpuUtilizationRate
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:1037   .text:0000066a RTS_TurnOffSchdule
+C:\Users\lisha\AppData\Local\Temp/ccXCmeBb.s:1082   .text:00000696 RTS_TurnOnSchdule
+
+UNDEFINED SYMBOLS
+RTS_PORT_TaskStackInit
+MemAlloc
+RTS_CORE_RegisterTask
+RTS_CORE_InsertTcbToRdyList
+RTS_CORE_GetTcbFromTid
+rts_gb_curr_task_tcb
+RTS_CORE_RemoveTcbFromRdyList
+RTS_CORE_InsertTcbToPendList
+RTS_CORE_UpdateTaskHightPrio
+RTS_CORE_SwitchToHiprioTask
+RTS_CORE_OsSchdule
+RTS_CORE_RemoveTcbFromDlyList
+RTS_CORE_DlyListHeadRelocate
+RTS_PORT_SwitchToNextTask
+RTS_CORE_RemoveTcbFromPendList
+RTS_CORE_InsertTcbToDlyList
+rts_gb_systicks
+RTS_CORE_SwitchToNextTask
+RTS_CORE_GetDlyListHead
+RTS_CORE_SetDlyListHead
+__floatunsisf
+__divsf3
+__subsf3
+__do_copy_data
+__do_clear_bss

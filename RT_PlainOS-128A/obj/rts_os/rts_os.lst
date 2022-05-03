@@ -1,0 +1,120 @@
+   1               		.file	"rts_os.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_OS_Init
+  18               	RTS_OS_Init:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 00D0      		rcall .
+  24 0006 CDB7      		in r28,__SP_L__
+  25 0008 DEB7      		in r29,__SP_H__
+  26               	/* prologue: function */
+  27               	/* frame size = 2 */
+  28 000a 9A83      		std Y+2,r25
+  29 000c 8983      		std Y+1,r24
+  30               	.LM2:
+  31 000e AFE5      		ldi r26,lo8(95)
+  32 0010 B0E0      		ldi r27,hi8(95)
+  33 0012 EFE5      		ldi r30,lo8(95)
+  34 0014 F0E0      		ldi r31,hi8(95)
+  35 0016 8081      		ld r24,Z
+  36 0018 8F77      		andi r24,lo8(127)
+  37 001a 8C93      		st X,r24
+  38               	.LM3:
+  39 001c 0E94 0000 		call MemAllocInit
+  40               	.LM4:
+  41 0020 0E94 0000 		call RTS_CORE_Init
+  42               	.LM5:
+  43 0024 8981      		ldd r24,Y+1
+  44 0026 9A81      		ldd r25,Y+2
+  45 0028 0E94 0000 		call RTS_TASK_IdleTaskInit
+  46               	.LM6:
+  47 002c 1092 0000 		sts rts_gb_systicks,__zero_reg__
+  48 0030 1092 0000 		sts (rts_gb_systicks)+1,__zero_reg__
+  49 0034 1092 0000 		sts (rts_gb_systicks)+2,__zero_reg__
+  50 0038 1092 0000 		sts (rts_gb_systicks)+3,__zero_reg__
+  51               	/* epilogue start */
+  52               	.LM7:
+  53 003c 0F90      		pop __tmp_reg__
+  54 003e 0F90      		pop __tmp_reg__
+  55 0040 CF91      		pop r28
+  56 0042 DF91      		pop r29
+  57 0044 0895      		ret
+  58               	.LFE2:
+  60               	.global	RTS_OS_Start
+  62               	RTS_OS_Start:
+  63               	.LFB3:
+  64               	.LM8:
+  65 0046 DF93      		push r29
+  66 0048 CF93      		push r28
+  67 004a CDB7      		in r28,__SP_L__
+  68 004c DEB7      		in r29,__SP_H__
+  69               	/* prologue: function */
+  70               	/* frame size = 0 */
+  71               	.LM9:
+  72 004e 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+  73               	.LM10:
+  74 0052 80E0      		ldi r24,lo8(rts_gb_curr_task_tcb)
+  75 0054 90E0      		ldi r25,hi8(rts_gb_curr_task_tcb)
+  76 0056 0E94 0000 		call RTS_CORE_GetHightPrioTcb
+  77               	.LM11:
+  78 005a 8091 0000 		lds r24,rts_gb_curr_task_tcb
+  79 005e 9091 0000 		lds r25,(rts_gb_curr_task_tcb)+1
+  80 0062 9093 0000 		sts (rts_gb_prev_task_tcb)+1,r25
+  81 0066 8093 0000 		sts rts_gb_prev_task_tcb,r24
+  82               	.LM12:
+  83 006a 0E94 0000 		call RTS_PORT_SystickInit
+  84               	.LM13:
+  85 006e AFE5      		ldi r26,lo8(95)
+  86 0070 B0E0      		ldi r27,hi8(95)
+  87 0072 EFE5      		ldi r30,lo8(95)
+  88 0074 F0E0      		ldi r31,hi8(95)
+  89 0076 8081      		ld r24,Z
+  90 0078 8068      		ori r24,lo8(-128)
+  91 007a 8C93      		st X,r24
+  92               	.LM14:
+  93 007c A7E5      		ldi r26,lo8(87)
+  94 007e B0E0      		ldi r27,hi8(87)
+  95 0080 E7E5      		ldi r30,lo8(87)
+  96 0082 F0E0      		ldi r31,hi8(87)
+  97 0084 8081      		ld r24,Z
+  98 0086 8460      		ori r24,lo8(4)
+  99 0088 8C93      		st X,r24
+ 100               	.LM15:
+ 101 008a 0E94 0000 		call RTS_PORT_SwitchToNextTask
+ 102               	/* epilogue start */
+ 103               	.LM16:
+ 104 008e CF91      		pop r28
+ 105 0090 DF91      		pop r29
+ 106 0092 0895      		ret
+ 107               	.LFE3:
+ 141               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_os.c
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:18     .text:00000000 RTS_OS_Init
+C:\Users\lisha\AppData\Local\Temp/ccAmYltd.s:62     .text:00000046 RTS_OS_Start
+
+UNDEFINED SYMBOLS
+MemAllocInit
+RTS_CORE_Init
+RTS_TASK_IdleTaskInit
+rts_gb_systicks
+RTS_CORE_UpdateTaskHightPrio
+rts_gb_curr_task_tcb
+RTS_CORE_GetHightPrioTcb
+rts_gb_prev_task_tcb
+RTS_PORT_SystickInit
+RTS_PORT_SwitchToNextTask

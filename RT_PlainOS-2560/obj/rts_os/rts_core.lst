@@ -1,0 +1,1547 @@
+   1               		.file	"rts_core.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_CORE_Init
+  18               	RTS_CORE_Init:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 E0E0      		ldi r30,lo8(rts_gb_tasks_reg_tbl)
+  25 0002 F0E0      		ldi r31,hi8(rts_gb_tasks_reg_tbl)
+  26               	.L2:
+  27               	.LBB10:
+  28               	.LBB11:
+  29               	.LM3:
+  30 0004 1192      		st Z+,__zero_reg__
+  31 0006 1192      		st Z+,__zero_reg__
+  32               	.LM4:
+  33 0008 80E0      		ldi r24,hi8(rts_gb_tasks_reg_tbl+22)
+  34 000a E030      		cpi r30,lo8(rts_gb_tasks_reg_tbl+22)
+  35 000c F807      		cpc r31,r24
+  36 000e 01F4      		brne .L2
+  37               	.LBE11:
+  38               	.LBE10:
+  39               	.LBB12:
+  40               	.LBB13:
+  41               	.LM5:
+  42 0010 1092 0000 		sts rts_gb_prio_bitmap,__zero_reg__
+  43 0014 E0E0      		ldi r30,lo8(rts_gb_rdy_lh_tbl)
+  44 0016 F0E0      		ldi r31,hi8(rts_gb_rdy_lh_tbl)
+  45               	.L3:
+  46               	.LBE13:
+  47               	.LBE12:
+  48               	.LBB14:
+  49               	.LBB15:
+  50               	.LM6:
+  51 0018 1182      		std Z+1,__zero_reg__
+  52 001a 1082      		st Z,__zero_reg__
+  53               	.LM7:
+  54 001c 1282      		std Z+2,__zero_reg__
+  55 001e 3396      		adiw r30,3
+  56               	.LM8:
+  57 0020 80E0      		ldi r24,hi8(rts_gb_rdy_lh_tbl+21)
+  58 0022 E030      		cpi r30,lo8(rts_gb_rdy_lh_tbl+21)
+  59 0024 F807      		cpc r31,r24
+  60 0026 01F4      		brne .L3
+  61               	.LBE15:
+  62               	.LBE14:
+  63               	.LBB16:
+  64               	.LBB17:
+  65               	.LM9:
+  66 0028 87E0      		ldi r24,lo8(7)
+  67 002a 8093 0000 		sts rts_pend_tcb0+3,r24
+  68               	.LM10:
+  69 002e 8093 0000 		sts rts_pend_tcb0+4,r24
+  70               	.LM11:
+  71 0032 20E0      		ldi r18,lo8(rts_pend_tcb0)
+  72 0034 30E0      		ldi r19,hi8(rts_pend_tcb0)
+  73 0036 3093 0000 		sts (rts_pend_tcb0+10)+1,r19
+  74 003a 2093 0000 		sts rts_pend_tcb0+10,r18
+  75               	.LM12:
+  76 003e 3093 0000 		sts (rts_pend_tcb0+8)+1,r19
+  77 0042 2093 0000 		sts rts_pend_tcb0+8,r18
+  78               	.LM13:
+  79 0046 80E0      		ldi r24,lo8(rts_gb_pend_lh)
+  80 0048 90E0      		ldi r25,hi8(rts_gb_pend_lh)
+  81 004a 9093 0000 		sts (rts_pend_tcb0+6)+1,r25
+  82 004e 8093 0000 		sts rts_pend_tcb0+6,r24
+  83               	.LM14:
+  84 0052 3093 0000 		sts (rts_gb_pend_lh)+1,r19
+  85 0056 2093 0000 		sts rts_gb_pend_lh,r18
+  86               	.LM15:
+  87 005a 1092 0000 		sts rts_gb_pend_lh+2,__zero_reg__
+  88               	/* epilogue start */
+  89               	.LBE17:
+  90               	.LBE16:
+  91               	.LM16:
+  92 005e 0895      		ret
+  93               	.LFE6:
+  95               	.global	RTS_CORE_UpdateTaskHightPrio
+  97               	RTS_CORE_UpdateTaskHightPrio:
+  98               	.LFB7:
+  99               	.LM17:
+ 100               	/* prologue: function */
+ 101               	/* frame size = 0 */
+ 102               	.LM18:
+ 103 0060 8091 0000 		lds r24,rts_gb_prio_bitmap_lv2_index
+ 104 0064 A0E0      		ldi r26,lo8(rts_gb_prio_tbl)
+ 105 0066 B0E0      		ldi r27,hi8(rts_gb_prio_tbl)
+ 106 0068 FD01      		movw r30,r26
+ 107 006a E80F      		add r30,r24
+ 108 006c F11D      		adc r31,__zero_reg__
+ 109 006e 2081      		ld r18,Z
+ 110 0070 30E0      		ldi r19,lo8(0)
+ 111               	.LM19:
+ 112 0072 F901      		movw r30,r18
+ 113 0074 E050      		subi r30,lo8(-(rts_gb_prio_bitmap_lv1_index))
+ 114 0076 F040      		sbci r31,hi8(-(rts_gb_prio_bitmap_lv1_index))
+ 115 0078 8081      		ld r24,Z
+ 116 007a FD01      		movw r30,r26
+ 117 007c E80F      		add r30,r24
+ 118 007e F11D      		adc r31,__zero_reg__
+ 119 0080 8081      		ld r24,Z
+ 120 0082 220F      		lsl r18
+ 121 0084 331F      		rol r19
+ 122 0086 220F      		lsl r18
+ 123 0088 331F      		rol r19
+ 124 008a 220F      		lsl r18
+ 125 008c 331F      		rol r19
+ 126 008e 280F      		add r18,r24
+ 127 0090 311D      		adc r19,__zero_reg__
+ 128               	.LM20:
+ 129 0092 F901      		movw r30,r18
+ 130 0094 E050      		subi r30,lo8(-(rts_gb_prio_bitmap))
+ 131 0096 F040      		sbci r31,hi8(-(rts_gb_prio_bitmap))
+ 132 0098 8081      		ld r24,Z
+ 133 009a A80F      		add r26,r24
+ 134 009c B11D      		adc r27,__zero_reg__
+ 135 009e 220F      		lsl r18
+ 136 00a0 331F      		rol r19
+ 137 00a2 220F      		lsl r18
+ 138 00a4 331F      		rol r19
+ 139 00a6 220F      		lsl r18
+ 140 00a8 331F      		rol r19
+ 141 00aa 8C91      		ld r24,X
+ 142               	.LVL0:
+ 143 00ac 820F      		add r24,r18
+ 144               	.LM21:
+ 145 00ae 8093 0000 		sts hiprio,r24
+ 146               	.LVL1:
+ 147               	/* epilogue start */
+ 148               	.LM22:
+ 149 00b2 0895      		ret
+ 150               	.LFE7:
+ 152               	.global	RTS_CORE_ClearPrioBitmapBit
+ 154               	RTS_CORE_ClearPrioBitmapBit:
+ 155               	.LFB8:
+ 156               	.LM23:
+ 157               	.LVL2:
+ 158               	/* prologue: function */
+ 159               	/* frame size = 0 */
+ 160 00b4 382F      		mov r19,r24
+ 161               	.LM24:
+ 162 00b6 E82F      		mov r30,r24
+ 163 00b8 E695      		lsr r30
+ 164 00ba E695      		lsr r30
+ 165 00bc E695      		lsr r30
+ 166 00be F0E0      		ldi r31,lo8(0)
+ 167 00c0 482F      		mov r20,r24
+ 168 00c2 50E0      		ldi r21,lo8(0)
+ 169 00c4 CA01      		movw r24,r20
+ 170               	.LVL3:
+ 171 00c6 8770      		andi r24,lo8(7)
+ 172 00c8 9070      		andi r25,hi8(7)
+ 173 00ca 61E0      		ldi r22,lo8(1)
+ 174 00cc 70E0      		ldi r23,hi8(1)
+ 175 00ce DB01      		movw r26,r22
+ 176 00d0 00C0      		rjmp 2f
+ 177 00d2 AA0F      	1:	lsl r26
+ 178 00d4 BB1F      		rol r27
+ 179 00d6 8A95      	2:	dec r24
+ 180 00d8 02F4      		brpl 1b
+ 181 00da CD01      		movw r24,r26
+ 182 00dc 8095      		com r24
+ 183 00de E050      		subi r30,lo8(-(rts_gb_prio_bitmap))
+ 184 00e0 F040      		sbci r31,hi8(-(rts_gb_prio_bitmap))
+ 185 00e2 2081      		ld r18,Z
+ 186 00e4 8223      		and r24,r18
+ 187 00e6 8083      		st Z,r24
+ 188               	.LM25:
+ 189 00e8 8823      		tst r24
+ 190 00ea 01F4      		brne .L12
+ 191               	.LM26:
+ 192 00ec 3295      		swap r19
+ 193 00ee 3695      		lsr r19
+ 194 00f0 3695      		lsr r19
+ 195 00f2 3370      		andi r19,lo8(3)
+ 196 00f4 A32F      		mov r26,r19
+ 197 00f6 B0E0      		ldi r27,lo8(0)
+ 198 00f8 4F73      		andi r20,lo8(63)
+ 199 00fa 5070      		andi r21,hi8(63)
+ 200 00fc 5595      		asr r21
+ 201 00fe 4795      		ror r20
+ 202 0100 5595      		asr r21
+ 203 0102 4795      		ror r20
+ 204 0104 5595      		asr r21
+ 205 0106 4795      		ror r20
+ 206 0108 CB01      		movw r24,r22
+ 207 010a 00C0      		rjmp 2f
+ 208 010c 880F      	1:	lsl r24
+ 209 010e 991F      		rol r25
+ 210 0110 4A95      	2:	dec r20
+ 211 0112 02F4      		brpl 1b
+ 212 0114 8095      		com r24
+ 213 0116 FD01      		movw r30,r26
+ 214 0118 E050      		subi r30,lo8(-(rts_gb_prio_bitmap_lv1_index))
+ 215 011a F040      		sbci r31,hi8(-(rts_gb_prio_bitmap_lv1_index))
+ 216 011c 2081      		ld r18,Z
+ 217 011e 8223      		and r24,r18
+ 218 0120 8083      		st Z,r24
+ 219               	.LM27:
+ 220 0122 8823      		tst r24
+ 221 0124 01F4      		brne .L12
+ 222               	.LM28:
+ 223 0126 032E      		mov r0,r19
+ 224 0128 00C0      		rjmp 2f
+ 225 012a 660F      	1:	lsl r22
+ 226 012c 771F      		rol r23
+ 227 012e 0A94      	2:	dec r0
+ 228 0130 02F4      		brpl 1b
+ 229               	.LVL4:
+ 230 0132 962F      		mov r25,r22
+ 231 0134 9095      		com r25
+ 232 0136 8091 0000 		lds r24,rts_gb_prio_bitmap_lv2_index
+ 233 013a 8923      		and r24,r25
+ 234 013c 8093 0000 		sts rts_gb_prio_bitmap_lv2_index,r24
+ 235               	.LVL5:
+ 236               	.L12:
+ 237 0140 0895      		ret
+ 238               	.LFE8:
+ 240               	.global	RTS_CORE_SetPrioBitmapBit
+ 242               	RTS_CORE_SetPrioBitmapBit:
+ 243               	.LFB9:
+ 244               	.LM29:
+ 245               	.LVL6:
+ 246               	/* prologue: function */
+ 247               	/* frame size = 0 */
+ 248               	.LM30:
+ 249 0142 682F      		mov r22,r24
+ 250 0144 70E0      		ldi r23,lo8(0)
+ 251 0146 E0E0      		ldi r30,lo8(rts_gb_prio_bitmap)
+ 252 0148 F0E0      		ldi r31,hi8(rts_gb_prio_bitmap)
+ 253 014a 8695      		lsr r24
+ 254 014c 8695      		lsr r24
+ 255 014e 8695      		lsr r24
+ 256               	.LVL7:
+ 257 0150 E80F      		add r30,r24
+ 258 0152 F11D      		adc r31,__zero_reg__
+ 259 0154 9B01      		movw r18,r22
+ 260 0156 2770      		andi r18,lo8(7)
+ 261 0158 3070      		andi r19,hi8(7)
+ 262 015a A1E0      		ldi r26,lo8(1)
+ 263 015c B0E0      		ldi r27,hi8(1)
+ 264 015e AD01      		movw r20,r26
+ 265 0160 00C0      		rjmp 2f
+ 266 0162 440F      	1:	lsl r20
+ 267 0164 551F      		rol r21
+ 268 0166 2A95      	2:	dec r18
+ 269 0168 02F4      		brpl 1b
+ 270 016a 9A01      		movw r18,r20
+ 271 016c 4081      		ld r20,Z
+ 272 016e 422B      		or r20,r18
+ 273 0170 4083      		st Z,r20
+ 274               	.LM31:
+ 275 0172 8695      		lsr r24
+ 276 0174 8695      		lsr r24
+ 277 0176 8695      		lsr r24
+ 278 0178 90E0      		ldi r25,lo8(0)
+ 279 017a FC01      		movw r30,r24
+ 280               	.LVL8:
+ 281 017c E050      		subi r30,lo8(-(rts_gb_prio_bitmap_lv1_index))
+ 282 017e F040      		sbci r31,hi8(-(rts_gb_prio_bitmap_lv1_index))
+ 283 0180 6F73      		andi r22,lo8(63)
+ 284 0182 7070      		andi r23,hi8(63)
+ 285 0184 7595      		asr r23
+ 286 0186 6795      		ror r22
+ 287 0188 7595      		asr r23
+ 288 018a 6795      		ror r22
+ 289 018c 7595      		asr r23
+ 290 018e 6795      		ror r22
+ 291 0190 9D01      		movw r18,r26
+ 292 0192 00C0      		rjmp 2f
+ 293 0194 220F      	1:	lsl r18
+ 294 0196 331F      		rol r19
+ 295 0198 6A95      	2:	dec r22
+ 296 019a 02F4      		brpl 1b
+ 297 019c B901      		movw r22,r18
+ 298 019e 2081      		ld r18,Z
+ 299 01a0 262B      		or r18,r22
+ 300 01a2 2083      		st Z,r18
+ 301               	.LM32:
+ 302 01a4 00C0      		rjmp 2f
+ 303 01a6 AA0F      	1:	lsl r26
+ 304 01a8 BB1F      		rol r27
+ 305 01aa 8A95      	2:	dec r24
+ 306 01ac 02F4      		brpl 1b
+ 307 01ae 8091 0000 		lds r24,rts_gb_prio_bitmap_lv2_index
+ 308 01b2 8A2B      		or r24,r26
+ 309 01b4 8093 0000 		sts rts_gb_prio_bitmap_lv2_index,r24
+ 310               	/* epilogue start */
+ 311               	.LM33:
+ 312 01b8 0895      		ret
+ 313               	.LFE9:
+ 315               	.global	RTS_CORE_RegisterTask
+ 317               	RTS_CORE_RegisterTask:
+ 318               	.LFB10:
+ 319               	.LM34:
+ 320               	.LVL9:
+ 321               	/* prologue: function */
+ 322               	/* frame size = 0 */
+ 323 01ba DC01      		movw r26,r24
+ 324               	.LM35:
+ 325 01bc E0E0      		ldi r30,lo8(rts_gb_tasks_reg_tbl)
+ 326 01be F0E0      		ldi r31,hi8(rts_gb_tasks_reg_tbl)
+ 327 01c0 20E0      		ldi r18,lo8(0)
+ 328 01c2 30E0      		ldi r19,hi8(0)
+ 329               	.LVL10:
+ 330               	.L18:
+ 331 01c4 422F      		mov r20,r18
+ 332               	.LM36:
+ 333 01c6 8081      		ld r24,Z
+ 334 01c8 9181      		ldd r25,Z+1
+ 335 01ca 892B      		or r24,r25
+ 336 01cc 01F0      		breq .L21
+ 337               	.LM37:
+ 338 01ce 4F5F      		subi r20,lo8(-(1))
+ 339 01d0 2F5F      		subi r18,lo8(-(1))
+ 340 01d2 3F4F      		sbci r19,hi8(-(1))
+ 341 01d4 3296      		adiw r30,2
+ 342               	.LM38:
+ 343 01d6 2B30      		cpi r18,11
+ 344 01d8 3105      		cpc r19,__zero_reg__
+ 345 01da 01F4      		brne .L18
+ 346               	.LM39:
+ 347 01dc 842F      		mov r24,r20
+ 348               	/* epilogue start */
+ 349 01de 0895      		ret
+ 350               	.L21:
+ 351               	.LM40:
+ 352 01e0 F901      		movw r30,r18
+ 353 01e2 EE0F      		lsl r30
+ 354 01e4 FF1F      		rol r31
+ 355 01e6 E050      		subi r30,lo8(-(rts_gb_tasks_reg_tbl))
+ 356 01e8 F040      		sbci r31,hi8(-(rts_gb_tasks_reg_tbl))
+ 357 01ea B183      		std Z+1,r27
+ 358 01ec A083      		st Z,r26
+ 359               	.LM41:
+ 360 01ee 1596      		adiw r26,5
+ 361 01f0 2C93      		st X,r18
+ 362               	.LM42:
+ 363 01f2 842F      		mov r24,r20
+ 364 01f4 0895      		ret
+ 365               	.LFE10:
+ 367               	.global	RTS_CORE_InsertTcbToRdyList
+ 369               	RTS_CORE_InsertTcbToRdyList:
+ 370               	.LFB11:
+ 371               	.LM43:
+ 372               	.LVL11:
+ 373 01f6 CF93      		push r28
+ 374 01f8 DF93      		push r29
+ 375               	/* prologue: function */
+ 376               	/* frame size = 0 */
+ 377 01fa EC01      		movw r28,r24
+ 378               	.LM44:
+ 379 01fc 6A81      		ldd r22,Y+2
+ 380               	.LVL12:
+ 381               	.LM45:
+ 382 01fe 262F      		mov r18,r22
+ 383 0200 30E0      		ldi r19,lo8(0)
+ 384 0202 A901      		movw r20,r18
+ 385 0204 440F      		lsl r20
+ 386 0206 551F      		rol r21
+ 387 0208 FA01      		movw r30,r20
+ 388 020a E20F      		add r30,r18
+ 389 020c F31F      		adc r31,r19
+ 390 020e E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 391 0210 F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 392 0212 A081      		ld r26,Z
+ 393 0214 B181      		ldd r27,Z+1
+ 394               	.LVL13:
+ 395               	.LM46:
+ 396 0216 1097      		sbiw r26,0
+ 397 0218 01F0      		breq .L26
+ 398               	.LVL14:
+ 399               	.LM47:
+ 400 021a B987      		std Y+9,r27
+ 401 021c A887      		std Y+8,r26
+ 402               	.LM48:
+ 403 021e 1A96      		adiw r26,10
+ 404 0220 8D91      		ld r24,X+
+ 405 0222 9C91      		ld r25,X
+ 406 0224 1B97      		sbiw r26,10+1
+ 407 0226 9B87      		std Y+11,r25
+ 408 0228 8A87      		std Y+10,r24
+ 409               	.LM49:
+ 410 022a 1A96      		adiw r26,10
+ 411 022c ED91      		ld r30,X+
+ 412 022e FC91      		ld r31,X
+ 413 0230 1B97      		sbiw r26,10+1
+ 414 0232 D187      		std Z+9,r29
+ 415 0234 C087      		std Z+8,r28
+ 416               	.LM50:
+ 417 0236 1B96      		adiw r26,10+1
+ 418 0238 DC93      		st X,r29
+ 419 023a CE93      		st -X,r28
+ 420 023c 1A97      		sbiw r26,10
+ 421               	.LVL15:
+ 422               	.L24:
+ 423               	.LM51:
+ 424 023e FA01      		movw r30,r20
+ 425 0240 E20F      		add r30,r18
+ 426 0242 F31F      		adc r31,r19
+ 427 0244 E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 428 0246 F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 429 0248 8281      		ldd r24,Z+2
+ 430 024a 8F5F      		subi r24,lo8(-(1))
+ 431 024c 8283      		std Z+2,r24
+ 432               	.LM52:
+ 433 024e 83E0      		ldi r24,lo8(3)
+ 434 0250 689F      		mul r22,r24
+ 435 0252 C001      		movw r24,r0
+ 436 0254 1124      		clr r1
+ 437 0256 8050      		subi r24,lo8(-(rts_gb_rdy_lh_tbl))
+ 438 0258 9040      		sbci r25,hi8(-(rts_gb_rdy_lh_tbl))
+ 439 025a 9F83      		std Y+7,r25
+ 440 025c 8E83      		std Y+6,r24
+ 441               	.LM53:
+ 442 025e 862F      		mov r24,r22
+ 443 0260 0E94 0000 		call RTS_CORE_SetPrioBitmapBit
+ 444               	.LVL16:
+ 445               	/* epilogue start */
+ 446               	.LM54:
+ 447 0264 DF91      		pop r29
+ 448 0266 CF91      		pop r28
+ 449               	.LVL17:
+ 450 0268 0895      		ret
+ 451               	.LVL18:
+ 452               	.L26:
+ 453               	.LM55:
+ 454 026a 9183      		std Z+1,r25
+ 455 026c 8083      		st Z,r24
+ 456               	.LM56:
+ 457 026e 9987      		std Y+9,r25
+ 458 0270 8887      		std Y+8,r24
+ 459               	.LM57:
+ 460 0272 9B87      		std Y+11,r25
+ 461 0274 8A87      		std Y+10,r24
+ 462 0276 00C0      		rjmp .L24
+ 463               	.LFE11:
+ 465               	.global	RTS_CORE_RemoveTcbFromRdyList
+ 467               	RTS_CORE_RemoveTcbFromRdyList:
+ 468               	.LFB12:
+ 469               	.LM58:
+ 470               	.LVL19:
+ 471 0278 CF93      		push r28
+ 472 027a DF93      		push r29
+ 473               	/* prologue: function */
+ 474               	/* frame size = 0 */
+ 475 027c FC01      		movw r30,r24
+ 476               	.LM59:
+ 477 027e 2281      		ldd r18,Z+2
+ 478               	.LVL20:
+ 479               	.LM60:
+ 480 0280 822F      		mov r24,r18
+ 481               	.LVL21:
+ 482 0282 90E0      		ldi r25,lo8(0)
+ 483 0284 EC01      		movw r28,r24
+ 484 0286 CC0F      		lsl r28
+ 485 0288 DD1F      		rol r29
+ 486 028a C80F      		add r28,r24
+ 487 028c D91F      		adc r29,r25
+ 488 028e C050      		subi r28,lo8(-(rts_gb_rdy_lh_tbl))
+ 489 0290 D040      		sbci r29,hi8(-(rts_gb_rdy_lh_tbl))
+ 490 0292 8A81      		ldd r24,Y+2
+ 491               	.LVL22:
+ 492               	.LM61:
+ 493 0294 8130      		cpi r24,lo8(1)
+ 494 0296 01F0      		breq .L31
+ 495               	.LM62:
+ 496 0298 8230      		cpi r24,lo8(2)
+ 497 029a 00F0      		brlo .L30
+ 498               	.LM63:
+ 499 029c 8085      		ldd r24,Z+8
+ 500 029e 9185      		ldd r25,Z+9
+ 501               	.LVL23:
+ 502 02a0 9983      		std Y+1,r25
+ 503 02a2 8883      		st Y,r24
+ 504               	.LM64:
+ 505 02a4 A285      		ldd r26,Z+10
+ 506 02a6 B385      		ldd r27,Z+11
+ 507 02a8 8085      		ldd r24,Z+8
+ 508 02aa 9185      		ldd r25,Z+9
+ 509 02ac 1996      		adiw r26,8+1
+ 510 02ae 9C93      		st X,r25
+ 511 02b0 8E93      		st -X,r24
+ 512 02b2 1897      		sbiw r26,8
+ 513               	.LM65:
+ 514 02b4 0084      		ldd __tmp_reg__,Z+8
+ 515 02b6 F185      		ldd r31,Z+9
+ 516 02b8 E02D      		mov r30,__tmp_reg__
+ 517               	.LVL24:
+ 518 02ba B387      		std Z+11,r27
+ 519 02bc A287      		std Z+10,r26
+ 520               	.LM66:
+ 521 02be 8A81      		ldd r24,Y+2
+ 522 02c0 8150      		subi r24,lo8(-(-1))
+ 523 02c2 8A83      		std Y+2,r24
+ 524               	.LVL25:
+ 525               	.L30:
+ 526               	/* epilogue start */
+ 527               	.LM67:
+ 528 02c4 DF91      		pop r29
+ 529 02c6 CF91      		pop r28
+ 530 02c8 0895      		ret
+ 531               	.L31:
+ 532               	.LM68:
+ 533 02ca 1982      		std Y+1,__zero_reg__
+ 534 02cc 1882      		st Y,__zero_reg__
+ 535               	.LM69:
+ 536 02ce 822F      		mov r24,r18
+ 537               	.LVL26:
+ 538 02d0 0E94 0000 		call RTS_CORE_ClearPrioBitmapBit
+ 539               	.LVL27:
+ 540               	.LM70:
+ 541 02d4 1A82      		std Y+2,__zero_reg__
+ 542               	.LM71:
+ 543 02d6 DF91      		pop r29
+ 544 02d8 CF91      		pop r28
+ 545 02da 0895      		ret
+ 546               	.LFE12:
+ 548               	.global	RTS_CORE_InsertTcbToPendList
+ 550               	RTS_CORE_InsertTcbToPendList:
+ 551               	.LFB13:
+ 552               	.LM72:
+ 553               	.LVL28:
+ 554 02dc CF93      		push r28
+ 555 02de DF93      		push r29
+ 556               	/* prologue: function */
+ 557               	/* frame size = 0 */
+ 558 02e0 DC01      		movw r26,r24
+ 559               	.LM73:
+ 560 02e2 2091 0000 		lds r18,rts_gb_pend_lh
+ 561 02e6 3091 0000 		lds r19,(rts_gb_pend_lh)+1
+ 562               	.LVL29:
+ 563               	.LM74:
+ 564 02ea 1B96      		adiw r26,10+1
+ 565 02ec 3C93      		st X,r19
+ 566 02ee 2E93      		st -X,r18
+ 567 02f0 1A97      		sbiw r26,10
+ 568               	.LM75:
+ 569 02f2 80E0      		ldi r24,lo8(rts_gb_pend_lh)
+ 570 02f4 90E0      		ldi r25,hi8(rts_gb_pend_lh)
+ 571               	.LVL30:
+ 572 02f6 1796      		adiw r26,6+1
+ 573 02f8 9C93      		st X,r25
+ 574 02fa 8E93      		st -X,r24
+ 575 02fc 1697      		sbiw r26,6
+ 576               	.LM76:
+ 577 02fe E901      		movw r28,r18
+ 578 0300 8885      		ldd r24,Y+8
+ 579 0302 9985      		ldd r25,Y+9
+ 580 0304 1996      		adiw r26,8+1
+ 581 0306 9C93      		st X,r25
+ 582 0308 8E93      		st -X,r24
+ 583 030a 1897      		sbiw r26,8
+ 584               	.LM77:
+ 585 030c E885      		ldd r30,Y+8
+ 586 030e F985      		ldd r31,Y+9
+ 587 0310 B387      		std Z+11,r27
+ 588 0312 A287      		std Z+10,r26
+ 589               	.LM78:
+ 590 0314 B987      		std Y+9,r27
+ 591 0316 A887      		std Y+8,r26
+ 592               	.LM79:
+ 593 0318 8091 0000 		lds r24,rts_gb_pend_lh+2
+ 594 031c 8F5F      		subi r24,lo8(-(1))
+ 595 031e 8093 0000 		sts rts_gb_pend_lh+2,r24
+ 596               	/* epilogue start */
+ 597               	.LM80:
+ 598 0322 DF91      		pop r29
+ 599 0324 CF91      		pop r28
+ 600 0326 0895      		ret
+ 601               	.LFE13:
+ 603               	.global	RTS_CORE_RemoveTcbFromPendList
+ 605               	RTS_CORE_RemoveTcbFromPendList:
+ 606               	.LFB14:
+ 607               	.LM81:
+ 608               	.LVL31:
+ 609               	/* prologue: function */
+ 610               	/* frame size = 0 */
+ 611 0328 FC01      		movw r30,r24
+ 612               	.LM82:
+ 613 032a A285      		ldd r26,Z+10
+ 614 032c B385      		ldd r27,Z+11
+ 615 032e 8085      		ldd r24,Z+8
+ 616 0330 9185      		ldd r25,Z+9
+ 617               	.LVL32:
+ 618 0332 1996      		adiw r26,8+1
+ 619 0334 9C93      		st X,r25
+ 620 0336 8E93      		st -X,r24
+ 621 0338 1897      		sbiw r26,8
+ 622               	.LM83:
+ 623 033a 0084      		ldd __tmp_reg__,Z+8
+ 624 033c F185      		ldd r31,Z+9
+ 625 033e E02D      		mov r30,__tmp_reg__
+ 626               	.LVL33:
+ 627 0340 B387      		std Z+11,r27
+ 628 0342 A287      		std Z+10,r26
+ 629               	.LM84:
+ 630 0344 8091 0000 		lds r24,rts_gb_pend_lh+2
+ 631 0348 8150      		subi r24,lo8(-(-1))
+ 632 034a 8093 0000 		sts rts_gb_pend_lh+2,r24
+ 633               	/* epilogue start */
+ 634               	.LM85:
+ 635 034e 0895      		ret
+ 636               	.LFE14:
+ 638               	.global	RTS_CORE_GetTcbFromTid
+ 640               	RTS_CORE_GetTcbFromTid:
+ 641               	.LFB15:
+ 642               	.LM86:
+ 643               	.LVL34:
+ 644               	/* prologue: function */
+ 645               	/* frame size = 0 */
+ 646 0350 FB01      		movw r30,r22
+ 647               	.LM87:
+ 648 0352 A82F      		mov r26,r24
+ 649 0354 B0E0      		ldi r27,lo8(0)
+ 650               	.LVL35:
+ 651 0356 AA0F      		lsl r26
+ 652 0358 BB1F      		rol r27
+ 653               	.LVL36:
+ 654 035a A050      		subi r26,lo8(-(rts_gb_tasks_reg_tbl))
+ 655 035c B040      		sbci r27,hi8(-(rts_gb_tasks_reg_tbl))
+ 656               	.LVL37:
+ 657 035e 8D91      		ld r24,X+
+ 658 0360 9C91      		ld r25,X
+ 659 0362 9183      		std Z+1,r25
+ 660 0364 8083      		st Z,r24
+ 661               	/* epilogue start */
+ 662               	.LM88:
+ 663 0366 0895      		ret
+ 664               	.LFE15:
+ 666               	.global	RTS_CORE_GetHightPrioTcb
+ 668               	RTS_CORE_GetHightPrioTcb:
+ 669               	.LFB16:
+ 670               	.LM89:
+ 671               	.LVL38:
+ 672               	/* prologue: function */
+ 673               	/* frame size = 0 */
+ 674 0368 DC01      		movw r26,r24
+ 675               	.LM90:
+ 676 036a 8091 0000 		lds r24,hiprio
+ 677               	.LVL39:
+ 678 036e 90E0      		ldi r25,lo8(0)
+ 679 0370 FC01      		movw r30,r24
+ 680 0372 EE0F      		lsl r30
+ 681 0374 FF1F      		rol r31
+ 682 0376 E80F      		add r30,r24
+ 683 0378 F91F      		adc r31,r25
+ 684 037a E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 685 037c F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 686 037e 8081      		ld r24,Z
+ 687 0380 9181      		ldd r25,Z+1
+ 688 0382 8D93      		st X+,r24
+ 689 0384 9C93      		st X,r25
+ 690               	/* epilogue start */
+ 691               	.LM91:
+ 692 0386 0895      		ret
+ 693               	.LFE16:
+ 695               	.global	RTS_CORE_SwitchToHiprioTask
+ 697               	RTS_CORE_SwitchToHiprioTask:
+ 698               	.LFB17:
+ 699               	.LM92:
+ 700               	/* prologue: naked */
+ 701               	/* frame size = 0 */
+ 702               	.LM93:
+ 703               	/* #APP */
+ 704               	 ;  356 "rts_os/rts_core.c" 1
+ 705 0388 1F92      		push   r1
+ 706               	 ;  0 "" 2
+ 707               	 ;  356 "rts_os/rts_core.c" 1
+ 708 038a 0F92      		push	r0
+ 709               	 ;  0 "" 2
+ 710               	 ;  356 "rts_os/rts_core.c" 1
+ 711 038c 0090 5F00 		lds	   r0, 0x5f
+ 712               	 ;  0 "" 2
+ 713               	 ;  356 "rts_os/rts_core.c" 1
+ 714 0390 0F92      		push	r0
+ 715               	 ;  0 "" 2
+ 716               	 ;  356 "rts_os/rts_core.c" 1
+ 717 0392 0090 5B00 		lds	r0, 0x5B
+ 718               	 ;  0 "" 2
+ 719               	 ;  356 "rts_os/rts_core.c" 1
+ 720 0396 0F92      		push	r0
+ 721               	 ;  0 "" 2
+ 722               	 ;  356 "rts_os/rts_core.c" 1
+ 723 0398 2F92      		push	r2
+ 724               	 ;  0 "" 2
+ 725               	 ;  356 "rts_os/rts_core.c" 1
+ 726 039a 3F92      		push	r3
+ 727               	 ;  0 "" 2
+ 728               	 ;  356 "rts_os/rts_core.c" 1
+ 729 039c 4F92      		push	r4
+ 730               	 ;  0 "" 2
+ 731               	 ;  356 "rts_os/rts_core.c" 1
+ 732 039e 5F92      		push	r5
+ 733               	 ;  0 "" 2
+ 734               	 ;  356 "rts_os/rts_core.c" 1
+ 735 03a0 6F92      		push	r6
+ 736               	 ;  0 "" 2
+ 737               	 ;  356 "rts_os/rts_core.c" 1
+ 738 03a2 7F92      		push	r7
+ 739               	 ;  0 "" 2
+ 740               	 ;  356 "rts_os/rts_core.c" 1
+ 741 03a4 8F92      		push	r8
+ 742               	 ;  0 "" 2
+ 743               	 ;  356 "rts_os/rts_core.c" 1
+ 744 03a6 9F92      		push	r9
+ 745               	 ;  0 "" 2
+ 746               	 ;  356 "rts_os/rts_core.c" 1
+ 747 03a8 AF92      		push	r10
+ 748               	 ;  0 "" 2
+ 749               	 ;  356 "rts_os/rts_core.c" 1
+ 750 03aa BF92      		push	r11
+ 751               	 ;  0 "" 2
+ 752               	 ;  356 "rts_os/rts_core.c" 1
+ 753 03ac CF92      		push	r12
+ 754               	 ;  0 "" 2
+ 755               	 ;  356 "rts_os/rts_core.c" 1
+ 756 03ae DF92      		push	r13
+ 757               	 ;  0 "" 2
+ 758               	 ;  356 "rts_os/rts_core.c" 1
+ 759 03b0 EF92      		push	r14
+ 760               	 ;  0 "" 2
+ 761               	 ;  356 "rts_os/rts_core.c" 1
+ 762 03b2 FF92      		push	r15
+ 763               	 ;  0 "" 2
+ 764               	 ;  356 "rts_os/rts_core.c" 1
+ 765 03b4 0F93      		push	r16
+ 766               	 ;  0 "" 2
+ 767               	 ;  356 "rts_os/rts_core.c" 1
+ 768 03b6 1F93      		push	r17
+ 769               	 ;  0 "" 2
+ 770               	 ;  356 "rts_os/rts_core.c" 1
+ 771 03b8 2F93      		push	r18
+ 772               	 ;  0 "" 2
+ 773               	 ;  356 "rts_os/rts_core.c" 1
+ 774 03ba 3F93      		push	r19
+ 775               	 ;  0 "" 2
+ 776               	 ;  356 "rts_os/rts_core.c" 1
+ 777 03bc 4F93      		push	r20
+ 778               	 ;  0 "" 2
+ 779               	 ;  356 "rts_os/rts_core.c" 1
+ 780 03be 5F93      		push	r21
+ 781               	 ;  0 "" 2
+ 782               	 ;  356 "rts_os/rts_core.c" 1
+ 783 03c0 6F93      		push	r22
+ 784               	 ;  0 "" 2
+ 785               	 ;  356 "rts_os/rts_core.c" 1
+ 786 03c2 7F93      		push	r23
+ 787               	 ;  0 "" 2
+ 788               	 ;  356 "rts_os/rts_core.c" 1
+ 789 03c4 8F93      		push   r24
+ 790               	 ;  0 "" 2
+ 791               	 ;  356 "rts_os/rts_core.c" 1
+ 792 03c6 9F93      		push   r25
+ 793               	 ;  0 "" 2
+ 794               	 ;  356 "rts_os/rts_core.c" 1
+ 795 03c8 AF93      		push	r26
+ 796               	 ;  0 "" 2
+ 797               	 ;  356 "rts_os/rts_core.c" 1
+ 798 03ca BF93      		push   r27
+ 799               	 ;  0 "" 2
+ 800               	 ;  356 "rts_os/rts_core.c" 1
+ 801 03cc EF93      		push	r30
+ 802               	 ;  0 "" 2
+ 803               	 ;  356 "rts_os/rts_core.c" 1
+ 804 03ce FF93      		push   r31
+ 805               	 ;  0 "" 2
+ 806               	 ;  356 "rts_os/rts_core.c" 1
+ 807 03d0 DF93      		push	r29
+ 808               	 ;  0 "" 2
+ 809               	 ;  356 "rts_os/rts_core.c" 1
+ 810 03d2 CF93      		push   r28
+ 811               	 ;  0 "" 2
+ 812               	/* #NOAPP */
+ 813 03d4 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 814 03d8 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 815 03dc 8DB7      		in r24,93-32
+ 816 03de 9EB7      		in r25,(93)+1-32
+ 817 03e0 9183      		std Z+1,r25
+ 818 03e2 8083      		st Z,r24
+ 819               	.LM94:
+ 820 03e4 8091 0000 		lds r24,hiprio
+ 821 03e8 90E0      		ldi r25,lo8(0)
+ 822 03ea FC01      		movw r30,r24
+ 823 03ec EE0F      		lsl r30
+ 824 03ee FF1F      		rol r31
+ 825 03f0 E80F      		add r30,r24
+ 826 03f2 F91F      		adc r31,r25
+ 827 03f4 E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 828 03f6 F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 829 03f8 8081      		ld r24,Z
+ 830 03fa 9181      		ldd r25,Z+1
+ 831 03fc 9093 0000 		sts (rts_gb_curr_task_tcb)+1,r25
+ 832 0400 8093 0000 		sts rts_gb_curr_task_tcb,r24
+ 833               	.LM95:
+ 834 0404 8091 0000 		lds r24,hiprio
+ 835 0408 90E0      		ldi r25,lo8(0)
+ 836 040a FC01      		movw r30,r24
+ 837 040c EE0F      		lsl r30
+ 838 040e FF1F      		rol r31
+ 839 0410 E80F      		add r30,r24
+ 840 0412 F91F      		adc r31,r25
+ 841 0414 E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 842 0416 F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 843 0418 8281      		ldd r24,Z+2
+ 844 041a 8230      		cpi r24,lo8(2)
+ 845 041c 00F4      		brsh .+2
+ 846 041e 00C0      		rjmp .L41
+ 847               	.LM96:
+ 848 0420 8091 6F00 		lds r24,111
+ 849 0424 8160      		ori r24,lo8(1)
+ 850 0426 8093 6F00 		sts 111,r24
+ 851               	.L42:
+ 852               	.LM97:
+ 853 042a E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 854 042e F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 855 0432 8081      		ld r24,Z
+ 856 0434 9181      		ldd r25,Z+1
+ 857 0436 9EBF      		out (93)+1-32,r25
+ 858 0438 8DBF      		out 93-32,r24
+ 859               	/* #APP */
+ 860               	 ;  367 "rts_os/rts_core.c" 1
+ 861 043a CF91      		pop	  r28
+ 862               	 ;  0 "" 2
+ 863               	 ;  367 "rts_os/rts_core.c" 1
+ 864 043c DF91      		pop   r29
+ 865               	 ;  0 "" 2
+ 866               	 ;  367 "rts_os/rts_core.c" 1
+ 867 043e FF91      		pop	  r31
+ 868               	 ;  0 "" 2
+ 869               	 ;  367 "rts_os/rts_core.c" 1
+ 870 0440 EF91      		pop   r30
+ 871               	 ;  0 "" 2
+ 872               	 ;  367 "rts_os/rts_core.c" 1
+ 873 0442 BF91      		pop	  r27
+ 874               	 ;  0 "" 2
+ 875               	 ;  367 "rts_os/rts_core.c" 1
+ 876 0444 AF91      		pop   r26
+ 877               	 ;  0 "" 2
+ 878               	 ;  367 "rts_os/rts_core.c" 1
+ 879 0446 9F91      		pop	  r25
+ 880               	 ;  0 "" 2
+ 881               	 ;  367 "rts_os/rts_core.c" 1
+ 882 0448 8F91      		pop	  r24
+ 883               	 ;  0 "" 2
+ 884               	 ;  367 "rts_os/rts_core.c" 1
+ 885 044a 7F91      		pop   r23
+ 886               	 ;  0 "" 2
+ 887               	 ;  367 "rts_os/rts_core.c" 1
+ 888 044c 6F91      		pop   r22
+ 889               	 ;  0 "" 2
+ 890               	 ;  367 "rts_os/rts_core.c" 1
+ 891 044e 5F91      		pop   r21
+ 892               	 ;  0 "" 2
+ 893               	 ;  367 "rts_os/rts_core.c" 1
+ 894 0450 4F91      		pop   r20
+ 895               	 ;  0 "" 2
+ 896               	 ;  367 "rts_os/rts_core.c" 1
+ 897 0452 3F91      		pop   r19
+ 898               	 ;  0 "" 2
+ 899               	 ;  367 "rts_os/rts_core.c" 1
+ 900 0454 2F91      		pop   r18
+ 901               	 ;  0 "" 2
+ 902               	 ;  367 "rts_os/rts_core.c" 1
+ 903 0456 1F91      		pop   r17
+ 904               	 ;  0 "" 2
+ 905               	 ;  367 "rts_os/rts_core.c" 1
+ 906 0458 0F91      		pop   r16
+ 907               	 ;  0 "" 2
+ 908               	 ;  367 "rts_os/rts_core.c" 1
+ 909 045a FF90      		pop   r15
+ 910               	 ;  0 "" 2
+ 911               	 ;  367 "rts_os/rts_core.c" 1
+ 912 045c EF90      		pop   r14
+ 913               	 ;  0 "" 2
+ 914               	 ;  367 "rts_os/rts_core.c" 1
+ 915 045e DF90      		pop   r13
+ 916               	 ;  0 "" 2
+ 917               	 ;  367 "rts_os/rts_core.c" 1
+ 918 0460 CF90      		pop   r12
+ 919               	 ;  0 "" 2
+ 920               	 ;  367 "rts_os/rts_core.c" 1
+ 921 0462 BF90      		pop   r11
+ 922               	 ;  0 "" 2
+ 923               	 ;  367 "rts_os/rts_core.c" 1
+ 924 0464 AF90      		pop   r10
+ 925               	 ;  0 "" 2
+ 926               	 ;  367 "rts_os/rts_core.c" 1
+ 927 0466 9F90      		pop   r9
+ 928               	 ;  0 "" 2
+ 929               	 ;  367 "rts_os/rts_core.c" 1
+ 930 0468 8F90      		pop   r8
+ 931               	 ;  0 "" 2
+ 932               	 ;  367 "rts_os/rts_core.c" 1
+ 933 046a 7F90      		pop   r7
+ 934               	 ;  0 "" 2
+ 935               	 ;  367 "rts_os/rts_core.c" 1
+ 936 046c 6F90      		pop   r6
+ 937               	 ;  0 "" 2
+ 938               	 ;  367 "rts_os/rts_core.c" 1
+ 939 046e 5F90      		pop   r5
+ 940               	 ;  0 "" 2
+ 941               	 ;  367 "rts_os/rts_core.c" 1
+ 942 0470 4F90      		pop   r4
+ 943               	 ;  0 "" 2
+ 944               	 ;  367 "rts_os/rts_core.c" 1
+ 945 0472 3F90      		pop   r3
+ 946               	 ;  0 "" 2
+ 947               	 ;  367 "rts_os/rts_core.c" 1
+ 948 0474 2F90      		pop   r2
+ 949               	 ;  0 "" 2
+ 950               	 ;  367 "rts_os/rts_core.c" 1
+ 951 0476 0F90      		pop	  r0
+ 952               	 ;  0 "" 2
+ 953               	 ;  367 "rts_os/rts_core.c" 1
+ 954 0478 0092 5B00 		sts	  0x5B, r0
+ 955               	 ;  0 "" 2
+ 956               	 ;  367 "rts_os/rts_core.c" 1
+ 957 047c 0F90      		pop   r0
+ 958               	 ;  0 "" 2
+ 959               	 ;  367 "rts_os/rts_core.c" 1
+ 960 047e 0092 5F00 		sts   0x5f, r0
+ 961               	 ;  0 "" 2
+ 962               	 ;  367 "rts_os/rts_core.c" 1
+ 963 0482 0F90      		pop   r0
+ 964               	 ;  0 "" 2
+ 965               	 ;  367 "rts_os/rts_core.c" 1
+ 966 0484 1F90      		pop	  r1
+ 967               	 ;  0 "" 2
+ 968               	 ;  367 "rts_os/rts_core.c" 1
+ 969 0486 0895      		ret
+ 970               	 ;  0 "" 2
+ 971               	/* epilogue start */
+ 972               	.LM98:
+ 973               	/* #NOAPP */
+ 974               	.L41:
+ 975               	.LM99:
+ 976 0488 8091 6F00 		lds r24,111
+ 977 048c 8E7F      		andi r24,lo8(-2)
+ 978 048e 8093 6F00 		sts 111,r24
+ 979 0492 00C0      		rjmp .L42
+ 980               	.LFE17:
+ 982               	.global	RTS_CORE_GetHiprioTcbNum
+ 984               	RTS_CORE_GetHiprioTcbNum:
+ 985               	.LFB18:
+ 986               	.LM100:
+ 987               	/* prologue: function */
+ 988               	/* frame size = 0 */
+ 989               	.LM101:
+ 990 0494 8091 0000 		lds r24,hiprio
+ 991 0498 90E0      		ldi r25,lo8(0)
+ 992 049a FC01      		movw r30,r24
+ 993 049c EE0F      		lsl r30
+ 994 049e FF1F      		rol r31
+ 995 04a0 E80F      		add r30,r24
+ 996 04a2 F91F      		adc r31,r25
+ 997 04a4 E050      		subi r30,lo8(-(rts_gb_rdy_lh_tbl))
+ 998 04a6 F040      		sbci r31,hi8(-(rts_gb_rdy_lh_tbl))
+ 999               	.LM102:
+ 1000 04a8 8281      		ldd r24,Z+2
+ 1001               	/* epilogue start */
+ 1002 04aa 0895      		ret
+ 1003               	.LFE18:
+ 1005               	.global	RTS_CORE_SwitchToNextTask
+ 1007               	RTS_CORE_SwitchToNextTask:
+ 1008               	.LFB19:
+ 1009               	.LM103:
+ 1010               	/* prologue: naked */
+ 1011               	/* frame size = 0 */
+ 1012               	.LM104:
+ 1013               	/* #APP */
+ 1014               	 ;  383 "rts_os/rts_core.c" 1
+ 1015 04ac 1F92      		push   r1
+ 1016               	 ;  0 "" 2
+ 1017               	 ;  383 "rts_os/rts_core.c" 1
+ 1018 04ae 0F92      		push	r0
+ 1019               	 ;  0 "" 2
+ 1020               	 ;  383 "rts_os/rts_core.c" 1
+ 1021 04b0 0090 5F00 		lds	   r0, 0x5f
+ 1022               	 ;  0 "" 2
+ 1023               	 ;  383 "rts_os/rts_core.c" 1
+ 1024 04b4 0F92      		push	r0
+ 1025               	 ;  0 "" 2
+ 1026               	 ;  383 "rts_os/rts_core.c" 1
+ 1027 04b6 0090 5B00 		lds	r0, 0x5B
+ 1028               	 ;  0 "" 2
+ 1029               	 ;  383 "rts_os/rts_core.c" 1
+ 1030 04ba 0F92      		push	r0
+ 1031               	 ;  0 "" 2
+ 1032               	 ;  383 "rts_os/rts_core.c" 1
+ 1033 04bc 2F92      		push	r2
+ 1034               	 ;  0 "" 2
+ 1035               	 ;  383 "rts_os/rts_core.c" 1
+ 1036 04be 3F92      		push	r3
+ 1037               	 ;  0 "" 2
+ 1038               	 ;  383 "rts_os/rts_core.c" 1
+ 1039 04c0 4F92      		push	r4
+ 1040               	 ;  0 "" 2
+ 1041               	 ;  383 "rts_os/rts_core.c" 1
+ 1042 04c2 5F92      		push	r5
+ 1043               	 ;  0 "" 2
+ 1044               	 ;  383 "rts_os/rts_core.c" 1
+ 1045 04c4 6F92      		push	r6
+ 1046               	 ;  0 "" 2
+ 1047               	 ;  383 "rts_os/rts_core.c" 1
+ 1048 04c6 7F92      		push	r7
+ 1049               	 ;  0 "" 2
+ 1050               	 ;  383 "rts_os/rts_core.c" 1
+ 1051 04c8 8F92      		push	r8
+ 1052               	 ;  0 "" 2
+ 1053               	 ;  383 "rts_os/rts_core.c" 1
+ 1054 04ca 9F92      		push	r9
+ 1055               	 ;  0 "" 2
+ 1056               	 ;  383 "rts_os/rts_core.c" 1
+ 1057 04cc AF92      		push	r10
+ 1058               	 ;  0 "" 2
+ 1059               	 ;  383 "rts_os/rts_core.c" 1
+ 1060 04ce BF92      		push	r11
+ 1061               	 ;  0 "" 2
+ 1062               	 ;  383 "rts_os/rts_core.c" 1
+ 1063 04d0 CF92      		push	r12
+ 1064               	 ;  0 "" 2
+ 1065               	 ;  383 "rts_os/rts_core.c" 1
+ 1066 04d2 DF92      		push	r13
+ 1067               	 ;  0 "" 2
+ 1068               	 ;  383 "rts_os/rts_core.c" 1
+ 1069 04d4 EF92      		push	r14
+ 1070               	 ;  0 "" 2
+ 1071               	 ;  383 "rts_os/rts_core.c" 1
+ 1072 04d6 FF92      		push	r15
+ 1073               	 ;  0 "" 2
+ 1074               	 ;  383 "rts_os/rts_core.c" 1
+ 1075 04d8 0F93      		push	r16
+ 1076               	 ;  0 "" 2
+ 1077               	 ;  383 "rts_os/rts_core.c" 1
+ 1078 04da 1F93      		push	r17
+ 1079               	 ;  0 "" 2
+ 1080               	 ;  383 "rts_os/rts_core.c" 1
+ 1081 04dc 2F93      		push	r18
+ 1082               	 ;  0 "" 2
+ 1083               	 ;  383 "rts_os/rts_core.c" 1
+ 1084 04de 3F93      		push	r19
+ 1085               	 ;  0 "" 2
+ 1086               	 ;  383 "rts_os/rts_core.c" 1
+ 1087 04e0 4F93      		push	r20
+ 1088               	 ;  0 "" 2
+ 1089               	 ;  383 "rts_os/rts_core.c" 1
+ 1090 04e2 5F93      		push	r21
+ 1091               	 ;  0 "" 2
+ 1092               	 ;  383 "rts_os/rts_core.c" 1
+ 1093 04e4 6F93      		push	r22
+ 1094               	 ;  0 "" 2
+ 1095               	 ;  383 "rts_os/rts_core.c" 1
+ 1096 04e6 7F93      		push	r23
+ 1097               	 ;  0 "" 2
+ 1098               	 ;  383 "rts_os/rts_core.c" 1
+ 1099 04e8 8F93      		push   r24
+ 1100               	 ;  0 "" 2
+ 1101               	 ;  383 "rts_os/rts_core.c" 1
+ 1102 04ea 9F93      		push   r25
+ 1103               	 ;  0 "" 2
+ 1104               	 ;  383 "rts_os/rts_core.c" 1
+ 1105 04ec AF93      		push	r26
+ 1106               	 ;  0 "" 2
+ 1107               	 ;  383 "rts_os/rts_core.c" 1
+ 1108 04ee BF93      		push   r27
+ 1109               	 ;  0 "" 2
+ 1110               	 ;  383 "rts_os/rts_core.c" 1
+ 1111 04f0 EF93      		push	r30
+ 1112               	 ;  0 "" 2
+ 1113               	 ;  383 "rts_os/rts_core.c" 1
+ 1114 04f2 FF93      		push   r31
+ 1115               	 ;  0 "" 2
+ 1116               	 ;  383 "rts_os/rts_core.c" 1
+ 1117 04f4 DF93      		push	r29
+ 1118               	 ;  0 "" 2
+ 1119               	 ;  383 "rts_os/rts_core.c" 1
+ 1120 04f6 CF93      		push   r28
+ 1121               	 ;  0 "" 2
+ 1122               	/* #NOAPP */
+ 1123 04f8 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 1124 04fc F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 1125 0500 8DB7      		in r24,93-32
+ 1126 0502 9EB7      		in r25,(93)+1-32
+ 1127 0504 9183      		std Z+1,r25
+ 1128 0506 8083      		st Z,r24
+ 1129               	.LM105:
+ 1130 0508 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 1131 050c F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 1132 0510 8085      		ldd r24,Z+8
+ 1133 0512 9185      		ldd r25,Z+9
+ 1134 0514 9093 0000 		sts (rts_gb_curr_task_tcb)+1,r25
+ 1135 0518 8093 0000 		sts rts_gb_curr_task_tcb,r24
+ 1136               	.LM106:
+ 1137 051c E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 1138 0520 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 1139 0524 8081      		ld r24,Z
+ 1140 0526 9181      		ldd r25,Z+1
+ 1141 0528 9EBF      		out (93)+1-32,r25
+ 1142 052a 8DBF      		out 93-32,r24
+ 1143               	/* #APP */
+ 1144               	 ;  385 "rts_os/rts_core.c" 1
+ 1145 052c CF91      		pop	  r28
+ 1146               	 ;  0 "" 2
+ 1147               	 ;  385 "rts_os/rts_core.c" 1
+ 1148 052e DF91      		pop   r29
+ 1149               	 ;  0 "" 2
+ 1150               	 ;  385 "rts_os/rts_core.c" 1
+ 1151 0530 FF91      		pop	  r31
+ 1152               	 ;  0 "" 2
+ 1153               	 ;  385 "rts_os/rts_core.c" 1
+ 1154 0532 EF91      		pop   r30
+ 1155               	 ;  0 "" 2
+ 1156               	 ;  385 "rts_os/rts_core.c" 1
+ 1157 0534 BF91      		pop	  r27
+ 1158               	 ;  0 "" 2
+ 1159               	 ;  385 "rts_os/rts_core.c" 1
+ 1160 0536 AF91      		pop   r26
+ 1161               	 ;  0 "" 2
+ 1162               	 ;  385 "rts_os/rts_core.c" 1
+ 1163 0538 9F91      		pop	  r25
+ 1164               	 ;  0 "" 2
+ 1165               	 ;  385 "rts_os/rts_core.c" 1
+ 1166 053a 8F91      		pop	  r24
+ 1167               	 ;  0 "" 2
+ 1168               	 ;  385 "rts_os/rts_core.c" 1
+ 1169 053c 7F91      		pop   r23
+ 1170               	 ;  0 "" 2
+ 1171               	 ;  385 "rts_os/rts_core.c" 1
+ 1172 053e 6F91      		pop   r22
+ 1173               	 ;  0 "" 2
+ 1174               	 ;  385 "rts_os/rts_core.c" 1
+ 1175 0540 5F91      		pop   r21
+ 1176               	 ;  0 "" 2
+ 1177               	 ;  385 "rts_os/rts_core.c" 1
+ 1178 0542 4F91      		pop   r20
+ 1179               	 ;  0 "" 2
+ 1180               	 ;  385 "rts_os/rts_core.c" 1
+ 1181 0544 3F91      		pop   r19
+ 1182               	 ;  0 "" 2
+ 1183               	 ;  385 "rts_os/rts_core.c" 1
+ 1184 0546 2F91      		pop   r18
+ 1185               	 ;  0 "" 2
+ 1186               	 ;  385 "rts_os/rts_core.c" 1
+ 1187 0548 1F91      		pop   r17
+ 1188               	 ;  0 "" 2
+ 1189               	 ;  385 "rts_os/rts_core.c" 1
+ 1190 054a 0F91      		pop   r16
+ 1191               	 ;  0 "" 2
+ 1192               	 ;  385 "rts_os/rts_core.c" 1
+ 1193 054c FF90      		pop   r15
+ 1194               	 ;  0 "" 2
+ 1195               	 ;  385 "rts_os/rts_core.c" 1
+ 1196 054e EF90      		pop   r14
+ 1197               	 ;  0 "" 2
+ 1198               	 ;  385 "rts_os/rts_core.c" 1
+ 1199 0550 DF90      		pop   r13
+ 1200               	 ;  0 "" 2
+ 1201               	 ;  385 "rts_os/rts_core.c" 1
+ 1202 0552 CF90      		pop   r12
+ 1203               	 ;  0 "" 2
+ 1204               	 ;  385 "rts_os/rts_core.c" 1
+ 1205 0554 BF90      		pop   r11
+ 1206               	 ;  0 "" 2
+ 1207               	 ;  385 "rts_os/rts_core.c" 1
+ 1208 0556 AF90      		pop   r10
+ 1209               	 ;  0 "" 2
+ 1210               	 ;  385 "rts_os/rts_core.c" 1
+ 1211 0558 9F90      		pop   r9
+ 1212               	 ;  0 "" 2
+ 1213               	 ;  385 "rts_os/rts_core.c" 1
+ 1214 055a 8F90      		pop   r8
+ 1215               	 ;  0 "" 2
+ 1216               	 ;  385 "rts_os/rts_core.c" 1
+ 1217 055c 7F90      		pop   r7
+ 1218               	 ;  0 "" 2
+ 1219               	 ;  385 "rts_os/rts_core.c" 1
+ 1220 055e 6F90      		pop   r6
+ 1221               	 ;  0 "" 2
+ 1222               	 ;  385 "rts_os/rts_core.c" 1
+ 1223 0560 5F90      		pop   r5
+ 1224               	 ;  0 "" 2
+ 1225               	 ;  385 "rts_os/rts_core.c" 1
+ 1226 0562 4F90      		pop   r4
+ 1227               	 ;  0 "" 2
+ 1228               	 ;  385 "rts_os/rts_core.c" 1
+ 1229 0564 3F90      		pop   r3
+ 1230               	 ;  0 "" 2
+ 1231               	 ;  385 "rts_os/rts_core.c" 1
+ 1232 0566 2F90      		pop   r2
+ 1233               	 ;  0 "" 2
+ 1234               	 ;  385 "rts_os/rts_core.c" 1
+ 1235 0568 0F90      		pop	  r0
+ 1236               	 ;  0 "" 2
+ 1237               	 ;  385 "rts_os/rts_core.c" 1
+ 1238 056a 0092 5B00 		sts	  0x5B, r0
+ 1239               	 ;  0 "" 2
+ 1240               	 ;  385 "rts_os/rts_core.c" 1
+ 1241 056e 0F90      		pop   r0
+ 1242               	 ;  0 "" 2
+ 1243               	 ;  385 "rts_os/rts_core.c" 1
+ 1244 0570 0092 5F00 		sts   0x5f, r0
+ 1245               	 ;  0 "" 2
+ 1246               	 ;  385 "rts_os/rts_core.c" 1
+ 1247 0574 0F90      		pop   r0
+ 1248               	 ;  0 "" 2
+ 1249               	 ;  385 "rts_os/rts_core.c" 1
+ 1250 0576 1F90      		pop	  r1
+ 1251               	 ;  0 "" 2
+ 1252               	 ;  385 "rts_os/rts_core.c" 1
+ 1253 0578 0895      		ret
+ 1254               	 ;  0 "" 2
+ 1255               	/* epilogue start */
+ 1256               	.LM107:
+ 1257               	/* #NOAPP */
+ 1258               	.LFE19:
+ 1260               	.global	RTS_CORE_OsSchdule
+ 1262               	RTS_CORE_OsSchdule:
+ 1263               	.LFB20:
+ 1264               	.LM108:
+ 1265               	/* prologue: function */
+ 1266               	/* frame size = 0 */
+ 1267               	.LM109:
+ 1268 057a 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 1269               	.LM110:
+ 1270 057e 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 1271               	/* epilogue start */
+ 1272               	.LM111:
+ 1273 0582 0895      		ret
+ 1274               	.LFE20:
+ 1276               	.global	rts_gb_prio_tbl
+ 1277               		.data
+ 1280               	rts_gb_prio_tbl:
+ 1281 0000 00        		.byte	0
+ 1282 0001 00        		.byte	0
+ 1283 0002 01        		.byte	1
+ 1284 0003 00        		.byte	0
+ 1285 0004 02        		.byte	2
+ 1286 0005 00        		.byte	0
+ 1287 0006 01        		.byte	1
+ 1288 0007 00        		.byte	0
+ 1289 0008 03        		.byte	3
+ 1290 0009 00        		.byte	0
+ 1291 000a 01        		.byte	1
+ 1292 000b 00        		.byte	0
+ 1293 000c 02        		.byte	2
+ 1294 000d 00        		.byte	0
+ 1295 000e 01        		.byte	1
+ 1296 000f 00        		.byte	0
+ 1297 0010 04        		.byte	4
+ 1298 0011 00        		.byte	0
+ 1299 0012 01        		.byte	1
+ 1300 0013 00        		.byte	0
+ 1301 0014 02        		.byte	2
+ 1302 0015 00        		.byte	0
+ 1303 0016 01        		.byte	1
+ 1304 0017 00        		.byte	0
+ 1305 0018 03        		.byte	3
+ 1306 0019 00        		.byte	0
+ 1307 001a 01        		.byte	1
+ 1308 001b 00        		.byte	0
+ 1309 001c 02        		.byte	2
+ 1310 001d 00        		.byte	0
+ 1311 001e 01        		.byte	1
+ 1312 001f 00        		.byte	0
+ 1313 0020 05        		.byte	5
+ 1314 0021 00        		.byte	0
+ 1315 0022 01        		.byte	1
+ 1316 0023 00        		.byte	0
+ 1317 0024 02        		.byte	2
+ 1318 0025 00        		.byte	0
+ 1319 0026 01        		.byte	1
+ 1320 0027 00        		.byte	0
+ 1321 0028 03        		.byte	3
+ 1322 0029 00        		.byte	0
+ 1323 002a 01        		.byte	1
+ 1324 002b 00        		.byte	0
+ 1325 002c 02        		.byte	2
+ 1326 002d 00        		.byte	0
+ 1327 002e 01        		.byte	1
+ 1328 002f 00        		.byte	0
+ 1329 0030 04        		.byte	4
+ 1330 0031 00        		.byte	0
+ 1331 0032 01        		.byte	1
+ 1332 0033 00        		.byte	0
+ 1333 0034 02        		.byte	2
+ 1334 0035 00        		.byte	0
+ 1335 0036 01        		.byte	1
+ 1336 0037 00        		.byte	0
+ 1337 0038 03        		.byte	3
+ 1338 0039 00        		.byte	0
+ 1339 003a 01        		.byte	1
+ 1340 003b 00        		.byte	0
+ 1341 003c 02        		.byte	2
+ 1342 003d 00        		.byte	0
+ 1343 003e 01        		.byte	1
+ 1344 003f 00        		.byte	0
+ 1345 0040 06        		.byte	6
+ 1346 0041 00        		.byte	0
+ 1347 0042 01        		.byte	1
+ 1348 0043 00        		.byte	0
+ 1349 0044 02        		.byte	2
+ 1350 0045 00        		.byte	0
+ 1351 0046 01        		.byte	1
+ 1352 0047 00        		.byte	0
+ 1353 0048 03        		.byte	3
+ 1354 0049 00        		.byte	0
+ 1355 004a 01        		.byte	1
+ 1356 004b 00        		.byte	0
+ 1357 004c 02        		.byte	2
+ 1358 004d 00        		.byte	0
+ 1359 004e 01        		.byte	1
+ 1360 004f 00        		.byte	0
+ 1361 0050 04        		.byte	4
+ 1362 0051 00        		.byte	0
+ 1363 0052 01        		.byte	1
+ 1364 0053 00        		.byte	0
+ 1365 0054 02        		.byte	2
+ 1366 0055 00        		.byte	0
+ 1367 0056 01        		.byte	1
+ 1368 0057 00        		.byte	0
+ 1369 0058 03        		.byte	3
+ 1370 0059 00        		.byte	0
+ 1371 005a 01        		.byte	1
+ 1372 005b 00        		.byte	0
+ 1373 005c 02        		.byte	2
+ 1374 005d 00        		.byte	0
+ 1375 005e 01        		.byte	1
+ 1376 005f 00        		.byte	0
+ 1377 0060 05        		.byte	5
+ 1378 0061 00        		.byte	0
+ 1379 0062 01        		.byte	1
+ 1380 0063 00        		.byte	0
+ 1381 0064 02        		.byte	2
+ 1382 0065 00        		.byte	0
+ 1383 0066 01        		.byte	1
+ 1384 0067 00        		.byte	0
+ 1385 0068 03        		.byte	3
+ 1386 0069 00        		.byte	0
+ 1387 006a 01        		.byte	1
+ 1388 006b 00        		.byte	0
+ 1389 006c 02        		.byte	2
+ 1390 006d 00        		.byte	0
+ 1391 006e 01        		.byte	1
+ 1392 006f 00        		.byte	0
+ 1393 0070 04        		.byte	4
+ 1394 0071 00        		.byte	0
+ 1395 0072 01        		.byte	1
+ 1396 0073 00        		.byte	0
+ 1397 0074 02        		.byte	2
+ 1398 0075 00        		.byte	0
+ 1399 0076 01        		.byte	1
+ 1400 0077 00        		.byte	0
+ 1401 0078 03        		.byte	3
+ 1402 0079 00        		.byte	0
+ 1403 007a 01        		.byte	1
+ 1404 007b 00        		.byte	0
+ 1405 007c 02        		.byte	2
+ 1406 007d 00        		.byte	0
+ 1407 007e 01        		.byte	1
+ 1408 007f 00        		.byte	0
+ 1409 0080 07        		.byte	7
+ 1410 0081 00        		.byte	0
+ 1411 0082 01        		.byte	1
+ 1412 0083 00        		.byte	0
+ 1413 0084 02        		.byte	2
+ 1414 0085 00        		.byte	0
+ 1415 0086 01        		.byte	1
+ 1416 0087 00        		.byte	0
+ 1417 0088 03        		.byte	3
+ 1418 0089 00        		.byte	0
+ 1419 008a 01        		.byte	1
+ 1420 008b 00        		.byte	0
+ 1421 008c 02        		.byte	2
+ 1422 008d 00        		.byte	0
+ 1423 008e 01        		.byte	1
+ 1424 008f 00        		.byte	0
+ 1425 0090 04        		.byte	4
+ 1426 0091 00        		.byte	0
+ 1427 0092 01        		.byte	1
+ 1428 0093 00        		.byte	0
+ 1429 0094 02        		.byte	2
+ 1430 0095 00        		.byte	0
+ 1431 0096 01        		.byte	1
+ 1432 0097 00        		.byte	0
+ 1433 0098 03        		.byte	3
+ 1434 0099 00        		.byte	0
+ 1435 009a 01        		.byte	1
+ 1436 009b 00        		.byte	0
+ 1437 009c 02        		.byte	2
+ 1438 009d 00        		.byte	0
+ 1439 009e 01        		.byte	1
+ 1440 009f 00        		.byte	0
+ 1441 00a0 05        		.byte	5
+ 1442 00a1 00        		.byte	0
+ 1443 00a2 01        		.byte	1
+ 1444 00a3 00        		.byte	0
+ 1445 00a4 02        		.byte	2
+ 1446 00a5 00        		.byte	0
+ 1447 00a6 01        		.byte	1
+ 1448 00a7 00        		.byte	0
+ 1449 00a8 03        		.byte	3
+ 1450 00a9 00        		.byte	0
+ 1451 00aa 01        		.byte	1
+ 1452 00ab 00        		.byte	0
+ 1453 00ac 02        		.byte	2
+ 1454 00ad 00        		.byte	0
+ 1455 00ae 01        		.byte	1
+ 1456 00af 00        		.byte	0
+ 1457 00b0 04        		.byte	4
+ 1458 00b1 00        		.byte	0
+ 1459 00b2 01        		.byte	1
+ 1460 00b3 00        		.byte	0
+ 1461 00b4 02        		.byte	2
+ 1462 00b5 00        		.byte	0
+ 1463 00b6 01        		.byte	1
+ 1464 00b7 00        		.byte	0
+ 1465 00b8 03        		.byte	3
+ 1466 00b9 00        		.byte	0
+ 1467 00ba 01        		.byte	1
+ 1468 00bb 00        		.byte	0
+ 1469 00bc 02        		.byte	2
+ 1470 00bd 00        		.byte	0
+ 1471 00be 01        		.byte	1
+ 1472 00bf 00        		.byte	0
+ 1473 00c0 06        		.byte	6
+ 1474 00c1 00        		.byte	0
+ 1475 00c2 01        		.byte	1
+ 1476 00c3 00        		.byte	0
+ 1477 00c4 02        		.byte	2
+ 1478 00c5 00        		.byte	0
+ 1479 00c6 01        		.byte	1
+ 1480 00c7 00        		.byte	0
+ 1481 00c8 03        		.byte	3
+ 1482 00c9 00        		.byte	0
+ 1483 00ca 01        		.byte	1
+ 1484 00cb 00        		.byte	0
+ 1485 00cc 02        		.byte	2
+ 1486 00cd 00        		.byte	0
+ 1487 00ce 01        		.byte	1
+ 1488 00cf 00        		.byte	0
+ 1489 00d0 04        		.byte	4
+ 1490 00d1 00        		.byte	0
+ 1491 00d2 01        		.byte	1
+ 1492 00d3 00        		.byte	0
+ 1493 00d4 02        		.byte	2
+ 1494 00d5 00        		.byte	0
+ 1495 00d6 01        		.byte	1
+ 1496 00d7 00        		.byte	0
+ 1497 00d8 03        		.byte	3
+ 1498 00d9 00        		.byte	0
+ 1499 00da 01        		.byte	1
+ 1500 00db 00        		.byte	0
+ 1501 00dc 02        		.byte	2
+ 1502 00dd 00        		.byte	0
+ 1503 00de 01        		.byte	1
+ 1504 00df 00        		.byte	0
+ 1505 00e0 05        		.byte	5
+ 1506 00e1 00        		.byte	0
+ 1507 00e2 01        		.byte	1
+ 1508 00e3 00        		.byte	0
+ 1509 00e4 02        		.byte	2
+ 1510 00e5 00        		.byte	0
+ 1511 00e6 01        		.byte	1
+ 1512 00e7 00        		.byte	0
+ 1513 00e8 03        		.byte	3
+ 1514 00e9 00        		.byte	0
+ 1515 00ea 01        		.byte	1
+ 1516 00eb 00        		.byte	0
+ 1517 00ec 02        		.byte	2
+ 1518 00ed 00        		.byte	0
+ 1519 00ee 01        		.byte	1
+ 1520 00ef 00        		.byte	0
+ 1521 00f0 04        		.byte	4
+ 1522 00f1 00        		.byte	0
+ 1523 00f2 01        		.byte	1
+ 1524 00f3 00        		.byte	0
+ 1525 00f4 02        		.byte	2
+ 1526 00f5 00        		.byte	0
+ 1527 00f6 01        		.byte	1
+ 1528 00f7 00        		.byte	0
+ 1529 00f8 03        		.byte	3
+ 1530 00f9 00        		.byte	0
+ 1531 00fa 01        		.byte	1
+ 1532 00fb 00        		.byte	0
+ 1533 00fc 02        		.byte	2
+ 1534 00fd 00        		.byte	0
+ 1535 00fe 01        		.byte	1
+ 1536 00ff 00        		.byte	0
+ 1539               	hiprio:
+ 1540 0100 06        		.byte	6
+ 1541               		.lcomm rts_gb_tasks_reg_tbl,22
+ 1542               		.lcomm rts_gb_prio_bitmap,1
+ 1543               		.lcomm rts_gb_prio_bitmap_lv1_index,1
+ 1544               		.lcomm rts_gb_prio_bitmap_lv2_index,1
+ 1545               		.lcomm rts_gb_rdy_lh_tbl,21
+ 1546               		.lcomm rts_gb_pend_lh,3
+ 1547               		.lcomm rts_pend_tcb0,12
+ 1548               		.comm rts_gb_curr_task_tcb,2,1
+ 1549               		.comm rts_gb_systicks,4,1
+ 1686               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_core.c
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:18     .text:00000000 RTS_CORE_Init
+                             .bss:00000000 rts_gb_tasks_reg_tbl
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1541   .bss:00000016 rts_gb_prio_bitmap
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1544   .bss:00000019 rts_gb_rdy_lh_tbl
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1546   .bss:00000031 rts_pend_tcb0
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1545   .bss:0000002e rts_gb_pend_lh
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:97     .text:00000060 RTS_CORE_UpdateTaskHightPrio
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1543   .bss:00000018 rts_gb_prio_bitmap_lv2_index
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1280   .data:00000000 rts_gb_prio_tbl
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1542   .bss:00000017 rts_gb_prio_bitmap_lv1_index
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1539   .data:00000100 hiprio
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:154    .text:000000b4 RTS_CORE_ClearPrioBitmapBit
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:242    .text:00000142 RTS_CORE_SetPrioBitmapBit
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:317    .text:000001ba RTS_CORE_RegisterTask
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:369    .text:000001f6 RTS_CORE_InsertTcbToRdyList
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:467    .text:00000278 RTS_CORE_RemoveTcbFromRdyList
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:550    .text:000002dc RTS_CORE_InsertTcbToPendList
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:605    .text:00000328 RTS_CORE_RemoveTcbFromPendList
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:640    .text:00000350 RTS_CORE_GetTcbFromTid
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:668    .text:00000368 RTS_CORE_GetHightPrioTcb
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:697    .text:00000388 RTS_CORE_SwitchToHiprioTask
+                            *COM*:00000002 rts_gb_curr_task_tcb
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:984    .text:00000494 RTS_CORE_GetHiprioTcbNum
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1007   .text:000004ac RTS_CORE_SwitchToNextTask
+C:\Users\lisha\AppData\Local\Temp/cc3jlbtk.s:1262   .text:0000057a RTS_CORE_OsSchdule
+                            *COM*:00000004 rts_gb_systicks
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

@@ -1,0 +1,104 @@
+   1               		.file	"rts_spinlock.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_InitSpinlock
+  18               	RTS_InitSpinlock:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 FC01      		movw r30,r24
+  25               	.LM2:
+  26               	/* #APP */
+  27               	 ;  26 "rts_os/rts_spinlock.c" 1
+  28 0002 0090 5F00 		lds	r0, 0x5f
+  29               	 ;  0 "" 2
+  30               	 ;  26 "rts_os/rts_spinlock.c" 1
+  31 0006 0F92      		push	r0
+  32               	 ;  0 "" 2
+  33               	/* #NOAPP */
+  34 0008 8FB7      		in r24,__SREG__
+  35               	.LVL1:
+  36 000a 8F77      		andi r24,lo8(127)
+  37 000c 8FBF      		out __SREG__,r24
+  38 000e 81E0      		ldi r24,lo8(1)
+  39 0010 8083      		st Z,r24
+  40               	/* #APP */
+  41               	 ;  26 "rts_os/rts_spinlock.c" 1
+  42 0012 0F90      		pop	r0
+  43               	 ;  0 "" 2
+  44               	 ;  26 "rts_os/rts_spinlock.c" 1
+  45 0014 0092 5F00 		sts	0x5f, r0
+  46               	 ;  0 "" 2
+  47               	/* epilogue start */
+  48               	.LM3:
+  49               	/* #NOAPP */
+  50 0018 0895      		ret
+  51               	.LFE2:
+  53               	.global	RTS_SpinLock
+  55               	RTS_SpinLock:
+  56               	.LFB3:
+  57               	.LM4:
+  58               	.LVL2:
+  59               	/* prologue: function */
+  60               	/* frame size = 0 */
+  61 001a FC01      		movw r30,r24
+  62               	.LM5:
+  63 001c E081      		ld r30,Z
+  64               	.L4:
+  65               	.LM6:
+  66               	/* #APP */
+  67               	 ;  37 "rts_os/rts_spinlock.c" 1
+  68 001e 0090 5F00 		lds	r0, 0x5f
+  69               	 ;  0 "" 2
+  70               	 ;  37 "rts_os/rts_spinlock.c" 1
+  71 0022 0F92      		push	r0
+  72               	 ;  0 "" 2
+  73               	/* #NOAPP */
+  74 0024 8FB7      		in r24,__SREG__
+  75               	.LVL3:
+  76 0026 8F77      		andi r24,lo8(127)
+  77 0028 8FBF      		out __SREG__,r24
+  78               	.LM7:
+  79 002a EE23      		tst r30
+  80 002c 01F0      		breq .L4
+  81               	/* epilogue start */
+  82               	.LM8:
+  83 002e 0895      		ret
+  84               	.LFE3:
+  86               	.global	RTS_SpinUnlock
+  88               	RTS_SpinUnlock:
+  89               	.LFB4:
+  90               	.LM9:
+  91               	.LVL4:
+  92               	/* prologue: function */
+  93               	/* frame size = 0 */
+  94 0030 FC01      		movw r30,r24
+  95               	.LM10:
+  96 0032 81E0      		ldi r24,lo8(1)
+  97               	.LVL5:
+  98 0034 8083      		st Z,r24
+  99               	/* epilogue start */
+ 100               	.LM11:
+ 101 0036 0895      		ret
+ 102               	.LFE4:
+ 144               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_spinlock.c
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:18     .text:00000000 RTS_InitSpinlock
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:55     .text:0000001a RTS_SpinLock
+C:\Users\lisha\AppData\Local\Temp/ccMMQDp3.s:88     .text:00000030 RTS_SpinUnlock
+
+NO UNDEFINED SYMBOLS

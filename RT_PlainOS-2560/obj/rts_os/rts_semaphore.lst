@@ -1,0 +1,428 @@
+   1               		.file	"rts_semaphore.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_InitSemaphore
+  18               	RTS_InitSemaphore:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	.LVL0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24 0000 FC01      		movw r30,r24
+  25               	.LM2:
+  26               	/* #APP */
+  27               	 ;  76 "rts_os/rts_semaphore.c" 1
+  28 0002 0090 5F00 		lds	r0, 0x5f
+  29               	 ;  0 "" 2
+  30               	 ;  76 "rts_os/rts_semaphore.c" 1
+  31 0006 0F92      		push	r0
+  32               	 ;  0 "" 2
+  33               	/* #NOAPP */
+  34 0008 8FB7      		in r24,__SREG__
+  35               	.LVL1:
+  36 000a 8F77      		andi r24,lo8(127)
+  37 000c 8FBF      		out __SREG__,r24
+  38               	.LM3:
+  39 000e 7787      		std Z+15,r23
+  40 0010 6687      		std Z+14,r22
+  41               	.LM4:
+  42 0012 E087      		std Z+8,r30
+  43 0014 F187      		std Z+9,r31
+  44               	.LVL2:
+  45               	.LM5:
+  46 0016 E287      		std Z+10,r30
+  47 0018 F387      		std Z+11,r31
+  48               	.LM6:
+  49 001a 1586      		std Z+13,__zero_reg__
+  50 001c 1486      		std Z+12,__zero_reg__
+  51               	.LM7:
+  52               	/* #APP */
+  53               	 ;  81 "rts_os/rts_semaphore.c" 1
+  54 001e 0F90      		pop	r0
+  55               	 ;  0 "" 2
+  56               	 ;  81 "rts_os/rts_semaphore.c" 1
+  57 0020 0092 5F00 		sts	0x5f, r0
+  58               	 ;  0 "" 2
+  59               	/* epilogue start */
+  60               	.LM8:
+  61               	/* #NOAPP */
+  62 0024 0895      		ret
+  63               	.LFE6:
+  65               	.global	RTS_PostSemaphore
+  67               	RTS_PostSemaphore:
+  68               	.LFB8:
+  69               	.LM9:
+  70               	.LVL3:
+  71 0026 CF93      		push r28
+  72 0028 DF93      		push r29
+  73               	/* prologue: function */
+  74               	/* frame size = 0 */
+  75 002a DC01      		movw r26,r24
+  76               	.LM10:
+  77               	/* #APP */
+  78               	 ;  108 "rts_os/rts_semaphore.c" 1
+  79 002c 0090 5F00 		lds	r0, 0x5f
+  80               	 ;  0 "" 2
+  81               	 ;  108 "rts_os/rts_semaphore.c" 1
+  82 0030 0F92      		push	r0
+  83               	 ;  0 "" 2
+  84               	/* #NOAPP */
+  85 0032 8FB7      		in r24,__SREG__
+  86               	.LVL4:
+  87 0034 8F77      		andi r24,lo8(127)
+  88 0036 8FBF      		out __SREG__,r24
+  89               	.LM11:
+  90 0038 E091 0000 		lds r30,rts_gb_curr_task_tcb
+  91 003c F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+  92 0040 81E0      		ldi r24,lo8(1)
+  93 0042 8383      		std Z+3,r24
+  94               	.LM12:
+  95 0044 E091 0000 		lds r30,rts_gb_curr_task_tcb
+  96 0048 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+  97 004c 88E0      		ldi r24,lo8(8)
+  98 004e 8483      		std Z+4,r24
+  99               	.LM13:
+ 100 0050 1E96      		adiw r26,14
+ 101 0052 8D91      		ld r24,X+
+ 102 0054 9C91      		ld r25,X
+ 103 0056 1F97      		sbiw r26,14+1
+ 104 0058 0196      		adiw r24,1
+ 105 005a 1F96      		adiw r26,14+1
+ 106 005c 9C93      		st X,r25
+ 107 005e 8E93      		st -X,r24
+ 108 0060 1E97      		sbiw r26,14
+ 109               	.LM14:
+ 110 0062 1816      		cp __zero_reg__,r24
+ 111 0064 1906      		cpc __zero_reg__,r25
+ 112 0066 04F4      		brge .L9
+ 113               	.LM15:
+ 114               	/* #APP */
+ 115               	 ;  119 "rts_os/rts_semaphore.c" 1
+ 116 0068 0F90      		pop	r0
+ 117               	 ;  0 "" 2
+ 118               	 ;  119 "rts_os/rts_semaphore.c" 1
+ 119 006a 0092 5F00 		sts	0x5f, r0
+ 120               	 ;  0 "" 2
+ 121               	/* epilogue start */
+ 122               	.LM16:
+ 123               	/* #NOAPP */
+ 124 006e DF91      		pop r29
+ 125 0070 CF91      		pop r28
+ 126 0072 0895      		ret
+ 127               	.L9:
+ 128               	.LBB6:
+ 129               	.LBB7:
+ 130               	.LM17:
+ 131 0074 1C96      		adiw r26,12
+ 132 0076 8D91      		ld r24,X+
+ 133 0078 9C91      		ld r25,X
+ 134 007a 1D97      		sbiw r26,12+1
+ 135 007c 0097      		sbiw r24,0
+ 136 007e 01F4      		brne .L5
+ 137 0080 C0E0      		ldi r28,lo8(0)
+ 138 0082 D0E0      		ldi r29,hi8(0)
+ 139               	.LVL5:
+ 140               	.L6:
+ 141               	.LBE7:
+ 142               	.LBE6:
+ 143               	.LM18:
+ 144 0084 CE01      		movw r24,r28
+ 145 0086 0E94 0000 		call RTS_CORE_InsertTcbToRdyList
+ 146               	.LVL6:
+ 147               	.LM19:
+ 148 008a 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 149               	.LM20:
+ 150 008e 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 151               	.LM21:
+ 152               	/* #APP */
+ 153               	 ;  119 "rts_os/rts_semaphore.c" 1
+ 154 0092 0F90      		pop	r0
+ 155               	 ;  0 "" 2
+ 156               	 ;  119 "rts_os/rts_semaphore.c" 1
+ 157 0094 0092 5F00 		sts	0x5f, r0
+ 158               	 ;  0 "" 2
+ 159               	.LM22:
+ 160               	/* #NOAPP */
+ 161 0098 DF91      		pop r29
+ 162 009a CF91      		pop r28
+ 163               	.LVL7:
+ 164 009c 0895      		ret
+ 165               	.LVL8:
+ 166               	.L5:
+ 167               	.LBB9:
+ 168               	.LBB8:
+ 169               	.LM23:
+ 170 009e 1896      		adiw r26,8
+ 171 00a0 CD91      		ld r28,X+
+ 172 00a2 DC91      		ld r29,X
+ 173 00a4 1997      		sbiw r26,8+1
+ 174               	.LVL9:
+ 175               	.LM24:
+ 176 00a6 E885      		ldd r30,Y+8
+ 177 00a8 F985      		ldd r31,Y+9
+ 178 00aa B387      		std Z+11,r27
+ 179 00ac A287      		std Z+10,r26
+ 180               	.LM25:
+ 181 00ae 1996      		adiw r26,8+1
+ 182 00b0 FC93      		st X,r31
+ 183 00b2 EE93      		st -X,r30
+ 184 00b4 1897      		sbiw r26,8
+ 185               	.LM26:
+ 186 00b6 0197      		sbiw r24,1
+ 187 00b8 1D96      		adiw r26,12+1
+ 188 00ba 9C93      		st X,r25
+ 189 00bc 8E93      		st -X,r24
+ 190 00be 1C97      		sbiw r26,12
+ 191 00c0 00C0      		rjmp .L6
+ 192               	.LBE8:
+ 193               	.LBE9:
+ 194               	.LFE8:
+ 196               	.global	RTS_WaitSemaphore
+ 198               	RTS_WaitSemaphore:
+ 199               	.LFB7:
+ 200               	.LM27:
+ 201               	.LVL10:
+ 202 00c2 CF93      		push r28
+ 203 00c4 DF93      		push r29
+ 204               	/* prologue: function */
+ 205               	/* frame size = 0 */
+ 206 00c6 EC01      		movw r28,r24
+ 207               	.LM28:
+ 208               	/* #APP */
+ 209               	 ;  89 "rts_os/rts_semaphore.c" 1
+ 210 00c8 0090 5F00 		lds	r0, 0x5f
+ 211               	 ;  0 "" 2
+ 212               	 ;  89 "rts_os/rts_semaphore.c" 1
+ 213 00cc 0F92      		push	r0
+ 214               	 ;  0 "" 2
+ 215               	/* #NOAPP */
+ 216 00ce 8FB7      		in r24,__SREG__
+ 217               	.LVL11:
+ 218 00d0 8F77      		andi r24,lo8(127)
+ 219 00d2 8FBF      		out __SREG__,r24
+ 220               	.LM29:
+ 221 00d4 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 222 00d8 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 223 00dc 88E0      		ldi r24,lo8(8)
+ 224 00de 8383      		std Z+3,r24
+ 225               	.LM30:
+ 226 00e0 E091 0000 		lds r30,rts_gb_curr_task_tcb
+ 227 00e4 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+ 228 00e8 81E0      		ldi r24,lo8(1)
+ 229 00ea 8483      		std Z+4,r24
+ 230               	.LM31:
+ 231 00ec 8E85      		ldd r24,Y+14
+ 232 00ee 9F85      		ldd r25,Y+15
+ 233 00f0 0197      		sbiw r24,1
+ 234 00f2 9F87      		std Y+15,r25
+ 235 00f4 8E87      		std Y+14,r24
+ 236               	.LM32:
+ 237 00f6 97FD      		sbrc r25,7
+ 238 00f8 00C0      		rjmp .L13
+ 239               	.LM33:
+ 240               	/* #APP */
+ 241               	 ;  100 "rts_os/rts_semaphore.c" 1
+ 242 00fa 0F90      		pop	r0
+ 243               	 ;  0 "" 2
+ 244               	 ;  100 "rts_os/rts_semaphore.c" 1
+ 245 00fc 0092 5F00 		sts	0x5f, r0
+ 246               	 ;  0 "" 2
+ 247               	/* epilogue start */
+ 248               	.LM34:
+ 249               	/* #NOAPP */
+ 250 0100 DF91      		pop r29
+ 251 0102 CF91      		pop r28
+ 252               	.LVL12:
+ 253 0104 0895      		ret
+ 254               	.LVL13:
+ 255               	.L13:
+ 256               	.LM35:
+ 257 0106 8091 0000 		lds r24,rts_gb_curr_task_tcb
+ 258 010a 9091 0000 		lds r25,(rts_gb_curr_task_tcb)+1
+ 259 010e 0E94 0000 		call RTS_CORE_RemoveTcbFromRdyList
+ 260               	.LM36:
+ 261 0112 A091 0000 		lds r26,rts_gb_curr_task_tcb
+ 262 0116 B091 0000 		lds r27,(rts_gb_curr_task_tcb)+1
+ 263               	.LBB10:
+ 264               	.LBB11:
+ 265               	.LM37:
+ 266 011a 8A85      		ldd r24,Y+10
+ 267 011c 9B85      		ldd r25,Y+11
+ 268 011e 1B96      		adiw r26,10+1
+ 269 0120 9C93      		st X,r25
+ 270 0122 8E93      		st -X,r24
+ 271 0124 1A97      		sbiw r26,10
+ 272               	.LM38:
+ 273 0126 1996      		adiw r26,8+1
+ 274 0128 DC93      		st X,r29
+ 275 012a CE93      		st -X,r28
+ 276 012c 1897      		sbiw r26,8
+ 277               	.LM39:
+ 278 012e EA85      		ldd r30,Y+10
+ 279 0130 FB85      		ldd r31,Y+11
+ 280 0132 B187      		std Z+9,r27
+ 281 0134 A087      		std Z+8,r26
+ 282               	.LM40:
+ 283 0136 BB87      		std Y+11,r27
+ 284 0138 AA87      		std Y+10,r26
+ 285               	.LM41:
+ 286 013a 8C85      		ldd r24,Y+12
+ 287 013c 9D85      		ldd r25,Y+13
+ 288 013e 0196      		adiw r24,1
+ 289 0140 9D87      		std Y+13,r25
+ 290 0142 8C87      		std Y+12,r24
+ 291               	.LBE11:
+ 292               	.LBE10:
+ 293               	.LM42:
+ 294 0144 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+ 295               	.LM43:
+ 296 0148 0E94 0000 		call RTS_CORE_SwitchToHiprioTask
+ 297               	.LM44:
+ 298               	/* #APP */
+ 299               	 ;  100 "rts_os/rts_semaphore.c" 1
+ 300 014c 0F90      		pop	r0
+ 301               	 ;  0 "" 2
+ 302               	 ;  100 "rts_os/rts_semaphore.c" 1
+ 303 014e 0092 5F00 		sts	0x5f, r0
+ 304               	 ;  0 "" 2
+ 305               	.LM45:
+ 306               	/* #NOAPP */
+ 307 0152 DF91      		pop r29
+ 308 0154 CF91      		pop r28
+ 309               	.LVL14:
+ 310 0156 0895      		ret
+ 311               	.LFE7:
+ 313               	.global	RTS_DestorySemaphore
+ 315               	RTS_DestorySemaphore:
+ 316               	.LFB5:
+ 317               	.LM46:
+ 318               	.LVL15:
+ 319               	/* prologue: function */
+ 320               	/* frame size = 0 */
+ 321 0158 9C01      		movw r18,r24
+ 322               	.LM47:
+ 323               	/* #APP */
+ 324               	 ;  65 "rts_os/rts_semaphore.c" 1
+ 325 015a 0090 5F00 		lds	r0, 0x5f
+ 326               	 ;  0 "" 2
+ 327               	 ;  65 "rts_os/rts_semaphore.c" 1
+ 328 015e 0F92      		push	r0
+ 329               	 ;  0 "" 2
+ 330               	/* #NOAPP */
+ 331 0160 8FB7      		in r24,__SREG__
+ 332               	.LVL16:
+ 333 0162 8F77      		andi r24,lo8(127)
+ 334 0164 8FBF      		out __SREG__,r24
+ 335               	.LM48:
+ 336 0166 2115      		cp r18,__zero_reg__
+ 337 0168 3105      		cpc r19,__zero_reg__
+ 338 016a 01F0      		breq .L15
+ 339               	.LM49:
+ 340 016c C901      		movw r24,r18
+ 341 016e 0E94 0000 		call MemFree
+ 342               	.LVL17:
+ 343               	.L15:
+ 344               	.LM50:
+ 345               	/* #APP */
+ 346               	 ;  70 "rts_os/rts_semaphore.c" 1
+ 347 0172 0F90      		pop	r0
+ 348               	 ;  0 "" 2
+ 349               	 ;  70 "rts_os/rts_semaphore.c" 1
+ 350 0174 0092 5F00 		sts	0x5f, r0
+ 351               	 ;  0 "" 2
+ 352               	/* epilogue start */
+ 353               	.LM51:
+ 354               	/* #NOAPP */
+ 355 0178 0895      		ret
+ 356               	.LFE5:
+ 358               	.global	RTS_CreateSemaphore
+ 360               	RTS_CreateSemaphore:
+ 361               	.LFB4:
+ 362               	.LM52:
+ 363               	.LVL18:
+ 364 017a CF93      		push r28
+ 365 017c DF93      		push r29
+ 366               	/* prologue: function */
+ 367               	/* frame size = 0 */
+ 368 017e EC01      		movw r28,r24
+ 369               	.LM53:
+ 370               	/* #APP */
+ 371               	 ;  49 "rts_os/rts_semaphore.c" 1
+ 372 0180 0090 5F00 		lds	r0, 0x5f
+ 373               	 ;  0 "" 2
+ 374               	 ;  49 "rts_os/rts_semaphore.c" 1
+ 375 0184 0F92      		push	r0
+ 376               	 ;  0 "" 2
+ 377               	/* #NOAPP */
+ 378 0186 8FB7      		in r24,__SREG__
+ 379               	.LVL19:
+ 380 0188 8F77      		andi r24,lo8(127)
+ 381 018a 8FBF      		out __SREG__,r24
+ 382               	.LM54:
+ 383 018c 80E1      		ldi r24,lo8(16)
+ 384 018e 90E0      		ldi r25,hi8(16)
+ 385 0190 0E94 0000 		call MemAlloc
+ 386 0194 FC01      		movw r30,r24
+ 387               	.LM55:
+ 388 0196 0097      		sbiw r24,0
+ 389               	.LVL20:
+ 390 0198 01F0      		breq .L18
+ 391               	.LM56:
+ 392 019a 8087      		std Z+8,r24
+ 393 019c 9187      		std Z+9,r25
+ 394               	.LM57:
+ 395 019e 8287      		std Z+10,r24
+ 396 01a0 9387      		std Z+11,r25
+ 397               	.LM58:
+ 398 01a2 1586      		std Z+13,__zero_reg__
+ 399 01a4 1486      		std Z+12,__zero_reg__
+ 400               	.LM59:
+ 401 01a6 D787      		std Z+15,r29
+ 402 01a8 C687      		std Z+14,r28
+ 403               	.L18:
+ 404               	.LM60:
+ 405               	/* #APP */
+ 406               	 ;  58 "rts_os/rts_semaphore.c" 1
+ 407 01aa 0F90      		pop	r0
+ 408               	 ;  0 "" 2
+ 409               	 ;  58 "rts_os/rts_semaphore.c" 1
+ 410 01ac 0092 5F00 		sts	0x5f, r0
+ 411               	 ;  0 "" 2
+ 412               	.LM61:
+ 413               	/* #NOAPP */
+ 414 01b0 CF01      		movw r24,r30
+ 415               	.LVL21:
+ 416               	/* epilogue start */
+ 417 01b2 DF91      		pop r29
+ 418 01b4 CF91      		pop r28
+ 419               	.LVL22:
+ 420 01b6 0895      		ret
+ 421               	.LFE4:
+ 479               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_semaphore.c
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:18     .text:00000000 RTS_InitSemaphore
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:67     .text:00000026 RTS_PostSemaphore
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:198    .text:000000c2 RTS_WaitSemaphore
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:315    .text:00000158 RTS_DestorySemaphore
+C:\Users\lisha\AppData\Local\Temp/ccQ8Ep4r.s:360    .text:0000017a RTS_CreateSemaphore
+
+UNDEFINED SYMBOLS
+rts_gb_curr_task_tcb
+RTS_CORE_InsertTcbToRdyList
+RTS_CORE_UpdateTaskHightPrio
+RTS_CORE_SwitchToHiprioTask
+RTS_CORE_RemoveTcbFromRdyList
+MemFree
+MemAlloc

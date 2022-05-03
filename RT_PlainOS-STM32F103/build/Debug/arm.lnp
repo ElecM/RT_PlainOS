@@ -1,0 +1,14 @@
+-mthumb -mcpu=cortex-m3 -T "c:/Users/lisha/Desktop/arm/arm/stm32f1x_64KB_flash.ld" --specs=nosys.specs --specs=nano.specs -Wl,--gc-sections -Wl,--print-memory-usage
+-Wl,-Map=./build/Debug/arm.map
+-o ./build/Debug/arm.elf ./build/Debug/lib/system_stm32f10x.o
+./build/Debug/rts_os/rts_core.o
+./build/Debug/rts_os/rts_heap1.o
+./build/Debug/rts_os/rts_os.o
+./build/Debug/rts_os/rts_port.o
+./build/Debug/rts_os/rts_semaphore.o
+./build/Debug/rts_os/rts_task.o
+./build/Debug/src/USART.o
+./build/Debug/src/main.o
+./build/Debug/src/stm32f10x_it.o
+./build/Debug/rts_os/rts_port_asm.o
+./build/Debug/src/startup_stm32f10x_md.o -lm

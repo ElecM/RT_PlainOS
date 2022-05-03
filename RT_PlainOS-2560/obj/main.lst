@@ -1,0 +1,532 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	delay
+  18               	delay:
+  19               	.LFB2:
+  20               	.LM1:
+  21               	.LVL0:
+  22 0000 DF93      		push r29
+  23 0002 CF93      		push r28
+  24 0004 0F92      		push __tmp_reg__
+  25 0006 0F92      		push __tmp_reg__
+  26 0008 CDB7      		in r28,__SP_L__
+  27 000a DEB7      		in r29,__SP_H__
+  28               	/* prologue: function */
+  29               	/* frame size = 2 */
+  30 000c 9C01      		movw r18,r24
+  31 000e 00C0      		rjmp .L2
+  32               	.LVL1:
+  33               	.L3:
+  34               	.LM2:
+  35 0010 2150      		subi r18,lo8(-(-1))
+  36 0012 3040      		sbci r19,hi8(-(-1))
+  37               	.LVL2:
+  38               	.L2:
+  39               	.LM3:
+  40 0014 2115      		cp r18,__zero_reg__
+  41 0016 3105      		cpc r19,__zero_reg__
+  42 0018 01F0      		breq .L10
+  43               	.LM4:
+  44 001a 1A82      		std Y+2,__zero_reg__
+  45 001c 1982      		std Y+1,__zero_reg__
+  46               	.LVL3:
+  47 001e 8981      		ldd r24,Y+1
+  48 0020 9A81      		ldd r25,Y+2
+  49 0022 8057      		subi r24,lo8(6000)
+  50 0024 9741      		sbci r25,hi8(6000)
+  51 0026 00F4      		brsh .L3
+  52               	.L7:
+  53 0028 8981      		ldd r24,Y+1
+  54 002a 9A81      		ldd r25,Y+2
+  55 002c 0196      		adiw r24,1
+  56 002e 9A83      		std Y+2,r25
+  57 0030 8983      		std Y+1,r24
+  58               	.LVL4:
+  59 0032 8981      		ldd r24,Y+1
+  60 0034 9A81      		ldd r25,Y+2
+  61 0036 8057      		subi r24,lo8(6000)
+  62 0038 9741      		sbci r25,hi8(6000)
+  63 003a 00F4      		brsh .L3
+  64 003c 00C0      		rjmp .L7
+  65               	.LVL5:
+  66               	.L10:
+  67               	/* epilogue start */
+  68               	.LM5:
+  69 003e 0F90      		pop __tmp_reg__
+  70 0040 0F90      		pop __tmp_reg__
+  71 0042 CF91      		pop r28
+  72 0044 DF91      		pop r29
+  73 0046 0895      		ret
+  74               	.LFE2:
+  76               		.data
+  77               	.LC0:
+  78 0000 4944 4C45 		.string	"IDLE is running!  "
+  78      2069 7320 
+  78      7275 6E6E 
+  78      696E 6721 
+  78      2020 00
+  79               		.text
+  80               	.global	idle_hook
+  82               	idle_hook:
+  83               	.LFB6:
+  84               	.LM6:
+  85               	.LVL6:
+  86               	/* prologue: function */
+  87               	/* frame size = 0 */
+  88               	.LM7:
+  89 0048 E091 0000 		lds r30,USART1+24
+  90 004c F091 0000 		lds r31,(USART1+24)+1
+  91 0050 80E0      		ldi r24,lo8(USART1)
+  92 0052 90E0      		ldi r25,hi8(USART1)
+  93               	.LVL7:
+  94 0054 60E0      		ldi r22,lo8(.LC0)
+  95 0056 70E0      		ldi r23,hi8(.LC0)
+  96 0058 1995      		eicall
+  97               	.LM8:
+  98 005a 84E6      		ldi r24,lo8(100)
+  99 005c 90E0      		ldi r25,hi8(100)
+ 100 005e 0E94 0000 		call delay
+ 101               	/* epilogue start */
+ 102               	.LM9:
+ 103 0062 0895      		ret
+ 104               	.LFE6:
+ 106               		.data
+ 107               	.LC1:
+ 108 0013 5254 5320 		.string	"RTS Start\r\n"
+ 108      5374 6172 
+ 108      740D 0A00 
+ 109               	.LC2:
+ 110 001f 5254 535F 		.string	"RTS_OS Started!"
+ 110      4F53 2053 
+ 110      7461 7274 
+ 110      6564 2100 
+ 111               	.LC3:
+ 112 002f 706C 6561 		.string	"please input 'S' to satrt RTS OS\r\n"
+ 112      7365 2069 
+ 112      6E70 7574 
+ 112      2027 5327 
+ 112      2074 6F20 
+ 113               		.text
+ 114               	.global	main
+ 116               	main:
+ 117               	.LFB7:
+ 118               	.LM10:
+ 119               	/* prologue: function */
+ 120               	/* frame size = 0 */
+ 121               	.LM11:
+ 122 0064 84B1      		in r24,36-32
+ 123 0066 8FEF      		ldi r24,lo8(-1)
+ 124 0068 84B9      		out 36-32,r24
+ 125               	.LM12:
+ 126 006a 15B8      		out 37-32,__zero_reg__
+ 127               	.LM13:
+ 128 006c 80E0      		ldi r24,lo8(USART1)
+ 129 006e 90E0      		ldi r25,hi8(USART1)
+ 130 0070 0E94 0000 		call usart_init
+ 131               	.LM14:
+ 132 0074 E091 0000 		lds r30,USART1+24
+ 133 0078 F091 0000 		lds r31,(USART1+24)+1
+ 134 007c 80E0      		ldi r24,lo8(USART1)
+ 135 007e 90E0      		ldi r25,hi8(USART1)
+ 136 0080 60E0      		ldi r22,lo8(.LC1)
+ 137 0082 70E0      		ldi r23,hi8(.LC1)
+ 138 0084 1995      		eicall
+ 139               	.LM15:
+ 140 0086 80E0      		ldi r24,lo8(gs(idle_hook))
+ 141 0088 90E0      		ldi r25,hi8(gs(idle_hook))
+ 142 008a 0E94 0000 		call RTS_OS_Init
+ 143               	.LM16:
+ 144 008e 80E0      		ldi r24,lo8(gs(task1))
+ 145 0090 90E0      		ldi r25,hi8(gs(task1))
+ 146 0092 60E0      		ldi r22,lo8(stack1)
+ 147 0094 70E0      		ldi r23,hi8(stack1)
+ 148 0096 40E8      		ldi r20,lo8(128)
+ 149 0098 50E0      		ldi r21,hi8(128)
+ 150 009a 21E0      		ldi r18,lo8(1)
+ 151 009c 0E94 0000 		call RTS_CreateTask
+ 152               	.LM17:
+ 153 00a0 80E0      		ldi r24,lo8(gs(task2))
+ 154 00a2 90E0      		ldi r25,hi8(gs(task2))
+ 155 00a4 60E0      		ldi r22,lo8(stack2)
+ 156 00a6 70E0      		ldi r23,hi8(stack2)
+ 157 00a8 40E8      		ldi r20,lo8(128)
+ 158 00aa 50E0      		ldi r21,hi8(128)
+ 159 00ac 22E0      		ldi r18,lo8(2)
+ 160 00ae 0E94 0000 		call RTS_CreateTask
+ 161               	.LM18:
+ 162 00b2 80E0      		ldi r24,lo8(gs(task3))
+ 163 00b4 90E0      		ldi r25,hi8(gs(task3))
+ 164 00b6 60E0      		ldi r22,lo8(stack3)
+ 165 00b8 70E0      		ldi r23,hi8(stack3)
+ 166 00ba 40E8      		ldi r20,lo8(128)
+ 167 00bc 50E0      		ldi r21,hi8(128)
+ 168 00be 23E0      		ldi r18,lo8(3)
+ 169 00c0 0E94 0000 		call RTS_CreateTask
+ 170               	.LM19:
+ 171 00c4 81E0      		ldi r24,lo8(1)
+ 172 00c6 90E0      		ldi r25,hi8(1)
+ 173 00c8 0E94 0000 		call RTS_CreateSemaphore
+ 174 00cc 9093 0000 		sts (semaphore)+1,r25
+ 175 00d0 8093 0000 		sts semaphore,r24
+ 176 00d4 00C0      		rjmp .L17
+ 177               	.L14:
+ 178               	.LM20:
+ 179 00d6 E091 0000 		lds r30,USART1+24
+ 180 00da F091 0000 		lds r31,(USART1+24)+1
+ 181 00de 80E0      		ldi r24,lo8(USART1)
+ 182 00e0 90E0      		ldi r25,hi8(USART1)
+ 183 00e2 60E0      		ldi r22,lo8(.LC3)
+ 184 00e4 70E0      		ldi r23,hi8(.LC3)
+ 185 00e6 1995      		eicall
+ 186               	.L17:
+ 187               	.LM21:
+ 188 00e8 E091 0000 		lds r30,USART1+26
+ 189 00ec F091 0000 		lds r31,(USART1+26)+1
+ 190 00f0 80E0      		ldi r24,lo8(USART1)
+ 191 00f2 90E0      		ldi r25,hi8(USART1)
+ 192 00f4 1995      		eicall
+ 193               	.LM22:
+ 194 00f6 8335      		cpi r24,lo8(83)
+ 195 00f8 01F4      		brne .L14
+ 196               	.LM23:
+ 197 00fa E091 0000 		lds r30,USART1+24
+ 198 00fe F091 0000 		lds r31,(USART1+24)+1
+ 199 0102 80E0      		ldi r24,lo8(USART1)
+ 200 0104 90E0      		ldi r25,hi8(USART1)
+ 201 0106 60E0      		ldi r22,lo8(.LC2)
+ 202 0108 70E0      		ldi r23,hi8(.LC2)
+ 203 010a 1995      		eicall
+ 204               	.LM24:
+ 205 010c 0E94 0000 		call RTS_OS_Start
+ 206 0110 00C0      		rjmp .L17
+ 207               	.LFE7:
+ 209               		.data
+ 210               	.LC4:
+ 211 0052 7461 736B 		.string	"task3 is running!  "
+ 211      3320 6973 
+ 211      2072 756E 
+ 211      6E69 6E67 
+ 211      2120 2000 
+ 212               		.text
+ 213               	.global	task3
+ 215               	task3:
+ 216               	.LFB5:
+ 217               	.LM25:
+ 218               	/* prologue: function */
+ 219               	/* frame size = 0 */
+ 220               	.LVL8:
+ 221               	.L19:
+ 222               	.LM26:
+ 223 0112 8091 0000 		lds r24,semaphore
+ 224 0116 9091 0000 		lds r25,(semaphore)+1
+ 225               	.LVL9:
+ 226 011a 0E94 0000 		call RTS_WaitSemaphore
+ 227               	.LM27:
+ 228 011e E091 0000 		lds r30,USART1+24
+ 229 0122 F091 0000 		lds r31,(USART1+24)+1
+ 230 0126 80E0      		ldi r24,lo8(USART1)
+ 231 0128 90E0      		ldi r25,hi8(USART1)
+ 232 012a 60E0      		ldi r22,lo8(.LC4)
+ 233 012c 70E0      		ldi r23,hi8(.LC4)
+ 234 012e 1995      		eicall
+ 235               	.LM28:
+ 236 0130 8091 0000 		lds r24,semaphore
+ 237 0134 9091 0000 		lds r25,(semaphore)+1
+ 238 0138 0E94 0000 		call RTS_PostSemaphore
+ 239               	.LM29:
+ 240 013c 84E6      		ldi r24,lo8(100)
+ 241 013e 90E0      		ldi r25,hi8(100)
+ 242 0140 0E94 0000 		call delay
+ 243 0144 00C0      		rjmp .L19
+ 244               	.LFE5:
+ 246               		.data
+ 247               	.LC5:
+ 248 0066 7469 636B 		.string	"ticks:"
+ 248      733A 00
+ 249               	.LC6:
+ 250 006d 4350 5520 		.string	"CPU Rate:"
+ 250      5261 7465 
+ 250      3A00 
+ 251               	.LC7:
+ 252 0077 2E00      		.string	"."
+ 253               	.LC8:
+ 254 0079 2520 2000 		.string	"%  "
+ 255               		.text
+ 256               	.global	task2
+ 258               	task2:
+ 259               	.LFB4:
+ 260               	.LM30:
+ 261               	.LVL10:
+ 262 0146 EF92      		push r14
+ 263 0148 FF92      		push r15
+ 264 014a 0F93      		push r16
+ 265 014c 1F93      		push r17
+ 266               	/* prologue: function */
+ 267               	/* frame size = 0 */
+ 268               	.L22:
+ 269               	.LM31:
+ 270 014e 8091 0000 		lds r24,semaphore
+ 271 0152 9091 0000 		lds r25,(semaphore)+1
+ 272               	.LVL11:
+ 273 0156 0E94 0000 		call RTS_WaitSemaphore
+ 274               	.LM32:
+ 275 015a 0E94 0000 		call RTS_GetCpuUtilizationRate
+ 276 015e 22E0      		ldi r18,lo8(0x447a0002)
+ 277 0160 30E0      		ldi r19,hi8(0x447a0002)
+ 278 0162 4AE7      		ldi r20,hlo8(0x447a0002)
+ 279 0164 54E4      		ldi r21,hhi8(0x447a0002)
+ 280 0166 0E94 0000 		call __mulsf3
+ 281 016a 0E94 0000 		call __fixunssfsi
+ 282 016e 7B01      		movw r14,r22
+ 283 0170 8C01      		movw r16,r24
+ 284               	.LM33:
+ 285 0172 E091 0000 		lds r30,USART1+24
+ 286 0176 F091 0000 		lds r31,(USART1+24)+1
+ 287 017a 80E0      		ldi r24,lo8(USART1)
+ 288 017c 90E0      		ldi r25,hi8(USART1)
+ 289 017e 60E0      		ldi r22,lo8(.LC5)
+ 290 0180 70E0      		ldi r23,hi8(.LC5)
+ 291 0182 1995      		eicall
+ 292               	.LM34:
+ 293 0184 4091 0000 		lds r20,rts_gb_systicks
+ 294 0188 5091 0000 		lds r21,(rts_gb_systicks)+1
+ 295 018c 6091 0000 		lds r22,(rts_gb_systicks)+2
+ 296 0190 7091 0000 		lds r23,(rts_gb_systicks)+3
+ 297 0194 E091 0000 		lds r30,USART1+32
+ 298 0198 F091 0000 		lds r31,(USART1+32)+1
+ 299 019c 80E0      		ldi r24,lo8(USART1)
+ 300 019e 90E0      		ldi r25,hi8(USART1)
+ 301 01a0 1995      		eicall
+ 302               	.LM35:
+ 303 01a2 E091 0000 		lds r30,USART1+24
+ 304 01a6 F091 0000 		lds r31,(USART1+24)+1
+ 305 01aa 80E0      		ldi r24,lo8(USART1)
+ 306 01ac 90E0      		ldi r25,hi8(USART1)
+ 307 01ae 60E0      		ldi r22,lo8(.LC6)
+ 308 01b0 70E0      		ldi r23,hi8(.LC6)
+ 309 01b2 1995      		eicall
+ 310               	.LM36:
+ 311 01b4 B701      		movw r22,r14
+ 312 01b6 C801      		movw r24,r16
+ 313 01b8 24E6      		ldi r18,lo8(100)
+ 314 01ba 30E0      		ldi r19,hi8(100)
+ 315 01bc 40E0      		ldi r20,hlo8(100)
+ 316 01be 50E0      		ldi r21,hhi8(100)
+ 317 01c0 0E94 0000 		call __udivmodsi4
+ 318 01c4 AB01      		movw r20,r22
+ 319 01c6 BC01      		movw r22,r24
+ 320 01c8 E091 0000 		lds r30,USART1+32
+ 321 01cc F091 0000 		lds r31,(USART1+32)+1
+ 322 01d0 80E0      		ldi r24,lo8(USART1)
+ 323 01d2 90E0      		ldi r25,hi8(USART1)
+ 324 01d4 1995      		eicall
+ 325               	.LM37:
+ 326 01d6 E091 0000 		lds r30,USART1+24
+ 327 01da F091 0000 		lds r31,(USART1+24)+1
+ 328 01de 80E0      		ldi r24,lo8(USART1)
+ 329 01e0 90E0      		ldi r25,hi8(USART1)
+ 330 01e2 60E0      		ldi r22,lo8(.LC7)
+ 331 01e4 70E0      		ldi r23,hi8(.LC7)
+ 332 01e6 1995      		eicall
+ 333               	.LM38:
+ 334 01e8 B701      		movw r22,r14
+ 335 01ea C801      		movw r24,r16
+ 336 01ec 2AE0      		ldi r18,lo8(10)
+ 337 01ee 30E0      		ldi r19,hi8(10)
+ 338 01f0 40E0      		ldi r20,hlo8(10)
+ 339 01f2 50E0      		ldi r21,hhi8(10)
+ 340 01f4 0E94 0000 		call __udivmodsi4
+ 341 01f8 AB01      		movw r20,r22
+ 342 01fa BC01      		movw r22,r24
+ 343 01fc E091 0000 		lds r30,USART1+32
+ 344 0200 F091 0000 		lds r31,(USART1+32)+1
+ 345 0204 80E0      		ldi r24,lo8(USART1)
+ 346 0206 90E0      		ldi r25,hi8(USART1)
+ 347 0208 1995      		eicall
+ 348               	.LM39:
+ 349 020a E091 0000 		lds r30,USART1+24
+ 350 020e F091 0000 		lds r31,(USART1+24)+1
+ 351 0212 80E0      		ldi r24,lo8(USART1)
+ 352 0214 90E0      		ldi r25,hi8(USART1)
+ 353 0216 60E0      		ldi r22,lo8(.LC8)
+ 354 0218 70E0      		ldi r23,hi8(.LC8)
+ 355 021a 1995      		eicall
+ 356               	.LM40:
+ 357 021c 8091 0000 		lds r24,semaphore
+ 358 0220 9091 0000 		lds r25,(semaphore)+1
+ 359 0224 0E94 0000 		call RTS_PostSemaphore
+ 360               	.LM41:
+ 361 0228 84E6      		ldi r24,lo8(100)
+ 362 022a 90E0      		ldi r25,hi8(100)
+ 363 022c 0E94 0000 		call delay
+ 364 0230 00C0      		rjmp .L22
+ 365               	.LFE4:
+ 367               		.data
+ 368               	.LC9:
+ 369 007d 2020 6375 		.string	"  curr_task_tid:"
+ 369      7272 5F74 
+ 369      6173 6B5F 
+ 369      7469 643A 
+ 369      00
+ 370               		.text
+ 371               	.global	task1
+ 373               	task1:
+ 374               	.LFB3:
+ 375               	.LM42:
+ 376               	.LVL12:
+ 377 0232 0F93      		push r16
+ 378 0234 1F93      		push r17
+ 379               	/* prologue: function */
+ 380               	/* frame size = 0 */
+ 381               	.LVL13:
+ 382               	.L33:
+ 383               	.LM43:
+ 384 0236 E091 0000 		lds r30,USART1+24
+ 385 023a F091 0000 		lds r31,(USART1+24)+1
+ 386 023e 80E0      		ldi r24,lo8(USART1)
+ 387 0240 90E0      		ldi r25,hi8(USART1)
+ 388               	.LVL14:
+ 389 0242 60E0      		ldi r22,lo8(.LC9)
+ 390 0244 70E0      		ldi r23,hi8(.LC9)
+ 391 0246 1995      		eicall
+ 392               	.LM44:
+ 393 0248 0091 0000 		lds r16,USART1+32
+ 394 024c 1091 0000 		lds r17,(USART1+32)+1
+ 395 0250 0E94 0000 		call RTS_GetCurrTaskTid
+ 396 0254 482F      		mov r20,r24
+ 397 0256 50E0      		ldi r21,lo8(0)
+ 398 0258 60E0      		ldi r22,lo8(0)
+ 399 025a 70E0      		ldi r23,hi8(0)
+ 400 025c 80E0      		ldi r24,lo8(USART1)
+ 401 025e 90E0      		ldi r25,hi8(USART1)
+ 402 0260 F801      		movw r30,r16
+ 403 0262 1995      		eicall
+ 404               	.LM45:
+ 405 0264 E091 0000 		lds r30,USART1+26
+ 406 0268 F091 0000 		lds r31,(USART1+26)+1
+ 407 026c 80E0      		ldi r24,lo8(USART1)
+ 408 026e 90E0      		ldi r25,hi8(USART1)
+ 409 0270 1995      		eicall
+ 410               	.LM46:
+ 411 0272 8834      		cpi r24,lo8(72)
+ 412               	.LVL15:
+ 413 0274 01F0      		breq .L34
+ 414               	.LM47:
+ 415 0276 8134      		cpi r24,lo8(65)
+ 416 0278 01F0      		breq .L35
+ 417               	.LM48:
+ 418 027a 8234      		cpi r24,lo8(66)
+ 419 027c 01F0      		breq .L36
+ 420               	.LM49:
+ 421 027e 8334      		cpi r24,lo8(67)
+ 422 0280 01F0      		breq .L37
+ 423               	.LM50:
+ 424 0282 8434      		cpi r24,lo8(68)
+ 425 0284 01F4      		brne .L33
+ 426               	.LM51:
+ 427 0286 83E0      		ldi r24,lo8(3)
+ 428               	.LVL16:
+ 429 0288 65E0      		ldi r22,lo8(5)
+ 430 028a 0E94 0000 		call RTS_ChangeTaskPrio
+ 431 028e 00C0      		rjmp .L33
+ 432               	.LVL17:
+ 433               	.L34:
+ 434               	.LM52:
+ 435 0290 83E0      		ldi r24,lo8(3)
+ 436               	.LVL18:
+ 437 0292 0E94 0000 		call RTS_PendTask
+ 438 0296 00C0      		rjmp .L33
+ 439               	.LVL19:
+ 440               	.L35:
+ 441               	.LM53:
+ 442 0298 81E0      		ldi r24,lo8(1)
+ 443               	.LVL20:
+ 444 029a 0E94 0000 		call RTS_PendTask
+ 445 029e 00C0      		rjmp .L33
+ 446               	.LVL21:
+ 447               	.L36:
+ 448               	.LM54:
+ 449 02a0 83E0      		ldi r24,lo8(3)
+ 450               	.LVL22:
+ 451 02a2 0E94 0000 		call RTS_ResumeTask
+ 452 02a6 00C0      		rjmp .L33
+ 453               	.LVL23:
+ 454               	.L37:
+ 455               	.LM55:
+ 456 02a8 83E0      		ldi r24,lo8(3)
+ 457               	.LVL24:
+ 458 02aa 61E0      		ldi r22,lo8(1)
+ 459 02ac 0E94 0000 		call RTS_ChangeTaskPrio
+ 460 02b0 00C0      		rjmp .L33
+ 461               	.LFE3:
+ 463               	.global	USART1
+ 464               		.data
+ 467               	USART1:
+ 468 008e 00        		.byte	0
+ 469 008f 09        		.byte	9
+ 470 0090 09        		.byte	9
+ 471 0091 00        		.byte	0
+ 472 0092 03        		.byte	3
+ 473 0093 01        		.byte	1
+ 474 0094 00        		.byte	0
+ 475 0095 0000 0000 		.skip 12,0
+ 475      0000 0000 
+ 475      0000 0000 
+ 476 00a1 0000 0000 		.skip 15,0
+ 476      0000 0000 
+ 476      0000 0000 
+ 476      0000 00
+ 477               	.global	semaphore
+ 478               	.global	semaphore
+ 479               		.section .bss
+ 482               	semaphore:
+ 483 0000 0000      		.skip 2,0
+ 484               		.comm stack1,128,1
+ 485               		.comm stack2,128,1
+ 486               		.comm stack3,128,1
+ 551               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:18     .text:00000000 delay
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:82     .text:00000048 idle_hook
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:467    .data:0000008e USART1
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:116    .text:00000064 main
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:373    .text:00000232 task1
+                            *COM*:00000080 stack1
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:258    .text:00000146 task2
+                            *COM*:00000080 stack2
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:215    .text:00000112 task3
+                            *COM*:00000080 stack3
+C:\Users\lisha\AppData\Local\Temp/cc9ewdp4.s:482    .bss:00000000 semaphore
+
+UNDEFINED SYMBOLS
+usart_init
+RTS_OS_Init
+RTS_CreateTask
+RTS_CreateSemaphore
+RTS_OS_Start
+RTS_WaitSemaphore
+RTS_PostSemaphore
+RTS_GetCpuUtilizationRate
+__mulsf3
+__fixunssfsi
+rts_gb_systicks
+__udivmodsi4
+RTS_GetCurrTaskTid
+RTS_ChangeTaskPrio
+RTS_PendTask
+RTS_ResumeTask
+__do_copy_data
+__do_clear_bss

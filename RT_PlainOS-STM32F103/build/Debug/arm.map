@@ -1,0 +1,828 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+                              ./build/Debug/rts_os/rts_task.o (__aeabi_dsub)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+                              ./build/Debug/rts_os/rts_task.o (__aeabi_d2f)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+                              ./build/Debug/rts_os/rts_task.o (__aeabi_ui2f)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+                              ./build/Debug/rts_os/rts_task.o (__aeabi_fdiv)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+                              ./build/Debug/src/USART.o (__aeabi_uldivmod)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (exit)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o) (_global_impure_ptr)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (__libc_init_array)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o (memset)
+c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+                              c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+rts_gb_systicks     0x4               ./build/Debug/rts_os/rts_core.o
+semaphore           0x4               ./build/Debug/src/main.o
+rts_gb_prev_task_tcb
+                    0x4               ./build/Debug/rts_os/rts_core.o
+mem_ctr_blk         0x400             ./build/Debug/rts_os/rts_heap1.o
+stack2              0x800             ./build/Debug/src/main.o
+rts_gb_curr_task_tcb
+                    0x4               ./build/Debug/rts_os/rts_core.o
+stack3              0x800             ./build/Debug/src/main.o
+mem_pool            0x1000            ./build/Debug/rts_os/rts_heap1.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+ .data          0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+ .text          0x00000000       0x74 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.extab     0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.exidx     0x00000000        0x8 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .ARM.attributes
+                0x00000000       0x1b c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+ .text          0x00000000        0x0 ./build/Debug/lib/system_stm32f10x.o
+ .data          0x00000000        0x0 ./build/Debug/lib/system_stm32f10x.o
+ .bss           0x00000000        0x0 ./build/Debug/lib/system_stm32f10x.o
+ .text.SystemCoreClockUpdate
+                0x00000000       0x5c ./build/Debug/lib/system_stm32f10x.o
+ .data.AHBPrescTable
+                0x00000000       0x10 ./build/Debug/lib/system_stm32f10x.o
+ .data.SystemCoreClock
+                0x00000000        0x4 ./build/Debug/lib/system_stm32f10x.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_core.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_core.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_InsertTcbToPendList
+                0x00000000       0x24 ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_RemoveTcbFromPendList
+                0x00000000       0x1c ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_DlyListHeadRelocate
+                0x00000000       0x14 ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_GetTcbFromTid
+                0x00000000       0x10 ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_GetHiprioTcbNum
+                0x00000000       0x18 ./build/Debug/rts_os/rts_core.o
+ .text.RTS_CORE_OsSchdule
+                0x00000000       0x50 ./build/Debug/rts_os/rts_core.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_heap1.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_heap1.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_heap1.o
+ .text.MemCleanFragment
+                0x00000000       0x60 ./build/Debug/rts_os/rts_heap1.o
+ .text.MemFree  0x00000000       0x6c ./build/Debug/rts_os/rts_heap1.o
+ .text.MemGetUsedBytes
+                0x00000000        0xc ./build/Debug/rts_os/rts_heap1.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_os.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_os.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_os.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_port.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_port.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_port.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_semaphore.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_semaphore.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_semaphore.o
+ .text.RTS_DestorySemaphore
+                0x00000000       0x10 ./build/Debug/rts_os/rts_semaphore.o
+ .text.RTS_InitSemaphore
+                0x00000000       0x10 ./build/Debug/rts_os/rts_semaphore.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_task.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_task.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_PendTask
+                0x00000000       0x90 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_ResumeTask
+                0x00000000       0x48 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_GetCurrTaskTid
+                0x00000000        0xc ./build/Debug/rts_os/rts_task.o
+ .text.RTS_GetCurrTaskPrio
+                0x00000000        0xc ./build/Debug/rts_os/rts_task.o
+ .text.RTS_ChangeTaskPrio
+                0x00000000       0x4c ./build/Debug/rts_os/rts_task.o
+ .text.RTS_GetCpuUtilizationRate
+                0x00000000       0x54 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_TurnOffSchdule
+                0x00000000       0x10 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_TurnOnSchdule
+                0x00000000       0x10 ./build/Debug/rts_os/rts_task.o
+ .data.rts_gb_cpu_utilization_rate
+                0x00000000        0x4 ./build/Debug/rts_os/rts_task.o
+ .text          0x00000000        0x0 ./build/Debug/src/USART.o
+ .data          0x00000000        0x0 ./build/Debug/src/USART.o
+ .bss           0x00000000        0x0 ./build/Debug/src/USART.o
+ .text.USART1_PrintNumber
+                0x00000000       0x90 ./build/Debug/src/USART.o
+ .text.USART1_Print64Number
+                0x00000000       0xb4 ./build/Debug/src/USART.o
+ .text.USART1_Print64Integer
+                0x00000000       0x3c ./build/Debug/src/USART.o
+ .text.USART1_PrintInteger
+                0x00000000       0x30 ./build/Debug/src/USART.o
+ .text.USART1_ReceiveByte
+                0x00000000        0xc ./build/Debug/src/USART.o
+ .rodata.USART1_Print64Integer.str1.4
+                0x00000000        0x3 ./build/Debug/src/USART.o
+ .text          0x00000000        0x0 ./build/Debug/src/main.o
+ .data          0x00000000        0x0 ./build/Debug/src/main.o
+ .bss           0x00000000        0x0 ./build/Debug/src/main.o
+ .text.delay    0x00000000       0x38 ./build/Debug/src/main.o
+ .text          0x00000000        0x0 ./build/Debug/src/stm32f10x_it.o
+ .data          0x00000000        0x0 ./build/Debug/src/stm32f10x_it.o
+ .bss           0x00000000        0x0 ./build/Debug/src/stm32f10x_it.o
+ .text          0x00000000        0x0 ./build/Debug/rts_os/rts_port_asm.o
+ .data          0x00000000        0x0 ./build/Debug/rts_os/rts_port_asm.o
+ .bss           0x00000000        0x0 ./build/Debug/rts_os/rts_port_asm.o
+ .text.RTS_PORT_TriggerPendsv
+                0x00000000       0x14 ./build/Debug/rts_os/rts_port_asm.o
+ .text          0x00000000       0x14 ./build/Debug/src/startup_stm32f10x_md.o
+ .data          0x00000000        0x0 ./build/Debug/src/startup_stm32f10x_md.o
+ .bss           0x00000000        0x0 ./build/Debug/src/startup_stm32f10x_md.o
+ .text          0x00000000      0x378 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00000000       0xac c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubdf3.o)
+ .text          0x00000000       0xa0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00000000       0x24 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_truncdfsf2.o)
+ .text          0x00000000      0x21c c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x00000000       0x4c c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_addsubsf3.o)
+ .text          0x00000000      0x2a0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .debug_frame   0x00000000       0x38 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_arm_muldivsf3.o)
+ .text          0x00000000       0x30 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00000000       0x2c c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_aeabi_uldivmod.o)
+ .text          0x00000000      0x2d0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00000000        0x8 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00000000       0x34 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_udivmoddi4.o)
+ .text          0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00000000       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x28 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-exit.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .data._impure_ptr
+                0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .data.impure_data
+                0x00000000       0x60 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .rodata._global_impure_ptr
+                0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .text.memset   0x00000000       0x10 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000       0x20 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .text._exit    0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .debug_frame   0x00000000       0x20 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+ .eh_frame      0x00000000        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+ .ARM.attributes
+                0x00000000       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+ .text          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+ .data          0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+ .bss           0x00000000        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x08000000         0x00040000         xr
+RAM              0x20000000         0x0000c000         xrw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/crt0.o
+LOAD ./build/Debug/lib/system_stm32f10x.o
+LOAD ./build/Debug/rts_os/rts_core.o
+LOAD ./build/Debug/rts_os/rts_heap1.o
+LOAD ./build/Debug/rts_os/rts_os.o
+LOAD ./build/Debug/rts_os/rts_port.o
+LOAD ./build/Debug/rts_os/rts_semaphore.o
+LOAD ./build/Debug/rts_os/rts_task.o
+LOAD ./build/Debug/src/USART.o
+LOAD ./build/Debug/src/main.o
+LOAD ./build/Debug/src/stm32f10x_it.o
+LOAD ./build/Debug/rts_os/rts_port_asm.o
+LOAD ./build/Debug/src/startup_stm32f10x_md.o
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
+START GROUP
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a
+END GROUP
+START GROUP
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a
+END GROUP
+START GROUP
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp\libgcc.a
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a
+END GROUP
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtend.o
+LOAD c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+                0x2000c000                _estack = 0x2000c000
+                0x00000000                _Min_Heap_Size = 0x0
+                0x00000100                _Min_Stack_Size = 0x100
+
+.isr_vector     0x08000000      0x10c
+                0x08000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x10c ./build/Debug/src/startup_stm32f10x_md.o
+                0x08000000                g_pfnVectors
+                0x0800010c                . = ALIGN (0x4)
+
+.eh_frame       0x0800010c        0x0
+ .eh_frame      0x0800010c        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+
+.text           0x0800010c      0xcd4
+                0x0800010c                . = ALIGN (0x4)
+ *(.text)
+ .text          0x0800010c       0x40 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+ *(.text*)
+ .text.SystemInit
+                0x0800014c      0x104 ./build/Debug/lib/system_stm32f10x.o
+                0x0800014c                SystemInit
+ .text.RTS_CORE_Init
+                0x08000250       0x78 ./build/Debug/rts_os/rts_core.o
+                0x08000250                RTS_CORE_Init
+ .text.RTS_CORE_UpdateTaskHightPrio
+                0x080002c8       0x3c ./build/Debug/rts_os/rts_core.o
+                0x080002c8                RTS_CORE_UpdateTaskHightPrio
+ .text.RTS_CORE_ClearPrioBitmapBit
+                0x08000304       0x50 ./build/Debug/rts_os/rts_core.o
+                0x08000304                RTS_CORE_ClearPrioBitmapBit
+ .text.RTS_CORE_SetPrioBitmapBit
+                0x08000354       0x44 ./build/Debug/rts_os/rts_core.o
+                0x08000354                RTS_CORE_SetPrioBitmapBit
+ .text.RTS_CORE_RegisterTask
+                0x08000398       0x2c ./build/Debug/rts_os/rts_core.o
+                0x08000398                RTS_CORE_RegisterTask
+ .text.RTS_CORE_InsertTcbToRdyList
+                0x080003c4       0x3c ./build/Debug/rts_os/rts_core.o
+                0x080003c4                RTS_CORE_InsertTcbToRdyList
+ .text.RTS_CORE_RemoveTcbFromRdyList
+                0x08000400       0x3c ./build/Debug/rts_os/rts_core.o
+                0x08000400                RTS_CORE_RemoveTcbFromRdyList
+ .text.RTS_CORE_InsertTcbToDlyList
+                0x0800043c       0x7c ./build/Debug/rts_os/rts_core.o
+                0x0800043c                RTS_CORE_InsertTcbToDlyList
+ .text.RTS_CORE_RemoveTcbFromDlyList
+                0x080004b8       0x1c ./build/Debug/rts_os/rts_core.o
+                0x080004b8                RTS_CORE_RemoveTcbFromDlyList
+ .text.RTS_CORE_SetDlyListHead
+                0x080004d4        0xc ./build/Debug/rts_os/rts_core.o
+                0x080004d4                RTS_CORE_SetDlyListHead
+ .text.RTS_CORE_GetDlyListHead
+                0x080004e0        0xc ./build/Debug/rts_os/rts_core.o
+                0x080004e0                RTS_CORE_GetDlyListHead
+ .text.RTS_CORE_GetHightPrioTcb
+                0x080004ec       0x18 ./build/Debug/rts_os/rts_core.o
+                0x080004ec                RTS_CORE_GetHightPrioTcb
+ .text.RTS_CORE_SwitchToHiprioTask
+                0x08000504       0x1c ./build/Debug/rts_os/rts_core.o
+                0x08000504                RTS_CORE_SwitchToHiprioTask
+ .text.RTS_CORE_SwitchToNextTask
+                0x08000520       0x14 ./build/Debug/rts_os/rts_core.o
+                0x08000520                RTS_CORE_SwitchToNextTask
+ .text.MemAllocInit
+                0x08000534       0x48 ./build/Debug/rts_os/rts_heap1.o
+                0x08000534                MemAllocInit
+ .text.MemAlloc
+                0x0800057c       0x94 ./build/Debug/rts_os/rts_heap1.o
+                0x0800057c                MemAlloc
+ .text.RTS_OS_Init
+                0x08000610       0x24 ./build/Debug/rts_os/rts_os.o
+                0x08000610                RTS_OS_Init
+ .text.RTS_OS_Start
+                0x08000634       0x30 ./build/Debug/rts_os/rts_os.o
+                0x08000634                RTS_OS_Start
+ .text.RTS_PORT_SystickInit
+                0x08000664       0x2c ./build/Debug/rts_os/rts_port.o
+                0x08000664                RTS_PORT_SystickInit
+ .text.RTS_PORT_TaskStackInit
+                0x08000690       0x38 ./build/Debug/rts_os/rts_port.o
+                0x08000690                RTS_PORT_TaskStackInit
+ .text.RTS_CreateSemaphore
+                0x080006c8       0x1c ./build/Debug/rts_os/rts_semaphore.o
+                0x080006c8                RTS_CreateSemaphore
+ .text.RTS_WaitSemaphore
+                0x080006e4       0x58 ./build/Debug/rts_os/rts_semaphore.o
+                0x080006e4                RTS_WaitSemaphore
+ .text.RTS_PostSemaphore
+                0x0800073c       0x58 ./build/Debug/rts_os/rts_semaphore.o
+                0x0800073c                RTS_PostSemaphore
+ .text.IdleTask
+                0x08000794       0x20 ./build/Debug/rts_os/rts_task.o
+ .text.RTS_CreateTask
+                0x080007b4       0x40 ./build/Debug/rts_os/rts_task.o
+                0x080007b4                RTS_CreateTask
+ .text.RTS_TASK_IdleTaskInit
+                0x080007f4       0x24 ./build/Debug/rts_os/rts_task.o
+                0x080007f4                RTS_TASK_IdleTaskInit
+ .text.RTS_DelayTicks
+                0x08000818       0x48 ./build/Debug/rts_os/rts_task.o
+                0x08000818                RTS_DelayTicks
+ .text.SysTick_Handler
+                0x08000860       0xd0 ./build/Debug/rts_os/rts_task.o
+                0x08000860                SysTick_Handler
+ .text.USART1_Init
+                0x08000930       0x8c ./build/Debug/src/USART.o
+                0x08000930                USART1_Init
+ .text.USART1_PrintString
+                0x080009bc       0x20 ./build/Debug/src/USART.o
+                0x080009bc                USART1_PrintString
+ .text.USART1_IRQHandler
+                0x080009dc       0x3c ./build/Debug/src/USART.o
+                0x080009dc                USART1_IRQHandler
+ .text.idel_task
+                0x08000a18       0x48 ./build/Debug/src/main.o
+                0x08000a18                idel_task
+ .text.task2    0x08000a60       0x28 ./build/Debug/src/main.o
+                0x08000a60                task2
+ .text.task3    0x08000a88       0x28 ./build/Debug/src/main.o
+                0x08000a88                task3
+ .text.startup.main
+                0x08000ab0       0xa8 ./build/Debug/src/main.o
+                0x08000ab0                main
+ .text.NMI_Handler
+                0x08000b58        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b58                NMI_Handler
+ .text.HardFault_Handler
+                0x08000b5c        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b5c                HardFault_Handler
+ .text.MemManage_Handler
+                0x08000b60        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b60                MemManage_Handler
+ .text.BusFault_Handler
+                0x08000b64        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b64                BusFault_Handler
+ .text.UsageFault_Handler
+                0x08000b68        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b68                UsageFault_Handler
+ .text.SVC_Handler
+                0x08000b6c        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b6c                SVC_Handler
+ .text.DebugMon_Handler
+                0x08000b70        0x4 ./build/Debug/src/stm32f10x_it.o
+                0x08000b70                DebugMon_Handler
+ .text.PendSV_Handler
+                0x08000b74       0x48 ./build/Debug/rts_os/rts_port_asm.o
+                0x08000b74                PendSV_Handler
+ .text.Reset_Handler
+                0x08000bbc       0x48 ./build/Debug/src/startup_stm32f10x_md.o
+                0x08000bbc                Reset_Handler
+ .text.Default_Handler
+                0x08000c04        0x2 ./build/Debug/src/startup_stm32f10x_md.o
+                0x08000c04                EXTI2_IRQHandler
+                0x08000c04                TIM1_CC_IRQHandler
+                0x08000c04                PVD_IRQHandler
+                0x08000c04                EXTI3_IRQHandler
+                0x08000c04                EXTI0_IRQHandler
+                0x08000c04                I2C2_EV_IRQHandler
+                0x08000c04                ADC1_2_IRQHandler
+                0x08000c04                SPI1_IRQHandler
+                0x08000c04                TAMPER_IRQHandler
+                0x08000c04                DMA1_Channel4_IRQHandler
+                0x08000c04                USART3_IRQHandler
+                0x08000c04                RTC_IRQHandler
+                0x08000c04                DMA1_Channel7_IRQHandler
+                0x08000c04                CAN1_RX1_IRQHandler
+                0x08000c04                TIM4_IRQHandler
+                0x08000c04                I2C1_EV_IRQHandler
+                0x08000c04                DMA1_Channel6_IRQHandler
+                0x08000c04                TIM3_IRQHandler
+                0x08000c04                RCC_IRQHandler
+                0x08000c04                TIM1_TRG_COM_IRQHandler
+                0x08000c04                DMA1_Channel1_IRQHandler
+                0x08000c04                Default_Handler
+                0x08000c04                EXTI15_10_IRQHandler
+                0x08000c04                EXTI9_5_IRQHandler
+                0x08000c04                SPI2_IRQHandler
+                0x08000c04                DMA1_Channel5_IRQHandler
+                0x08000c04                EXTI4_IRQHandler
+                0x08000c04                USB_LP_CAN1_RX0_IRQHandler
+                0x08000c04                USB_HP_CAN1_TX_IRQHandler
+                0x08000c04                DMA1_Channel3_IRQHandler
+                0x08000c04                TIM1_UP_IRQHandler
+                0x08000c04                WWDG_IRQHandler
+                0x08000c04                TIM2_IRQHandler
+                0x08000c04                TIM1_BRK_IRQHandler
+                0x08000c04                EXTI1_IRQHandler
+                0x08000c04                RTCAlarm_IRQHandler
+                0x08000c04                USART2_IRQHandler
+                0x08000c04                I2C2_ER_IRQHandler
+                0x08000c04                DMA1_Channel2_IRQHandler
+                0x08000c04                CAN1_SCE_IRQHandler
+                0x08000c04                FLASH_IRQHandler
+                0x08000c04                I2C1_ER_IRQHandler
+                0x08000c04                USBWakeUp_IRQHandler
+ *fill*         0x08000c06        0x2 
+ .text.__libc_init_array
+                0x08000c08       0x48 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x08000c08                __libc_init_array
+ *(.rodata)
+ *(.rodata*)
+ .rodata.rts_gb_prio_tbl
+                0x08000c50      0x100 ./build/Debug/rts_os/rts_core.o
+                0x08000c50                rts_gb_prio_tbl
+ .rodata.idel_task.str1.4
+                0x08000d50       0x18 ./build/Debug/src/main.o
+ .rodata.main.str1.4
+                0x08000d68       0x34 ./build/Debug/src/main.o
+ .rodata.task2.str1.4
+                0x08000d9c       0x14 ./build/Debug/src/main.o
+ .rodata.task3.str1.4
+                0x08000db0       0x18 ./build/Debug/src/main.o
+                                 0x15 (size before relaxing)
+ *(.glue_7)
+ .glue_7        0x08000dc8        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x08000dc8        0x0 linker stubs
+ *(.init)
+ .init          0x08000dc8        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+                0x08000dc8                _init
+ .init          0x08000dcc        0x8 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+ *(.fini)
+ .fini          0x08000dd4        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+                0x08000dd4                _fini
+ .fini          0x08000dd8        0x8 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+                0x08000de0                . = ALIGN (0x4)
+                0x08000de0                _etext = .
+
+.vfp11_veneer   0x08000de0        0x0
+ .vfp11_veneer  0x08000de0        0x0 linker stubs
+
+.v4_bx          0x08000de0        0x0
+ .v4_bx         0x08000de0        0x0 linker stubs
+
+.iplt           0x08000de0        0x0
+ .iplt          0x08000de0        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+
+.rel.dyn        0x08000de0        0x0
+ .rel.iplt      0x08000de0        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x08000de0        0x0
+                0x08000de0                __exidx_start = .
+ *(.ARM.exidx*)
+                0x08000de0                __exidx_end = .
+
+.ARM.attributes
+                0x08000de0       0x29
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x08000de0       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crti.o
+ .ARM.attributes
+                0x08000dfd       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+ .ARM.attributes
+                0x08000e2a       0x2d ./build/Debug/lib/system_stm32f10x.o
+ .ARM.attributes
+                0x08000e57       0x2d ./build/Debug/rts_os/rts_core.o
+ .ARM.attributes
+                0x08000e84       0x2d ./build/Debug/rts_os/rts_heap1.o
+ .ARM.attributes
+                0x08000eb1       0x2d ./build/Debug/rts_os/rts_os.o
+ .ARM.attributes
+                0x08000ede       0x2d ./build/Debug/rts_os/rts_port.o
+ .ARM.attributes
+                0x08000f0b       0x2d ./build/Debug/rts_os/rts_semaphore.o
+ .ARM.attributes
+                0x08000f38       0x2d ./build/Debug/rts_os/rts_task.o
+ .ARM.attributes
+                0x08000f65       0x2d ./build/Debug/src/USART.o
+ .ARM.attributes
+                0x08000f92       0x2d ./build/Debug/src/main.o
+ .ARM.attributes
+                0x08000fbf       0x2d ./build/Debug/src/stm32f10x_it.o
+ .ARM.attributes
+                0x08000fec       0x21 ./build/Debug/rts_os/rts_port_asm.o
+ .ARM.attributes
+                0x0800100d       0x21 ./build/Debug/src/startup_stm32f10x_md.o
+ .ARM.attributes
+                0x0800102e       0x2d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+ .ARM.attributes
+                0x0800105b       0x1d c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtn.o
+
+.preinit_array  0x08000de0        0x0
+                0x08000de0                PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                0x08000de0                PROVIDE (__preinit_array_end = .)
+
+.init_array     0x08000de0        0x4
+                0x08000de0                PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+ .init_array    0x08000de0        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08000de4                PROVIDE (__init_array_end = .)
+
+.fini_array     0x08000de4        0x4
+                [!provide]                PROVIDE (__fini_array_start = .)
+ *(.fini_array*)
+ .fini_array    0x08000de4        0x4 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+ *(SORT_BY_NAME(.fini_array.*))
+                [!provide]                PROVIDE (__fini_array_end = .)
+                0x08000de8                _sidata = .
+
+.data           0x20000000        0xc load address 0x08000de8
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                _sdata = .
+ *(.data)
+ *(.data*)
+ .data.hiprio   0x20000000        0x1 ./build/Debug/rts_os/rts_core.o
+ *fill*         0x20000001        0x1 
+ .data.rts_gb_task_coun
+                0x20000002        0x2 ./build/Debug/rts_os/rts_task.o
+ .data.rts_gb_task_idle_coun
+                0x20000004        0x2 ./build/Debug/rts_os/rts_task.o
+ .data.rts_gb_task_switch_on
+                0x20000006        0x1 ./build/Debug/rts_os/rts_task.o
+ .data.once_entry
+                0x20000007        0x4 ./build/Debug/rts_os/rts_port_asm.o
+                0x2000000c                . = ALIGN (0x4)
+ *fill*         0x2000000b        0x1 
+                0x2000000c                _edata = .
+
+.igot.plt       0x2000000c        0x0 load address 0x08000df4
+ .igot.plt      0x2000000c        0x0 c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x2000000c                . = ALIGN (0x4)
+
+.bss            0x20000010     0x2710 load address 0x08000df8
+                0x20000010                _sbss = .
+                0x20000010                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x20000010       0x1c c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/thumb/v7-m/nofp/crtbegin.o
+ *(.bss*)
+ .bss.rts_dly_tcb0
+                0x2000002c       0x18 ./build/Debug/rts_os/rts_core.o
+ .bss.rts_gb_dly_lh
+                0x20000044        0x8 ./build/Debug/rts_os/rts_core.o
+ .bss.rts_gb_pend_lh
+                0x2000004c        0x8 ./build/Debug/rts_os/rts_core.o
+ .bss.rts_gb_prio_bitmap
+                0x20000054        0x1 ./build/Debug/rts_os/rts_core.o
+ *fill*         0x20000055        0x3 
+ .bss.rts_gb_prio_bitmap_lv1_index
+                0x20000058        0x1 ./build/Debug/rts_os/rts_core.o
+ .bss.rts_gb_prio_bitmap_lv2_index
+                0x20000059        0x1 ./build/Debug/rts_os/rts_core.o
+ *fill*         0x2000005a        0x2 
+ .bss.rts_gb_rdy_lh_tbl
+                0x2000005c       0x38 ./build/Debug/rts_os/rts_core.o
+ .bss.rts_gb_tasks_reg_tbl
+                0x20000094       0x2c ./build/Debug/rts_os/rts_core.o
+ .bss.rts_pend_tcb0
+                0x200000c0       0x18 ./build/Debug/rts_os/rts_core.o
+ .bss.idle_stack.5259
+                0x200000d8      0x200 ./build/Debug/rts_os/rts_task.o
+ .bss.rts_gb_idle_task_pf
+                0x200002d8        0x4 ./build/Debug/rts_os/rts_task.o
+ .bss.Receive1BUFF
+                0x200002dc       0x28 ./build/Debug/src/USART.o
+                0x200002dc                Receive1BUFF
+ .bss.USART1_ReCoun
+                0x20000304        0x1 ./build/Debug/src/USART.o
+                0x20000304                USART1_ReCoun
+ *(COMMON)
+ *fill*         0x20000305        0x3 
+ COMMON         0x20000308        0xc ./build/Debug/rts_os/rts_core.o
+                0x20000308                rts_gb_systicks
+                0x2000030c                rts_gb_prev_task_tcb
+                0x20000310                rts_gb_curr_task_tcb
+ COMMON         0x20000314     0x1400 ./build/Debug/rts_os/rts_heap1.o
+                0x20000314                mem_ctr_blk
+                0x20000714                mem_pool
+ *fill*         0x20001714        0x4 
+ COMMON         0x20001718     0x1008 ./build/Debug/src/main.o
+                0x20001718                semaphore
+                0x20001720                stack2
+                0x20001f20                stack3
+                0x20002720                . = ALIGN (0x4)
+                0x20002720                _ebss = .
+                0x20002720                __bss_end__ = _ebss
+                [!provide]                PROVIDE (end = _ebss)
+                [!provide]                PROVIDE (_end = _ebss)
+
+._user_heap_stack
+                0x20002720      0x100 load address 0x08003508
+                0x20002720                . = ALIGN (0x4)
+                0x20002720                . = (. + _Min_Heap_Size)
+                0x20002820                . = (. + _Min_Stack_Size)
+ *fill*         0x20002720      0x100 
+                0x20002820                . = ALIGN (0x4)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+OUTPUT(./build/Debug/arm.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x44d7
+ .debug_info    0x00000000      0x519 ./build/Debug/lib/system_stm32f10x.o
+ .debug_info    0x00000519      0x8d4 ./build/Debug/rts_os/rts_core.o
+ .debug_info    0x00000ded      0x32f ./build/Debug/rts_os/rts_heap1.o
+ .debug_info    0x0000111c      0x753 ./build/Debug/rts_os/rts_os.o
+ .debug_info    0x0000186f      0x6df ./build/Debug/rts_os/rts_port.o
+ .debug_info    0x00001f4e      0x6c0 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_info    0x0000260e      0xa8b ./build/Debug/rts_os/rts_task.o
+ .debug_info    0x00003099      0xbb7 ./build/Debug/src/USART.o
+ .debug_info    0x00003c50      0x719 ./build/Debug/src/main.o
+ .debug_info    0x00004369      0x12a ./build/Debug/src/stm32f10x_it.o
+ .debug_info    0x00004493       0x22 ./build/Debug/rts_os/rts_port_asm.o
+ .debug_info    0x000044b5       0x22 ./build/Debug/src/startup_stm32f10x_md.o
+
+.debug_abbrev   0x00000000     0x15b1
+ .debug_abbrev  0x00000000      0x1bb ./build/Debug/lib/system_stm32f10x.o
+ .debug_abbrev  0x000001bb      0x38a ./build/Debug/rts_os/rts_core.o
+ .debug_abbrev  0x00000545      0x198 ./build/Debug/rts_os/rts_heap1.o
+ .debug_abbrev  0x000006dd      0x1fa ./build/Debug/rts_os/rts_os.o
+ .debug_abbrev  0x000008d7      0x20a ./build/Debug/rts_os/rts_port.o
+ .debug_abbrev  0x00000ae1      0x222 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_abbrev  0x00000d03      0x275 ./build/Debug/rts_os/rts_task.o
+ .debug_abbrev  0x00000f78      0x325 ./build/Debug/src/USART.o
+ .debug_abbrev  0x0000129d      0x23c ./build/Debug/src/main.o
+ .debug_abbrev  0x000014d9       0xb4 ./build/Debug/src/stm32f10x_it.o
+ .debug_abbrev  0x0000158d       0x12 ./build/Debug/rts_os/rts_port_asm.o
+ .debug_abbrev  0x0000159f       0x12 ./build/Debug/src/startup_stm32f10x_md.o
+
+.debug_loc      0x00000000     0x11f1
+ .debug_loc     0x00000000       0xd6 ./build/Debug/lib/system_stm32f10x.o
+ .debug_loc     0x000000d6      0x436 ./build/Debug/rts_os/rts_core.o
+ .debug_loc     0x0000050c      0x278 ./build/Debug/rts_os/rts_heap1.o
+ .debug_loc     0x00000784       0x32 ./build/Debug/rts_os/rts_os.o
+ .debug_loc     0x000007b6      0x147 ./build/Debug/rts_os/rts_port.o
+ .debug_loc     0x000008fd      0x1b2 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_loc     0x00000aaf      0x297 ./build/Debug/rts_os/rts_task.o
+ .debug_loc     0x00000d46      0x43c ./build/Debug/src/USART.o
+ .debug_loc     0x00001182       0x6f ./build/Debug/src/main.o
+
+.debug_aranges  0x00000000      0x358
+ .debug_aranges
+                0x00000000       0x28 ./build/Debug/lib/system_stm32f10x.o
+ .debug_aranges
+                0x00000028       0xb8 ./build/Debug/rts_os/rts_core.o
+ .debug_aranges
+                0x000000e0       0x40 ./build/Debug/rts_os/rts_heap1.o
+ .debug_aranges
+                0x00000120       0x28 ./build/Debug/rts_os/rts_os.o
+ .debug_aranges
+                0x00000148       0x28 ./build/Debug/rts_os/rts_port.o
+ .debug_aranges
+                0x00000170       0x40 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_aranges
+                0x000001b0       0x80 ./build/Debug/rts_os/rts_task.o
+ .debug_aranges
+                0x00000230       0x58 ./build/Debug/src/USART.o
+ .debug_aranges
+                0x00000288       0x40 ./build/Debug/src/main.o
+ .debug_aranges
+                0x000002c8       0x40 ./build/Debug/src/stm32f10x_it.o
+ .debug_aranges
+                0x00000308       0x28 ./build/Debug/rts_os/rts_port_asm.o
+ .debug_aranges
+                0x00000330       0x28 ./build/Debug/src/startup_stm32f10x_md.o
+
+.debug_ranges   0x00000000      0x440
+ .debug_ranges  0x00000000       0x70 ./build/Debug/lib/system_stm32f10x.o
+ .debug_ranges  0x00000070      0x150 ./build/Debug/rts_os/rts_core.o
+ .debug_ranges  0x000001c0       0x30 ./build/Debug/rts_os/rts_heap1.o
+ .debug_ranges  0x000001f0       0x18 ./build/Debug/rts_os/rts_os.o
+ .debug_ranges  0x00000208       0x50 ./build/Debug/rts_os/rts_port.o
+ .debug_ranges  0x00000258       0x48 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_ranges  0x000002a0       0x70 ./build/Debug/rts_os/rts_task.o
+ .debug_ranges  0x00000310       0x90 ./build/Debug/src/USART.o
+ .debug_ranges  0x000003a0       0x30 ./build/Debug/src/main.o
+ .debug_ranges  0x000003d0       0x30 ./build/Debug/src/stm32f10x_it.o
+ .debug_ranges  0x00000400       0x20 ./build/Debug/rts_os/rts_port_asm.o
+ .debug_ranges  0x00000420       0x20 ./build/Debug/src/startup_stm32f10x_md.o
+
+.debug_line     0x00000000     0x280d
+ .debug_line    0x00000000      0x329 ./build/Debug/lib/system_stm32f10x.o
+ .debug_line    0x00000329      0x792 ./build/Debug/rts_os/rts_core.o
+ .debug_line    0x00000abb      0x4eb ./build/Debug/rts_os/rts_heap1.o
+ .debug_line    0x00000fa6      0x1d8 ./build/Debug/rts_os/rts_os.o
+ .debug_line    0x0000117e      0x22f ./build/Debug/rts_os/rts_port.o
+ .debug_line    0x000013ad      0x330 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_line    0x000016dd      0x5a7 ./build/Debug/rts_os/rts_task.o
+ .debug_line    0x00001c84      0x5cf ./build/Debug/src/USART.o
+ .debug_line    0x00002253      0x333 ./build/Debug/src/main.o
+ .debug_line    0x00002586      0x193 ./build/Debug/src/stm32f10x_it.o
+ .debug_line    0x00002719       0x7b ./build/Debug/rts_os/rts_port_asm.o
+ .debug_line    0x00002794       0x79 ./build/Debug/src/startup_stm32f10x_md.o
+
+.debug_str      0x00000000     0x112a
+ .debug_str     0x00000000      0x2b8 ./build/Debug/lib/system_stm32f10x.o
+                                0x313 (size before relaxing)
+ .debug_str     0x000002b8      0x41d ./build/Debug/rts_os/rts_core.o
+                                0x5e9 (size before relaxing)
+ .debug_str     0x000006d5       0xf7 ./build/Debug/rts_os/rts_heap1.o
+                                0x2ba (size before relaxing)
+ .debug_str     0x000007cc      0x39e ./build/Debug/rts_os/rts_os.o
+                                0x6be (size before relaxing)
+ .debug_str     0x00000b6a       0x89 ./build/Debug/rts_os/rts_port.o
+                                0x61b (size before relaxing)
+ .debug_str     0x00000bf3       0xe0 ./build/Debug/rts_os/rts_semaphore.o
+                                0x462 (size before relaxing)
+ .debug_str     0x00000cd3      0x1b3 ./build/Debug/rts_os/rts_task.o
+                                0x687 (size before relaxing)
+ .debug_str     0x00000e86      0x195 ./build/Debug/src/USART.o
+                                0x788 (size before relaxing)
+ .debug_str     0x0000101b       0x46 ./build/Debug/src/main.o
+                                0x3fd (size before relaxing)
+ .debug_str     0x00001061       0x86 ./build/Debug/src/stm32f10x_it.o
+                                0x218 (size before relaxing)
+ .debug_str     0x000010e7       0x26 ./build/Debug/rts_os/rts_port_asm.o
+                                 0x45 (size before relaxing)
+ .debug_str     0x0000110d       0x1d ./build/Debug/src/startup_stm32f10x_md.o
+                                 0x4a (size before relaxing)
+
+.comment        0x00000000       0x76
+ .comment       0x00000000       0x76 ./build/Debug/lib/system_stm32f10x.o
+                                 0x77 (size before relaxing)
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_core.o
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_heap1.o
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_os.o
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_port.o
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_semaphore.o
+ .comment       0x00000076       0x77 ./build/Debug/rts_os/rts_task.o
+ .comment       0x00000076       0x77 ./build/Debug/src/USART.o
+ .comment       0x00000076       0x77 ./build/Debug/src/main.o
+ .comment       0x00000076       0x77 ./build/Debug/src/stm32f10x_it.o
+
+.debug_frame    0x00000000      0x7a0
+ .debug_frame   0x00000000       0x48 ./build/Debug/lib/system_stm32f10x.o
+ .debug_frame   0x00000048      0x204 ./build/Debug/rts_os/rts_core.o
+ .debug_frame   0x0000024c       0xb8 ./build/Debug/rts_os/rts_heap1.o
+ .debug_frame   0x00000304       0x40 ./build/Debug/rts_os/rts_os.o
+ .debug_frame   0x00000344       0x48 ./build/Debug/rts_os/rts_port.o
+ .debug_frame   0x0000038c       0x84 ./build/Debug/rts_os/rts_semaphore.o
+ .debug_frame   0x00000410      0x160 ./build/Debug/rts_os/rts_task.o
+ .debug_frame   0x00000570       0xf8 ./build/Debug/src/USART.o
+ .debug_frame   0x00000668       0x8c ./build/Debug/src/main.o
+ .debug_frame   0x000006f4       0x80 ./build/Debug/src/stm32f10x_it.o
+ .debug_frame   0x00000774       0x2c c:/users/lisha/.eide/tools/gcc_arm/bin/../lib/gcc/arm-none-eabi/8.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)

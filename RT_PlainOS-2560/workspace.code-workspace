@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"rts_heap1.h": "c",
+			"io.h": "c",
+			"datatype.h": "c",
+			"atomic.h": "c"
+		}
+	}
+}

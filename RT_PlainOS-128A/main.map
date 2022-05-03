@@ -1,0 +1,931 @@
+Archive member included because of file (symbol)
+
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                              obj/rts_os/rts_task.o (__subsf3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o) (__addsf3x)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                              obj/rts_os/rts_task.o (__divsf3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o) (__divsf3x)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                              obj/rts_os/rts_task.o (__floatunsisf)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_inf)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_nan)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_pscA)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_pscB)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o) (__fp_round)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_split3)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o) (__fp_zero)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+                              obj/drivers/usart.o (__udivmodhi4)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                              obj/drivers/usart.o (__udivmodsi4)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                              d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o (exit)
+d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                              obj/main.o (__do_clear_bss)
+
+Allocating common symbols
+Common symbol       size              file
+
+rts_gb_systicks     0x4               obj/rts_os/rts_core.o
+stack1              0x80              obj/main.o
+semaphore           0x2               obj/main.o
+rts_gb_prev_task_tcb
+                    0x2               obj/rts_os/rts_core.o
+OLED                0x41a             obj/main.o
+mem_ctr_blk         0x200             obj/rts_os/rts_heap1.o
+stack2              0x80              obj/main.o
+rts_gb_curr_task_tcb
+                    0x2               obj/rts_os/rts_core.o
+stack3              0x80              obj/main.o
+mem_pool            0x200             obj/rts_os/rts_heap1.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+LOAD obj/main.o
+LOAD obj/rts_os/rts_heap1.o
+LOAD obj/rts_os/rts_port.o
+LOAD obj/rts_os/rts_core.o
+LOAD obj/rts_os/rts_task.o
+LOAD obj/rts_os/rts_os.o
+LOAD obj/rts_os/rts_semaphore.o
+LOAD obj/drivers/usart.o
+LOAD obj/drivers/gpio.o
+LOAD obj/drivers/oled128x64.o
+LOAD obj/rts_os/rts_port_asm.o
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libc.a
+LOAD d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x3b34
+ *(.vectors)
+ .vectors       0x00000000       0x8c d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000008c                . = ALIGN (0x2)
+                0x0000008c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000008c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000008c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000008c                __ctors_start = .
+ *(.ctors)
+                0x0000008c                __ctors_end = .
+                0x0000008c                __dtors_start = .
+ *(.dtors)
+                0x0000008c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000008c        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x0000008c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000008c        0xc d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000098       0x1a d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x00000098                __do_copy_data
+ .init4         0x000000b2       0x10 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x000000b2                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x000000c2        0x8 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ *(.init9)
+ *(.text)
+ .text          0x000000ca        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                0x000000ca                __vector_22
+                0x000000ca                __vector_28
+                0x000000ca                __vector_1
+                0x000000ca                __vector_32
+                0x000000ca                __vector_34
+                0x000000ca                __vector_24
+                0x000000ca                __vector_12
+                0x000000ca                __bad_interrupt
+                0x000000ca                __vector_6
+                0x000000ca                __vector_31
+                0x000000ca                __vector_3
+                0x000000ca                __vector_23
+                0x000000ca                __vector_25
+                0x000000ca                __vector_11
+                0x000000ca                __vector_13
+                0x000000ca                __vector_17
+                0x000000ca                __vector_19
+                0x000000ca                __vector_7
+                0x000000ca                __vector_27
+                0x000000ca                __vector_5
+                0x000000ca                __vector_33
+                0x000000ca                __vector_4
+                0x000000ca                __vector_9
+                0x000000ca                __vector_2
+                0x000000ca                __vector_21
+                0x000000ca                __vector_15
+                0x000000ca                __vector_29
+                0x000000ca                __vector_8
+                0x000000ca                __vector_26
+                0x000000ca                __vector_10
+                0x000000ca                __vector_16
+                0x000000ca                __vector_20
+ .text          0x000000ce      0x312 obj/main.o
+                0x0000012c                task1
+                0x000001da                task2
+                0x000002b6                idle_hook
+                0x000002ea                main
+                0x000000ce                delay
+                0x0000024a                task3
+ .text          0x000003e0      0x5ca obj/rts_os/rts_heap1.o
+                0x00000626                MemAlloc
+                0x00000516                MemAllocInit
+                0x00000988                MemGetUsedBytes
+                0x000003e0                MemCleanFragment
+                0x0000080e                MemFree
+ .text          0x000009aa      0x2ca obj/rts_os/rts_port.o
+                0x000009e0                RTS_PORT_TaskStackInit
+                0x000009aa                RTS_PORT_SystickInit
+ .text          0x00000c74      0xb96 obj/rts_os/rts_core.o
+                0x000016b6                RTS_CORE_SetDlyListHead
+                0x0000173c                RTS_CORE_GetHightPrioTcb
+                0x0000114e                RTS_CORE_InsertTcbToRdyList
+                0x0000144a                RTS_CORE_InsertTcbToDlyList
+                0x000010e6                RTS_CORE_RegisterTask
+                0x00000eb8                RTS_CORE_ClearPrioBitmapBit
+                0x0000167c                RTS_CORE_DlyListHeadRelocate
+                0x00000e02                RTS_CORE_UpdateTaskHightPrio
+                0x00000de4                RTS_CORE_Init
+                0x000017f4                RTS_CORE_OsSchdule
+                0x00001264                RTS_CORE_RemoveTcbFromRdyList
+                0x00001778                RTS_CORE_SwitchToHiprioTask
+                0x00001702                RTS_CORE_GetTcbFromTid
+                0x000017aa                RTS_CORE_GetHiprioTcbNum
+                0x0000136c                RTS_CORE_InsertTcbToPendList
+                0x000016da                RTS_CORE_GetDlyListHead
+                0x0000162a                RTS_CORE_RemoveTcbFromDlyList
+                0x000013f8                RTS_CORE_RemoveTcbFromPendList
+                0x000017d2                RTS_CORE_SwitchToNextTask
+                0x00000fee                RTS_CORE_SetPrioBitmapBit
+ .text          0x0000180a      0x6c4 obj/rts_os/rts_task.o
+                0x00001932                RTS_PendTask
+                0x00001ea0                RTS_TurnOnSchdule
+                0x00001834                RTS_TASK_IdleTaskInit
+                0x00001a34                RTS_ResumeTask
+                0x00001b7a                RTS_ChangeTaskPrio
+                0x00001aa8                RTS_DelayTicks
+                0x00001b4a                RTS_GetCurrTaskTid
+                0x00001dde                RTS_GetCpuUtilizationRate
+                0x00001e74                RTS_TurnOffSchdule
+                0x00001b62                RTS_GetCurrTaskPrio
+                0x00001c0a                __vector_14
+                0x00001874                RTS_CreateTask
+ .text          0x00001ece       0x94 obj/rts_os/rts_os.o
+                0x00001ece                RTS_OS_Init
+                0x00001f14                RTS_OS_Start
+ .text          0x00001f62      0x33e obj/rts_os/rts_semaphore.o
+                0x0000220a                RTS_PostSemaphore
+                0x000020ce                RTS_DestorySemaphore
+                0x00002178                RTS_WaitSemaphore
+                0x00002110                RTS_InitSemaphore
+                0x0000204e                RTS_CreateSemaphore
+ .text          0x000022a0      0x70e obj/drivers/usart.o
+                0x00002368                __vector_30
+                0x00002740                usart_init
+                0x00002424                __vector_18
+ .text          0x000029ae      0x282 obj/drivers/gpio.o
+                0x00002a5e                gpio_init
+ .text          0x00002c30      0xb06 obj/drivers/oled128x64.o
+                0x00003632                oled128x64_init
+ .text          0x00003736       0xd8 obj/rts_os/rts_port_asm.o
+                0x00003736                RTS_PORT_SwitchToNextTask
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text          0x0000380e        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x0000380e                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc.fplib
+                0x0000380e        0xa d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                0x0000380e                __subsf3
+                0x00003810                __addsf3
+ .text.avr-libc.fplib
+                0x00003818       0xc0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                0x00003832                __addsf3x
+ .text.avr-libc.fplib
+                0x000038d8        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                0x000038d8                __divsf3
+ .text.avr-libc.fplib
+                0x000038dc       0xcc d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                0x000038f2                __divsf3x
+                0x000038f6                __divsf3_pse
+ .text.avr-libc.fplib
+                0x000039a8       0x7a d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                0x000039ac                __floatsisf
+                0x000039a8                __floatunsisf
+ .text.avr-libc.fplib
+                0x00003a22        0xc d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                0x00003a22                __fp_inf
+ .text.avr-libc.fplib
+                0x00003a2e        0x6 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                0x00003a2e                __fp_nan
+ .text.avr-libc.fplib
+                0x00003a34        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                0x00003a34                __fp_pscA
+ .text.avr-libc.fplib
+                0x00003a42        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                0x00003a42                __fp_pscB
+ .text.avr-libc.fplib
+                0x00003a50       0x22 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                0x00003a50                __fp_round
+ .text.avr-libc.fplib
+                0x00003a72       0x44 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                0x00003a72                __fp_split3
+                0x00003a82                __fp_splitA
+ .text.avr-libc.fplib
+                0x00003ab6        0xe d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                0x00003ab6                __fp_zero
+                0x00003ab8                __fp_szero
+ .text.libgcc   0x00003ac4       0x28 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+                0x00003ac4                __udivmodhi4
+ .text.libgcc   0x00003aec       0x44 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                0x00003aec                __udivmodsi4
+ .text.libgcc   0x00003b30        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .text.libgcc   0x00003b30        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                0x00003b30                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00003b30        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                0x00003b30                exit
+                0x00003b30                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00003b30        0x4 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ *(.fini0)
+                0x00003b34                _etext = .
+
+.data           0x00800100      0x4e8 load address 0x00003b34
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .data          0x00800100       0xb3 obj/main.o
+                0x00800100                USART1
+ .data          0x008001b3        0x0 obj/rts_os/rts_heap1.o
+ .data          0x008001b3        0x0 obj/rts_os/rts_port.o
+ .data          0x008001b3      0x101 obj/rts_os/rts_core.o
+                0x008001b3                rts_gb_prio_tbl
+ .data          0x008002b4        0x9 obj/rts_os/rts_task.o
+ .data          0x008002bd        0x0 obj/rts_os/rts_os.o
+ .data          0x008002bd        0x0 obj/rts_os/rts_semaphore.o
+ .data          0x008002bd       0xf0 obj/drivers/usart.o
+ .data          0x008003ad        0x0 obj/drivers/gpio.o
+ .data          0x008003ad      0x239 obj/drivers/oled128x64.o
+ .data          0x008005e6        0x1 obj/rts_os/rts_port_asm.o
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .data          0x008005e7        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x008005e8                . = ALIGN (0x2)
+ *fill*         0x008005e7        0x1 00
+                0x008005e8                _edata = .
+                0x008005e8                PROVIDE (__data_end, .)
+
+.bss            0x008005e8      0xa7c
+                0x008005e8                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x008005e8        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+ .bss           0x008005e8        0x0 obj/main.o
+ .bss           0x008005e8        0x0 obj/rts_os/rts_heap1.o
+ .bss           0x008005e8        0x0 obj/rts_os/rts_port.o
+ .bss           0x008005e8       0x54 obj/rts_os/rts_core.o
+ .bss           0x0080063c       0x82 obj/rts_os/rts_task.o
+ .bss           0x008006be        0x0 obj/rts_os/rts_os.o
+ .bss           0x008006be        0x0 obj/rts_os/rts_semaphore.o
+ .bss           0x008006be        0x2 obj/drivers/usart.o
+ .bss           0x008006c0        0x0 obj/drivers/gpio.o
+ .bss           0x008006c0        0x0 obj/drivers/oled128x64.o
+ .bss           0x008006c0        0x0 obj/rts_os/rts_port_asm.o
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+ .bss           0x008006c0        0x0 d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x008006c0      0x59c obj/main.o
+                0x008006c0                stack1
+                0x00800740                semaphore
+                0x00800742                OLED
+                0x00800b5c                stack2
+                0x00800bdc                stack3
+ COMMON         0x00800c5c      0x400 obj/rts_os/rts_heap1.o
+                0x00800c5c                mem_ctr_blk
+                0x00800e5c                mem_pool
+ COMMON         0x0080105c        0x8 obj/rts_os/rts_core.o
+                0x0080105c                rts_gb_systicks
+                0x00801060                rts_gb_prev_task_tcb
+                0x00801062                rts_gb_curr_task_tcb
+                0x00801064                PROVIDE (__bss_end, .)
+                0x00003b34                __data_load_start = LOADADDR (.data)
+                0x0000401c                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00801064        0x0
+                0x00801064                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00801064                PROVIDE (__noinit_end, .)
+                0x00801064                _end = .
+                0x00801064                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab           0x00000000      0x48c
+ *(.stab)
+ .stab          0x00000000      0x48c obj/rts_os/rts_port_asm.o
+
+.stabstr        0x00000000       0x44
+ *(.stabstr)
+ .stabstr       0x00000000       0x44 obj/rts_os/rts_port_asm.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x140
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 obj/main.o
+ .debug_aranges
+                0x00000020       0x20 obj/rts_os/rts_heap1.o
+ .debug_aranges
+                0x00000040       0x20 obj/rts_os/rts_port.o
+ .debug_aranges
+                0x00000060       0x20 obj/rts_os/rts_core.o
+ .debug_aranges
+                0x00000080       0x20 obj/rts_os/rts_task.o
+ .debug_aranges
+                0x000000a0       0x20 obj/rts_os/rts_os.o
+ .debug_aranges
+                0x000000c0       0x20 obj/rts_os/rts_semaphore.o
+ .debug_aranges
+                0x000000e0       0x20 obj/drivers/usart.o
+ .debug_aranges
+                0x00000100       0x20 obj/drivers/gpio.o
+ .debug_aranges
+                0x00000120       0x20 obj/drivers/oled128x64.o
+
+.debug_pubnames
+                0x00000000      0x674
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x94 obj/main.o
+ .debug_pubnames
+                0x00000094       0x82 obj/rts_os/rts_heap1.o
+ .debug_pubnames
+                0x00000116       0x46 obj/rts_os/rts_port.o
+ .debug_pubnames
+                0x0000015c      0x2c2 obj/rts_os/rts_core.o
+ .debug_pubnames
+                0x0000041e      0x117 obj/rts_os/rts_task.o
+ .debug_pubnames
+                0x00000535       0x33 obj/rts_os/rts_os.o
+ .debug_pubnames
+                0x00000568       0x85 obj/rts_os/rts_semaphore.o
+ .debug_pubnames
+                0x000005ed       0x41 obj/drivers/usart.o
+ .debug_pubnames
+                0x0000062e       0x20 obj/drivers/gpio.o
+ .debug_pubnames
+                0x0000064e       0x26 obj/drivers/oled128x64.o
+
+.debug_info     0x00000000     0x2df6
+ *(.debug_info)
+ .debug_info    0x00000000      0x8d6 obj/main.o
+ .debug_info    0x000008d6      0x275 obj/rts_os/rts_heap1.o
+ .debug_info    0x00000b4b      0x109 obj/rts_os/rts_port.o
+ .debug_info    0x00000c54      0x6f0 obj/rts_os/rts_core.o
+ .debug_info    0x00001344      0x4b2 obj/rts_os/rts_task.o
+ .debug_info    0x000017f6      0x200 obj/rts_os/rts_os.o
+ .debug_info    0x000019f6      0x365 obj/rts_os/rts_semaphore.o
+ .debug_info    0x00001d5b      0x643 obj/drivers/usart.o
+ .debug_info    0x0000239e      0x288 obj/drivers/gpio.o
+ .debug_info    0x00002626      0x7d0 obj/drivers/oled128x64.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0xbd1
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x154 obj/main.o
+ .debug_abbrev  0x00000154      0x12a obj/rts_os/rts_heap1.o
+ .debug_abbrev  0x0000027e       0x94 obj/rts_os/rts_port.o
+ .debug_abbrev  0x00000312      0x1c0 obj/rts_os/rts_core.o
+ .debug_abbrev  0x000004d2      0x17b obj/rts_os/rts_task.o
+ .debug_abbrev  0x0000064d       0xd7 obj/rts_os/rts_os.o
+ .debug_abbrev  0x00000724      0x106 obj/rts_os/rts_semaphore.o
+ .debug_abbrev  0x0000082a      0x142 obj/drivers/usart.o
+ .debug_abbrev  0x0000096c       0xe1 obj/drivers/gpio.o
+ .debug_abbrev  0x00000a4d      0x184 obj/drivers/oled128x64.o
+
+.debug_line     0x00000000     0x2100
+ *(.debug_line)
+ .debug_line    0x00000000      0x289 obj/main.o
+ .debug_line    0x00000289      0x32f obj/rts_os/rts_heap1.o
+ .debug_line    0x000005b8      0x1f9 obj/rts_os/rts_port.o
+ .debug_line    0x000007b1      0x5e7 obj/rts_os/rts_core.o
+ .debug_line    0x00000d98      0x4ef obj/rts_os/rts_task.o
+ .debug_line    0x00001287      0x11d obj/rts_os/rts_os.o
+ .debug_line    0x000013a4      0x2cf obj/rts_os/rts_semaphore.o
+ .debug_line    0x00001673      0x355 obj/drivers/usart.o
+ .debug_line    0x000019c8      0x1bf obj/drivers/gpio.o
+ .debug_line    0x00001b87      0x579 obj/drivers/oled128x64.o
+
+.debug_frame    0x00000000      0x610
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x70 obj/main.o
+ .debug_frame   0x00000070       0x60 obj/rts_os/rts_heap1.o
+ .debug_frame   0x000000d0       0x30 obj/rts_os/rts_port.o
+ .debug_frame   0x00000100      0x190 obj/rts_os/rts_core.o
+ .debug_frame   0x00000290       0xe0 obj/rts_os/rts_task.o
+ .debug_frame   0x00000370       0x30 obj/rts_os/rts_os.o
+ .debug_frame   0x000003a0       0x80 obj/rts_os/rts_semaphore.o
+ .debug_frame   0x00000420       0x90 obj/drivers/usart.o
+ .debug_frame   0x000004b0       0x60 obj/drivers/gpio.o
+ .debug_frame   0x00000510      0x100 obj/drivers/oled128x64.o
+
+.debug_str      0x00000000      0xdf3
+ *(.debug_str)
+ .debug_str     0x00000000      0x439 obj/main.o
+                                0x607 (size before relaxing)
+ .debug_str     0x00000439       0xef obj/rts_os/rts_heap1.o
+                                0x1c1 (size before relaxing)
+ .debug_str     0x00000528       0x59 obj/rts_os/rts_port.o
+                                0x12b (size before relaxing)
+ .debug_str     0x00000581      0x3a7 obj/rts_os/rts_core.o
+                                0x50a (size before relaxing)
+ .debug_str     0x00000928      0x190 obj/rts_os/rts_task.o
+                                0x336 (size before relaxing)
+ .debug_str     0x00000ab8       0x38 obj/rts_os/rts_os.o
+                                0x1b5 (size before relaxing)
+ .debug_str     0x00000af0       0xb9 obj/rts_os/rts_semaphore.o
+                                0x255 (size before relaxing)
+ .debug_str     0x00000ba9       0xaf obj/drivers/usart.o
+                                0x4fa (size before relaxing)
+ .debug_str     0x00000c58       0x9d obj/drivers/gpio.o
+                                0x1ae (size before relaxing)
+ .debug_str     0x00000cf5       0xfe obj/drivers/oled128x64.o
+                                0x338 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
+
+Cross Reference Table
+
+Symbol                                            File
+MemAlloc                                          obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+MemAllocInit                                      obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_os.o
+MemCleanFragment                                  obj/rts_os/rts_heap1.o
+MemFree                                           obj/rts_os/rts_heap1.o
+                                                  obj/rts_os/rts_semaphore.o
+MemGetUsedBytes                                   obj/rts_os/rts_heap1.o
+OLED                                              obj/main.o
+RTS_CORE_ClearPrioBitmapBit                       obj/rts_os/rts_core.o
+RTS_CORE_DlyListHeadRelocate                      obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_GetDlyListHead                           obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_GetHightPrioTcb                          obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+RTS_CORE_GetHiprioTcbNum                          obj/rts_os/rts_core.o
+RTS_CORE_GetTcbFromTid                            obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_Init                                     obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_os.o
+RTS_CORE_InsertTcbToDlyList                       obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_InsertTcbToPendList                      obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_InsertTcbToRdyList                       obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_OsSchdule                                obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RegisterTask                             obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RemoveTcbFromDlyList                     obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RemoveTcbFromPendList                    obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_RemoveTcbFromRdyList                     obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_SetDlyListHead                           obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_SetPrioBitmapBit                         obj/rts_os/rts_core.o
+RTS_CORE_SwitchToHiprioTask                       obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_SwitchToNextTask                         obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_task.o
+RTS_CORE_UpdateTaskHightPrio                      obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_task.o
+RTS_ChangeTaskPrio                                obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_CreateSemaphore                               obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+RTS_CreateTask                                    obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_DelayTicks                                    obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_DestorySemaphore                              obj/rts_os/rts_semaphore.o
+RTS_GetCpuUtilizationRate                         obj/rts_os/rts_task.o
+RTS_GetCurrTaskPrio                               obj/rts_os/rts_task.o
+RTS_GetCurrTaskTid                                obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_InitSemaphore                                 obj/rts_os/rts_semaphore.o
+RTS_OS_Init                                       obj/rts_os/rts_os.o
+                                                  obj/main.o
+RTS_OS_Start                                      obj/rts_os/rts_os.o
+                                                  obj/main.o
+RTS_PORT_SwitchToNextTask                         obj/rts_os/rts_port_asm.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_task.o
+RTS_PORT_SystickInit                              obj/rts_os/rts_port.o
+                                                  obj/rts_os/rts_os.o
+RTS_PORT_TaskStackInit                            obj/rts_os/rts_port.o
+                                                  obj/rts_os/rts_task.o
+RTS_PendTask                                      obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_PostSemaphore                                 obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+RTS_ResumeTask                                    obj/rts_os/rts_task.o
+                                                  obj/main.o
+RTS_TASK_IdleTaskInit                             obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_os.o
+RTS_TurnOffSchdule                                obj/rts_os/rts_task.o
+RTS_TurnOnSchdule                                 obj/rts_os/rts_task.o
+RTS_WaitSemaphore                                 obj/rts_os/rts_semaphore.o
+                                                  obj/main.o
+USART1                                            obj/main.o
+__addsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+__addsf3x                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+__bad_interrupt                                   d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__bss_end                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+__bss_start                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+__data_end                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__data_load_start                                 d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__data_start                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__divsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                                                  obj/rts_os/rts_task.o
+__divsf3_pse                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+__divsf3x                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+__do_clear_bss                                    d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_clear_bss.o)
+                                                  obj/drivers/usart.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+                                                  obj/rts_os/rts_heap1.o
+                                                  obj/main.o
+__do_copy_data                                    d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+                                                  obj/drivers/oled128x64.o
+                                                  obj/drivers/usart.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+                                                  obj/main.o
+__floatsisf                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+__floatunsisf                                     d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(floatsisf.o)
+                                                  obj/rts_os/rts_task.o
+__fp_inf                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_inf.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__fp_nan                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_nan.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__fp_pscA                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscA.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__fp_pscB                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_pscB.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__fp_round                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_round.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+__fp_split3                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__fp_splitA                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_split3.o)
+__fp_szero                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(divsf3x.o)
+__fp_zero                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(fp_zero.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3x.o)
+__heap_end                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__init                                            d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__stack                                           d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__subsf3                                          d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51\libm.a(addsf3.o)
+                                                  obj/rts_os/rts_task.o
+__udivmodhi4                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodhi4.o)
+                                                  obj/drivers/oled128x64.o
+                                                  obj/drivers/usart.o
+__udivmodsi4                                      d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_udivmodsi4.o)
+                                                  obj/drivers/usart.o
+__vector_1                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_10                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_11                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_12                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_13                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_14                                       obj/rts_os/rts_task.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_15                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_16                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_17                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_18                                       obj/drivers/usart.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_19                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_2                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_20                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_21                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_22                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_23                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_24                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_25                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_26                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_27                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_28                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_29                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_3                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_30                                       obj/drivers/usart.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_31                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_32                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_33                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_34                                       d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_4                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_5                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_6                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_7                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_8                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_9                                        d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vector_default                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+__vectors                                         d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+_exit                                             d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+delay                                             obj/main.o
+exit                                              d:/winavr/bin/../lib/gcc/avr/4.3.3/avr51\libgcc.a(_exit.o)
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+gpio_init                                         obj/drivers/gpio.o
+                                                  obj/drivers/oled128x64.o
+idle_hook                                         obj/main.o
+main                                              obj/main.o
+                                                  d:/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr51/crtm128.o
+mem_ctr_blk                                       obj/rts_os/rts_heap1.o
+mem_pool                                          obj/rts_os/rts_heap1.o
+oled128x64_init                                   obj/drivers/oled128x64.o
+                                                  obj/main.o
+rts_gb_curr_task_tcb                              obj/rts_os/rts_port_asm.o
+                                                  obj/rts_os/rts_semaphore.o
+                                                  obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+rts_gb_prev_task_tcb                              obj/rts_os/rts_port_asm.o
+                                                  obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_core.o
+rts_gb_prio_tbl                                   obj/rts_os/rts_core.o
+rts_gb_systicks                                   obj/rts_os/rts_os.o
+                                                  obj/rts_os/rts_task.o
+                                                  obj/rts_os/rts_core.o
+semaphore                                         obj/main.o
+stack1                                            obj/main.o
+stack2                                            obj/main.o
+stack3                                            obj/main.o
+task1                                             obj/main.o
+task2                                             obj/main.o
+task3                                             obj/main.o
+usart_init                                        obj/drivers/usart.o
+                                                  obj/main.o

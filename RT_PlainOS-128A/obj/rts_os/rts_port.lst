@@ -1,0 +1,437 @@
+   1               		.file	"rts_port.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_PORT_SystickInit
+  18               	RTS_PORT_SystickInit:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 DF93      		push r29
+  22 0002 CF93      		push r28
+  23 0004 CDB7      		in r28,__SP_L__
+  24 0006 DEB7      		in r29,__SP_H__
+  25               	/* prologue: function */
+  26               	/* frame size = 0 */
+  27               	.LM2:
+  28 0008 AEE4      		ldi r26,lo8(78)
+  29 000a B0E0      		ldi r27,hi8(78)
+  30 000c EEE4      		ldi r30,lo8(78)
+  31 000e F0E0      		ldi r31,hi8(78)
+  32 0010 8081      		ld r24,Z
+  33 0012 8260      		ori r24,lo8(2)
+  34 0014 8C93      		st X,r24
+  35               	.LM3:
+  36 0016 ECE4      		ldi r30,lo8(76)
+  37 0018 F0E0      		ldi r31,hi8(76)
+  38 001a 8FEF      		ldi r24,lo8(-4097)
+  39 001c 9FEE      		ldi r25,hi8(-4097)
+  40 001e 9183      		std Z+1,r25
+  41 0020 8083      		st Z,r24
+  42               	.LM4:
+  43 0022 AFE5      		ldi r26,lo8(95)
+  44 0024 B0E0      		ldi r27,hi8(95)
+  45 0026 EFE5      		ldi r30,lo8(95)
+  46 0028 F0E0      		ldi r31,hi8(95)
+  47 002a 8081      		ld r24,Z
+  48 002c 8F77      		andi r24,lo8(127)
+  49 002e 8C93      		st X,r24
+  50               	/* epilogue start */
+  51               	.LM5:
+  52 0030 CF91      		pop r28
+  53 0032 DF91      		pop r29
+  54 0034 0895      		ret
+  55               	.LFE2:
+  57               	.global	RTS_PORT_TaskStackInit
+  59               	RTS_PORT_TaskStackInit:
+  60               	.LFB3:
+  61               	.LM6:
+  62 0036 DF93      		push r29
+  63 0038 CF93      		push r28
+  64 003a 00D0      		rcall .
+  65 003c 00D0      		rcall .
+  66 003e 00D0      		rcall .
+  67 0040 CDB7      		in r28,__SP_L__
+  68 0042 DEB7      		in r29,__SP_H__
+  69               	/* prologue: function */
+  70               	/* frame size = 6 */
+  71 0044 9A83      		std Y+2,r25
+  72 0046 8983      		std Y+1,r24
+  73 0048 7C83      		std Y+4,r23
+  74 004a 6B83      		std Y+3,r22
+  75 004c 5E83      		std Y+6,r21
+  76 004e 4D83      		std Y+5,r20
+  77               	.LM7:
+  78 0050 8D81      		ldd r24,Y+5
+  79 0052 9E81      		ldd r25,Y+6
+  80 0054 9C01      		movw r18,r24
+  81 0056 2150      		subi r18,lo8(-(-1))
+  82 0058 3040      		sbci r19,hi8(-(-1))
+  83 005a 8B81      		ldd r24,Y+3
+  84 005c 9C81      		ldd r25,Y+4
+  85 005e 820F      		add r24,r18
+  86 0060 931F      		adc r25,r19
+  87 0062 9C83      		std Y+4,r25
+  88 0064 8B83      		std Y+3,r24
+  89               	.LM8:
+  90 0066 8981      		ldd r24,Y+1
+  91 0068 9A81      		ldd r25,Y+2
+  92 006a EB81      		ldd r30,Y+3
+  93 006c FC81      		ldd r31,Y+4
+  94 006e 8083      		st Z,r24
+  95 0070 8B81      		ldd r24,Y+3
+  96 0072 9C81      		ldd r25,Y+4
+  97 0074 0197      		sbiw r24,1
+  98 0076 9C83      		std Y+4,r25
+  99 0078 8B83      		std Y+3,r24
+ 100               	.LM9:
+ 101 007a 8981      		ldd r24,Y+1
+ 102 007c 9A81      		ldd r25,Y+2
+ 103 007e 892F      		mov r24,r25
+ 104 0080 9927      		clr r25
+ 105 0082 EB81      		ldd r30,Y+3
+ 106 0084 FC81      		ldd r31,Y+4
+ 107 0086 8083      		st Z,r24
+ 108 0088 8B81      		ldd r24,Y+3
+ 109 008a 9C81      		ldd r25,Y+4
+ 110 008c 0197      		sbiw r24,1
+ 111 008e 9C83      		std Y+4,r25
+ 112 0090 8B83      		std Y+3,r24
+ 113               	.LM10:
+ 114 0092 EB81      		ldd r30,Y+3
+ 115 0094 FC81      		ldd r31,Y+4
+ 116 0096 1082      		st Z,__zero_reg__
+ 117 0098 8B81      		ldd r24,Y+3
+ 118 009a 9C81      		ldd r25,Y+4
+ 119 009c 0197      		sbiw r24,1
+ 120 009e 9C83      		std Y+4,r25
+ 121 00a0 8B83      		std Y+3,r24
+ 122               	.LM11:
+ 123 00a2 EB81      		ldd r30,Y+3
+ 124 00a4 FC81      		ldd r31,Y+4
+ 125 00a6 1082      		st Z,__zero_reg__
+ 126 00a8 8B81      		ldd r24,Y+3
+ 127 00aa 9C81      		ldd r25,Y+4
+ 128 00ac 0197      		sbiw r24,1
+ 129 00ae 9C83      		std Y+4,r25
+ 130 00b0 8B83      		std Y+3,r24
+ 131               	.LM12:
+ 132 00b2 EB81      		ldd r30,Y+3
+ 133 00b4 FC81      		ldd r31,Y+4
+ 134 00b6 1082      		st Z,__zero_reg__
+ 135 00b8 8B81      		ldd r24,Y+3
+ 136 00ba 9C81      		ldd r25,Y+4
+ 137 00bc 0197      		sbiw r24,1
+ 138 00be 9C83      		std Y+4,r25
+ 139 00c0 8B83      		std Y+3,r24
+ 140               	.LM13:
+ 141 00c2 EB81      		ldd r30,Y+3
+ 142 00c4 FC81      		ldd r31,Y+4
+ 143 00c6 1082      		st Z,__zero_reg__
+ 144 00c8 8B81      		ldd r24,Y+3
+ 145 00ca 9C81      		ldd r25,Y+4
+ 146 00cc 0197      		sbiw r24,1
+ 147 00ce 9C83      		std Y+4,r25
+ 148 00d0 8B83      		std Y+3,r24
+ 149               	.LM14:
+ 150 00d2 EB81      		ldd r30,Y+3
+ 151 00d4 FC81      		ldd r31,Y+4
+ 152 00d6 1082      		st Z,__zero_reg__
+ 153 00d8 8B81      		ldd r24,Y+3
+ 154 00da 9C81      		ldd r25,Y+4
+ 155 00dc 0197      		sbiw r24,1
+ 156 00de 9C83      		std Y+4,r25
+ 157 00e0 8B83      		std Y+3,r24
+ 158               	.LM15:
+ 159 00e2 EB81      		ldd r30,Y+3
+ 160 00e4 FC81      		ldd r31,Y+4
+ 161 00e6 80E8      		ldi r24,lo8(-128)
+ 162 00e8 8083      		st Z,r24
+ 163 00ea 8B81      		ldd r24,Y+3
+ 164 00ec 9C81      		ldd r25,Y+4
+ 165 00ee 0197      		sbiw r24,1
+ 166 00f0 9C83      		std Y+4,r25
+ 167 00f2 8B83      		std Y+3,r24
+ 168               	.LM16:
+ 169 00f4 EB81      		ldd r30,Y+3
+ 170 00f6 FC81      		ldd r31,Y+4
+ 171 00f8 1082      		st Z,__zero_reg__
+ 172 00fa 8B81      		ldd r24,Y+3
+ 173 00fc 9C81      		ldd r25,Y+4
+ 174 00fe 0197      		sbiw r24,1
+ 175 0100 9C83      		std Y+4,r25
+ 176 0102 8B83      		std Y+3,r24
+ 177               	.LM17:
+ 178 0104 EB81      		ldd r30,Y+3
+ 179 0106 FC81      		ldd r31,Y+4
+ 180 0108 1082      		st Z,__zero_reg__
+ 181 010a 8B81      		ldd r24,Y+3
+ 182 010c 9C81      		ldd r25,Y+4
+ 183 010e 0197      		sbiw r24,1
+ 184 0110 9C83      		std Y+4,r25
+ 185 0112 8B83      		std Y+3,r24
+ 186               	.LM18:
+ 187 0114 EB81      		ldd r30,Y+3
+ 188 0116 FC81      		ldd r31,Y+4
+ 189 0118 1082      		st Z,__zero_reg__
+ 190 011a 8B81      		ldd r24,Y+3
+ 191 011c 9C81      		ldd r25,Y+4
+ 192 011e 0197      		sbiw r24,1
+ 193 0120 9C83      		std Y+4,r25
+ 194 0122 8B83      		std Y+3,r24
+ 195               	.LM19:
+ 196 0124 EB81      		ldd r30,Y+3
+ 197 0126 FC81      		ldd r31,Y+4
+ 198 0128 1082      		st Z,__zero_reg__
+ 199 012a 8B81      		ldd r24,Y+3
+ 200 012c 9C81      		ldd r25,Y+4
+ 201 012e 0197      		sbiw r24,1
+ 202 0130 9C83      		std Y+4,r25
+ 203 0132 8B83      		std Y+3,r24
+ 204               	.LM20:
+ 205 0134 EB81      		ldd r30,Y+3
+ 206 0136 FC81      		ldd r31,Y+4
+ 207 0138 1082      		st Z,__zero_reg__
+ 208 013a 8B81      		ldd r24,Y+3
+ 209 013c 9C81      		ldd r25,Y+4
+ 210 013e 0197      		sbiw r24,1
+ 211 0140 9C83      		std Y+4,r25
+ 212 0142 8B83      		std Y+3,r24
+ 213               	.LM21:
+ 214 0144 EB81      		ldd r30,Y+3
+ 215 0146 FC81      		ldd r31,Y+4
+ 216 0148 1082      		st Z,__zero_reg__
+ 217 014a 8B81      		ldd r24,Y+3
+ 218 014c 9C81      		ldd r25,Y+4
+ 219 014e 0197      		sbiw r24,1
+ 220 0150 9C83      		std Y+4,r25
+ 221 0152 8B83      		std Y+3,r24
+ 222               	.LM22:
+ 223 0154 EB81      		ldd r30,Y+3
+ 224 0156 FC81      		ldd r31,Y+4
+ 225 0158 1082      		st Z,__zero_reg__
+ 226 015a 8B81      		ldd r24,Y+3
+ 227 015c 9C81      		ldd r25,Y+4
+ 228 015e 0197      		sbiw r24,1
+ 229 0160 9C83      		std Y+4,r25
+ 230 0162 8B83      		std Y+3,r24
+ 231               	.LM23:
+ 232 0164 EB81      		ldd r30,Y+3
+ 233 0166 FC81      		ldd r31,Y+4
+ 234 0168 1082      		st Z,__zero_reg__
+ 235 016a 8B81      		ldd r24,Y+3
+ 236 016c 9C81      		ldd r25,Y+4
+ 237 016e 0197      		sbiw r24,1
+ 238 0170 9C83      		std Y+4,r25
+ 239 0172 8B83      		std Y+3,r24
+ 240               	.LM24:
+ 241 0174 EB81      		ldd r30,Y+3
+ 242 0176 FC81      		ldd r31,Y+4
+ 243 0178 1082      		st Z,__zero_reg__
+ 244 017a 8B81      		ldd r24,Y+3
+ 245 017c 9C81      		ldd r25,Y+4
+ 246 017e 0197      		sbiw r24,1
+ 247 0180 9C83      		std Y+4,r25
+ 248 0182 8B83      		std Y+3,r24
+ 249               	.LM25:
+ 250 0184 EB81      		ldd r30,Y+3
+ 251 0186 FC81      		ldd r31,Y+4
+ 252 0188 1082      		st Z,__zero_reg__
+ 253 018a 8B81      		ldd r24,Y+3
+ 254 018c 9C81      		ldd r25,Y+4
+ 255 018e 0197      		sbiw r24,1
+ 256 0190 9C83      		std Y+4,r25
+ 257 0192 8B83      		std Y+3,r24
+ 258               	.LM26:
+ 259 0194 EB81      		ldd r30,Y+3
+ 260 0196 FC81      		ldd r31,Y+4
+ 261 0198 1082      		st Z,__zero_reg__
+ 262 019a 8B81      		ldd r24,Y+3
+ 263 019c 9C81      		ldd r25,Y+4
+ 264 019e 0197      		sbiw r24,1
+ 265 01a0 9C83      		std Y+4,r25
+ 266 01a2 8B83      		std Y+3,r24
+ 267               	.LM27:
+ 268 01a4 EB81      		ldd r30,Y+3
+ 269 01a6 FC81      		ldd r31,Y+4
+ 270 01a8 1082      		st Z,__zero_reg__
+ 271 01aa 8B81      		ldd r24,Y+3
+ 272 01ac 9C81      		ldd r25,Y+4
+ 273 01ae 0197      		sbiw r24,1
+ 274 01b0 9C83      		std Y+4,r25
+ 275 01b2 8B83      		std Y+3,r24
+ 276               	.LM28:
+ 277 01b4 EB81      		ldd r30,Y+3
+ 278 01b6 FC81      		ldd r31,Y+4
+ 279 01b8 1082      		st Z,__zero_reg__
+ 280 01ba 8B81      		ldd r24,Y+3
+ 281 01bc 9C81      		ldd r25,Y+4
+ 282 01be 0197      		sbiw r24,1
+ 283 01c0 9C83      		std Y+4,r25
+ 284 01c2 8B83      		std Y+3,r24
+ 285               	.LM29:
+ 286 01c4 EB81      		ldd r30,Y+3
+ 287 01c6 FC81      		ldd r31,Y+4
+ 288 01c8 1082      		st Z,__zero_reg__
+ 289 01ca 8B81      		ldd r24,Y+3
+ 290 01cc 9C81      		ldd r25,Y+4
+ 291 01ce 0197      		sbiw r24,1
+ 292 01d0 9C83      		std Y+4,r25
+ 293 01d2 8B83      		std Y+3,r24
+ 294               	.LM30:
+ 295 01d4 EB81      		ldd r30,Y+3
+ 296 01d6 FC81      		ldd r31,Y+4
+ 297 01d8 1082      		st Z,__zero_reg__
+ 298 01da 8B81      		ldd r24,Y+3
+ 299 01dc 9C81      		ldd r25,Y+4
+ 300 01de 0197      		sbiw r24,1
+ 301 01e0 9C83      		std Y+4,r25
+ 302 01e2 8B83      		std Y+3,r24
+ 303               	.LM31:
+ 304 01e4 EB81      		ldd r30,Y+3
+ 305 01e6 FC81      		ldd r31,Y+4
+ 306 01e8 1082      		st Z,__zero_reg__
+ 307 01ea 8B81      		ldd r24,Y+3
+ 308 01ec 9C81      		ldd r25,Y+4
+ 309 01ee 0197      		sbiw r24,1
+ 310 01f0 9C83      		std Y+4,r25
+ 311 01f2 8B83      		std Y+3,r24
+ 312               	.LM32:
+ 313 01f4 EB81      		ldd r30,Y+3
+ 314 01f6 FC81      		ldd r31,Y+4
+ 315 01f8 1082      		st Z,__zero_reg__
+ 316 01fa 8B81      		ldd r24,Y+3
+ 317 01fc 9C81      		ldd r25,Y+4
+ 318 01fe 0197      		sbiw r24,1
+ 319 0200 9C83      		std Y+4,r25
+ 320 0202 8B83      		std Y+3,r24
+ 321               	.LM33:
+ 322 0204 EB81      		ldd r30,Y+3
+ 323 0206 FC81      		ldd r31,Y+4
+ 324 0208 1082      		st Z,__zero_reg__
+ 325 020a 8B81      		ldd r24,Y+3
+ 326 020c 9C81      		ldd r25,Y+4
+ 327 020e 0197      		sbiw r24,1
+ 328 0210 9C83      		std Y+4,r25
+ 329 0212 8B83      		std Y+3,r24
+ 330               	.LM34:
+ 331 0214 EB81      		ldd r30,Y+3
+ 332 0216 FC81      		ldd r31,Y+4
+ 333 0218 1082      		st Z,__zero_reg__
+ 334 021a 8B81      		ldd r24,Y+3
+ 335 021c 9C81      		ldd r25,Y+4
+ 336 021e 0197      		sbiw r24,1
+ 337 0220 9C83      		std Y+4,r25
+ 338 0222 8B83      		std Y+3,r24
+ 339               	.LM35:
+ 340 0224 EB81      		ldd r30,Y+3
+ 341 0226 FC81      		ldd r31,Y+4
+ 342 0228 1082      		st Z,__zero_reg__
+ 343 022a 8B81      		ldd r24,Y+3
+ 344 022c 9C81      		ldd r25,Y+4
+ 345 022e 0197      		sbiw r24,1
+ 346 0230 9C83      		std Y+4,r25
+ 347 0232 8B83      		std Y+3,r24
+ 348               	.LM36:
+ 349 0234 EB81      		ldd r30,Y+3
+ 350 0236 FC81      		ldd r31,Y+4
+ 351 0238 1082      		st Z,__zero_reg__
+ 352 023a 8B81      		ldd r24,Y+3
+ 353 023c 9C81      		ldd r25,Y+4
+ 354 023e 0197      		sbiw r24,1
+ 355 0240 9C83      		std Y+4,r25
+ 356 0242 8B83      		std Y+3,r24
+ 357               	.LM37:
+ 358 0244 EB81      		ldd r30,Y+3
+ 359 0246 FC81      		ldd r31,Y+4
+ 360 0248 1082      		st Z,__zero_reg__
+ 361 024a 8B81      		ldd r24,Y+3
+ 362 024c 9C81      		ldd r25,Y+4
+ 363 024e 0197      		sbiw r24,1
+ 364 0250 9C83      		std Y+4,r25
+ 365 0252 8B83      		std Y+3,r24
+ 366               	.LM38:
+ 367 0254 EB81      		ldd r30,Y+3
+ 368 0256 FC81      		ldd r31,Y+4
+ 369 0258 1082      		st Z,__zero_reg__
+ 370 025a 8B81      		ldd r24,Y+3
+ 371 025c 9C81      		ldd r25,Y+4
+ 372 025e 0197      		sbiw r24,1
+ 373 0260 9C83      		std Y+4,r25
+ 374 0262 8B83      		std Y+3,r24
+ 375               	.LM39:
+ 376 0264 EB81      		ldd r30,Y+3
+ 377 0266 FC81      		ldd r31,Y+4
+ 378 0268 1082      		st Z,__zero_reg__
+ 379 026a 8B81      		ldd r24,Y+3
+ 380 026c 9C81      		ldd r25,Y+4
+ 381 026e 0197      		sbiw r24,1
+ 382 0270 9C83      		std Y+4,r25
+ 383 0272 8B83      		std Y+3,r24
+ 384               	.LM40:
+ 385 0274 EB81      		ldd r30,Y+3
+ 386 0276 FC81      		ldd r31,Y+4
+ 387 0278 1082      		st Z,__zero_reg__
+ 388 027a 8B81      		ldd r24,Y+3
+ 389 027c 9C81      		ldd r25,Y+4
+ 390 027e 0197      		sbiw r24,1
+ 391 0280 9C83      		std Y+4,r25
+ 392 0282 8B83      		std Y+3,r24
+ 393               	.LM41:
+ 394 0284 EB81      		ldd r30,Y+3
+ 395 0286 FC81      		ldd r31,Y+4
+ 396 0288 1082      		st Z,__zero_reg__
+ 397 028a 8B81      		ldd r24,Y+3
+ 398 028c 9C81      		ldd r25,Y+4
+ 399 028e 0197      		sbiw r24,1
+ 400 0290 9C83      		std Y+4,r25
+ 401 0292 8B83      		std Y+3,r24
+ 402               	.LM42:
+ 403 0294 EB81      		ldd r30,Y+3
+ 404 0296 FC81      		ldd r31,Y+4
+ 405 0298 1082      		st Z,__zero_reg__
+ 406 029a 8B81      		ldd r24,Y+3
+ 407 029c 9C81      		ldd r25,Y+4
+ 408 029e 0197      		sbiw r24,1
+ 409 02a0 9C83      		std Y+4,r25
+ 410 02a2 8B83      		std Y+3,r24
+ 411               	.LM43:
+ 412 02a4 EB81      		ldd r30,Y+3
+ 413 02a6 FC81      		ldd r31,Y+4
+ 414 02a8 1082      		st Z,__zero_reg__
+ 415 02aa 8B81      		ldd r24,Y+3
+ 416 02ac 9C81      		ldd r25,Y+4
+ 417 02ae 0197      		sbiw r24,1
+ 418 02b0 9C83      		std Y+4,r25
+ 419 02b2 8B83      		std Y+3,r24
+ 420               	.LM44:
+ 421 02b4 8B81      		ldd r24,Y+3
+ 422 02b6 9C81      		ldd r25,Y+4
+ 423               	/* epilogue start */
+ 424               	.LM45:
+ 425 02b8 2696      		adiw r28,6
+ 426 02ba 0FB6      		in __tmp_reg__,__SREG__
+ 427 02bc F894      		cli
+ 428 02be DEBF      		out __SP_H__,r29
+ 429 02c0 0FBE      		out __SREG__,__tmp_reg__
+ 430 02c2 CDBF      		out __SP_L__,r28
+ 431 02c4 CF91      		pop r28
+ 432 02c6 DF91      		pop r29
+ 433 02c8 0895      		ret
+ 434               	.LFE3:
+ 468               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_port.c
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:18     .text:00000000 RTS_PORT_SystickInit
+C:\Users\lisha\AppData\Local\Temp/cc5ghGuQ.s:59     .text:00000036 RTS_PORT_TaskStackInit
+
+NO UNDEFINED SYMBOLS

@@ -1,0 +1,1 @@
+-std=c11 -c -xc -mthumb -mcpu=cortex-m3 -O2 -Wall -g -ffunction-sections -fdata-sections -I./.eide/deps -I./lib/cmsis -I./lib -I./rts_os -I./.eide/deps -I./src -DSTM32F10X_MD -D__CHECK_DEVICE_DEFINES -D__CM3_REV -o ./build/Debug/rts_os/rts_os.o -MMD ./rts_os/rts_os.c

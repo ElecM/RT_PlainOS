@@ -1,0 +1,222 @@
+   1               		.file	"rts_os.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	RTS_OS_Start
+  18               	RTS_OS_Start:
+  19               	.LFB3:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 0E94 0000 		call RTS_CORE_UpdateTaskHightPrio
+  25               	.LM3:
+  26 0004 80E0      		ldi r24,lo8(rts_gb_curr_task_tcb)
+  27 0006 90E0      		ldi r25,hi8(rts_gb_curr_task_tcb)
+  28 0008 0E94 0000 		call RTS_CORE_GetHightPrioTcb
+  29               	.LM4:
+  30 000c 0E94 0000 		call RTS_CORE_GetHiprioTcbNum
+  31 0010 8230      		cpi r24,lo8(2)
+  32 0012 00F4      		brsh .+2
+  33 0014 00C0      		rjmp .L2
+  34               	.LM5:
+  35 0016 8091 6F00 		lds r24,111
+  36 001a 8160      		ori r24,lo8(1)
+  37 001c 8093 6F00 		sts 111,r24
+  38               	.L3:
+  39               	.LM6:
+  40 0020 E091 0000 		lds r30,rts_gb_curr_task_tcb
+  41 0024 F091 0000 		lds r31,(rts_gb_curr_task_tcb)+1
+  42 0028 8081      		ld r24,Z
+  43 002a 9181      		ldd r25,Z+1
+  44 002c 9EBF      		out (93)+1-32,r25
+  45 002e 8DBF      		out 93-32,r24
+  46               	/* #APP */
+  47               	 ;  29 "rts_os/rts_os.c" 1
+  48 0030 CF91      		pop	  r28
+  49               	 ;  0 "" 2
+  50               	 ;  29 "rts_os/rts_os.c" 1
+  51 0032 DF91      		pop   r29
+  52               	 ;  0 "" 2
+  53               	 ;  29 "rts_os/rts_os.c" 1
+  54 0034 FF91      		pop	  r31
+  55               	 ;  0 "" 2
+  56               	 ;  29 "rts_os/rts_os.c" 1
+  57 0036 EF91      		pop   r30
+  58               	 ;  0 "" 2
+  59               	 ;  29 "rts_os/rts_os.c" 1
+  60 0038 BF91      		pop	  r27
+  61               	 ;  0 "" 2
+  62               	 ;  29 "rts_os/rts_os.c" 1
+  63 003a AF91      		pop   r26
+  64               	 ;  0 "" 2
+  65               	 ;  29 "rts_os/rts_os.c" 1
+  66 003c 9F91      		pop	  r25
+  67               	 ;  0 "" 2
+  68               	 ;  29 "rts_os/rts_os.c" 1
+  69 003e 8F91      		pop	  r24
+  70               	 ;  0 "" 2
+  71               	 ;  29 "rts_os/rts_os.c" 1
+  72 0040 7F91      		pop   r23
+  73               	 ;  0 "" 2
+  74               	 ;  29 "rts_os/rts_os.c" 1
+  75 0042 6F91      		pop   r22
+  76               	 ;  0 "" 2
+  77               	 ;  29 "rts_os/rts_os.c" 1
+  78 0044 5F91      		pop   r21
+  79               	 ;  0 "" 2
+  80               	 ;  29 "rts_os/rts_os.c" 1
+  81 0046 4F91      		pop   r20
+  82               	 ;  0 "" 2
+  83               	 ;  29 "rts_os/rts_os.c" 1
+  84 0048 3F91      		pop   r19
+  85               	 ;  0 "" 2
+  86               	 ;  29 "rts_os/rts_os.c" 1
+  87 004a 2F91      		pop   r18
+  88               	 ;  0 "" 2
+  89               	 ;  29 "rts_os/rts_os.c" 1
+  90 004c 1F91      		pop   r17
+  91               	 ;  0 "" 2
+  92               	 ;  29 "rts_os/rts_os.c" 1
+  93 004e 0F91      		pop   r16
+  94               	 ;  0 "" 2
+  95               	 ;  29 "rts_os/rts_os.c" 1
+  96 0050 FF90      		pop   r15
+  97               	 ;  0 "" 2
+  98               	 ;  29 "rts_os/rts_os.c" 1
+  99 0052 EF90      		pop   r14
+ 100               	 ;  0 "" 2
+ 101               	 ;  29 "rts_os/rts_os.c" 1
+ 102 0054 DF90      		pop   r13
+ 103               	 ;  0 "" 2
+ 104               	 ;  29 "rts_os/rts_os.c" 1
+ 105 0056 CF90      		pop   r12
+ 106               	 ;  0 "" 2
+ 107               	 ;  29 "rts_os/rts_os.c" 1
+ 108 0058 BF90      		pop   r11
+ 109               	 ;  0 "" 2
+ 110               	 ;  29 "rts_os/rts_os.c" 1
+ 111 005a AF90      		pop   r10
+ 112               	 ;  0 "" 2
+ 113               	 ;  29 "rts_os/rts_os.c" 1
+ 114 005c 9F90      		pop   r9
+ 115               	 ;  0 "" 2
+ 116               	 ;  29 "rts_os/rts_os.c" 1
+ 117 005e 8F90      		pop   r8
+ 118               	 ;  0 "" 2
+ 119               	 ;  29 "rts_os/rts_os.c" 1
+ 120 0060 7F90      		pop   r7
+ 121               	 ;  0 "" 2
+ 122               	 ;  29 "rts_os/rts_os.c" 1
+ 123 0062 6F90      		pop   r6
+ 124               	 ;  0 "" 2
+ 125               	 ;  29 "rts_os/rts_os.c" 1
+ 126 0064 5F90      		pop   r5
+ 127               	 ;  0 "" 2
+ 128               	 ;  29 "rts_os/rts_os.c" 1
+ 129 0066 4F90      		pop   r4
+ 130               	 ;  0 "" 2
+ 131               	 ;  29 "rts_os/rts_os.c" 1
+ 132 0068 3F90      		pop   r3
+ 133               	 ;  0 "" 2
+ 134               	 ;  29 "rts_os/rts_os.c" 1
+ 135 006a 2F90      		pop   r2
+ 136               	 ;  0 "" 2
+ 137               	 ;  29 "rts_os/rts_os.c" 1
+ 138 006c 0F90      		pop	  r0
+ 139               	 ;  0 "" 2
+ 140               	 ;  29 "rts_os/rts_os.c" 1
+ 141 006e 0092 5B00 		sts	  0x5B, r0
+ 142               	 ;  0 "" 2
+ 143               	 ;  29 "rts_os/rts_os.c" 1
+ 144 0072 0F90      		pop   r0
+ 145               	 ;  0 "" 2
+ 146               	 ;  29 "rts_os/rts_os.c" 1
+ 147 0074 0092 5F00 		sts   0x5f, r0
+ 148               	 ;  0 "" 2
+ 149               	 ;  29 "rts_os/rts_os.c" 1
+ 150 0078 0F90      		pop   r0
+ 151               	 ;  0 "" 2
+ 152               	 ;  29 "rts_os/rts_os.c" 1
+ 153 007a 1F90      		pop	  r1
+ 154               	 ;  0 "" 2
+ 155               	 ;  29 "rts_os/rts_os.c" 1
+ 156 007c 0895      		ret
+ 157               	 ;  0 "" 2
+ 158               	.LM7:
+ 159               	/* #NOAPP */
+ 160 007e 8FB7      		in r24,__SREG__
+ 161 0080 8068      		ori r24,lo8(-128)
+ 162 0082 8FBF      		out __SREG__,r24
+ 163               	/* epilogue start */
+ 164               	.LM8:
+ 165 0084 0895      		ret
+ 166               	.L2:
+ 167               	.LM9:
+ 168 0086 8091 6F00 		lds r24,111
+ 169 008a 8E7F      		andi r24,lo8(-2)
+ 170 008c 8093 6F00 		sts 111,r24
+ 171 0090 00C0      		rjmp .L3
+ 172               	.LFE3:
+ 174               	.global	RTS_OS_Init
+ 176               	RTS_OS_Init:
+ 177               	.LFB2:
+ 178               	.LM10:
+ 179               	.LVL0:
+ 180 0092 0F93      		push r16
+ 181 0094 1F93      		push r17
+ 182               	/* prologue: function */
+ 183               	/* frame size = 0 */
+ 184 0096 8C01      		movw r16,r24
+ 185               	.LM11:
+ 186 0098 8FB7      		in r24,__SREG__
+ 187               	.LVL1:
+ 188 009a 8F77      		andi r24,lo8(127)
+ 189 009c 8FBF      		out __SREG__,r24
+ 190               	.LM12:
+ 191 009e 0E94 0000 		call MemAllocInit
+ 192               	.LM13:
+ 193 00a2 0E94 0000 		call RTS_PORT_SystickInit
+ 194               	.LM14:
+ 195 00a6 0E94 0000 		call RTS_CORE_Init
+ 196               	.LM15:
+ 197 00aa C801      		movw r24,r16
+ 198 00ac 0E94 0000 		call RTS_TASK_IdleTaskInit
+ 199               	.LM16:
+ 200 00b0 1092 0000 		sts rts_gb_systicks,__zero_reg__
+ 201 00b4 1092 0000 		sts (rts_gb_systicks)+1,__zero_reg__
+ 202 00b8 1092 0000 		sts (rts_gb_systicks)+2,__zero_reg__
+ 203 00bc 1092 0000 		sts (rts_gb_systicks)+3,__zero_reg__
+ 204               	/* epilogue start */
+ 205               	.LM17:
+ 206 00c0 1F91      		pop r17
+ 207 00c2 0F91      		pop r16
+ 208               	.LVL2:
+ 209 00c4 0895      		ret
+ 210               	.LFE2:
+ 244               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 rts_os.c
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:2      *ABS*:0000003f __SREG__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:3      *ABS*:0000003e __SP_H__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:4      *ABS*:0000003d __SP_L__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:5      *ABS*:00000034 __CCP__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:18     .text:00000000 RTS_OS_Start
+C:\Users\lisha\AppData\Local\Temp/ccuTZqDy.s:176    .text:00000092 RTS_OS_Init
+
+UNDEFINED SYMBOLS
+RTS_CORE_UpdateTaskHightPrio
+rts_gb_curr_task_tcb
+RTS_CORE_GetHightPrioTcb
+RTS_CORE_GetHiprioTcbNum
+MemAllocInit
+RTS_PORT_SystickInit
+RTS_CORE_Init
+RTS_TASK_IdleTaskInit
+rts_gb_systicks

@@ -1,0 +1,1 @@
+-c -x assembler-with-cpp -mthumb -mcpu=cortex-m3 -g -ffunction-sections -fdata-sections -I./.eide/deps -I./lib/cmsis -I./lib -I./rts_os -I./.eide/deps -I./src -o ./build/Debug/rts_os/rts_port_asm.o -MMD ./rts_os/rts_port_asm.S
